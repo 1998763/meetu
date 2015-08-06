@@ -461,7 +461,8 @@ ol {
   list-style: none;
 }
 
-em {
+em,
+i {
   font-style: normal;
   color: #333;
 }
