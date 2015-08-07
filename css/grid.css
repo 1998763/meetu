@@ -37,17 +37,15 @@ header input:focus {
 }
 
 header input.short {
-	position: absolute;
-	left: 58px;
-	top: 9px;
+	position: relative;
+	left: 10px;
 	width: 224px;
 }
 
 header input.long {
-	position: absolute;
-	left: 8px;
-	top: 9px;
-	width: 266px;
+	position: relative;
+	left: -14px;
+	width: 270px;
 }
 
 header .left {
@@ -75,7 +73,9 @@ header .city {
 }
 
 header .icon-search {
+	display: inline-block;
 	width: 38px;
+	vertical-align: middle;
 }
 
 header .icon-ring .icon-red{ 
