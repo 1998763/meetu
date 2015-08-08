@@ -121,3 +121,11 @@ header .icon-ring .icon-red{
 }
 
 /* public */
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
