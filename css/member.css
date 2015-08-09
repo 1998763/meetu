@@ -44,7 +44,7 @@
 	background: #fff;
 }
 
-.nav-left, .nav-right {
+.member-nav-left, .member-nav-right {
 	position: relative;
 	display: block;
 	box-flex: 1;
@@ -53,11 +53,11 @@
 	padding: 5px 0;
 }
 
-.nav-left {
+.member-nav-left {
 	border-right: 1px solid #dcdcdc;
 }
 
-.nav-center {
+.member-nav-center {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -65,11 +65,11 @@
 	margin-top: -20px;
 }
 
-.nav-left .nav-center {
+.member-nav-left .member-nav-center {
 	margin-left: -35px;
 }
 
-.nav-right .nav-center {
+.member-nav-right .member-nav-center {
 	margin-left: -41px;
 }
 
