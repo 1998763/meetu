@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>觅游-MEET U</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<link rel="stylesheet" type="text/css" href="css/g.css">
+</head>
+<body>
+	<header>
+		<a class="city left">广州<i class="icon-down"></i></a>
+		<input type="text" class="short">
+		<a class="icon-menu right js-menu"></a>
+		<a class="icon-search right js-search" style="display: none"></a>
+	</header>
+	<div class="header-down">
+		<ul class="search-list">
+			<li>
+				<span class="fr">78451人浏览</span>广州美食一日游
+			</li>
+			<li>
+				<span class="fr">78451人浏览</span>广州美食一日游
+			</li>
+			<li>
+				<span class="fr">78451人浏览</span>广州美食一日游
+			</li>
+		</ul>
+		<div class="condition-box">
+			<h2>筛选条件</h2>
+			<ul class="condition-list">
+				<li>接待2人<i class="icon-remove"></i></li>
+				<li>2015-05-17 星期二<i class="icon-remove"></i></li>
+				<li>接待2人<i class="icon-remove"></i></li>
+				<li>接待2人<i class="icon-remove"></i></li>
+			</ul>
+		</div>
+	</div>
+	<div class="filter-box">
+		
+	</div>
+	<div class="container">
+		<div class="swipe-box">
+			<div id='slider' class='swipe'>
+				<div class='swipe-wrap'>
+	                <a href="">
+	                  	<img src="images/index-swipe.jpg" alt="">
+	                </a>
+	                <a href="">
+	                	<img src="images/index-swipe.jpg" alt="">
+	            	</a>
+	                <a href="">
+	                	<img src="images/index-swipe.jpg" alt="">
+	            	</a>      
+				</div>
+			</div>
+			<span class="slider-nav"></span>
+		</div>
+		<div class="box">
+			<a href="#" class="p3-box">
+				<div class="img-box">
+					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="product-foot">
+						<h1>历史与繁华的痕迹—沙面</h1>
+						<p><i></i>广州 荔湾区 by 雯雯 文员</p>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="p3-box">
+				<div class="img-box">
+					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="product-foot">
+						<h1>历史与繁华的痕迹—沙面</h1>
+						<p><i></i>广州 荔湾区 by 雯雯 文员</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/swipe.min.js"></script>
+    <script>
+        $(function() {
+        	//search
+        	$('input.short').on('focus', function() {
+        		$('.header-down, .js-search').show();
+        		$('.js-menu').hide();
+        	})
+        	$('input.short').on('blur', function() {
+        		$('.header-down, .js-search').hide();
+        		$('.js-menu').show();
+        	})
+
+            //swipe
+			window.mySwipe = Swipe(document.getElementById('slider'), {
+				auto: 4000,
+				continuous: true,
+				transitionEnd: function(index) {
+					$('.slider-nav i').removeClass('active').eq(index).addClass('active');
+				}
+			});
+			var sliderNav = '<i class="active"></i>';
+			for(var i = 1; i < mySwipe.getNumSlides(); i++) {
+				sliderNav += '<i></i>';
+			}
+			$('.slider-nav').show().append(sliderNav).css('margin-left', -($('.slider-nav').width()/2) + 'px');
+        });
+    </script>
+</body>
+</html>

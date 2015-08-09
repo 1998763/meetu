@@ -1,0 +1,111 @@
+.header-down {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 45px;
+	z-index: 10;
+	background: #f2f2f2
+}
+
+.search-list li {
+	line-height: 1;
+	padding: 14px 9px;
+	color: #888;
+	background: #fff;
+}
+
+.condition-box {
+	padding: 10px 9px;
+}
+
+.condition-box h2 {
+	line-height: 30px;
+	border-bottom: 1px solid #dcdcdc;
+	font-size: 16px;
+	color: #414141;
+}
+
+.condition-list {
+	padding: 15px 0 0;
+	overflow: hidden;
+}
+
+.condition-list li {
+	float: left;
+	padding: 5px 7px 5px 10px;
+	border-radius: 15px;
+	margin: 0 10px 10px 0;
+	font-size: 12px;
+	color: #fff;
+	background: #5d9cec;
+}
+
+.condition-list li i {
+	display: inline-block;
+	width: 12px;
+	height: 14px;
+	margin-top: -2px;
+	margin-left: 4px;
+	vertical-align: middle;
+}
+
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 10000px;
+}
+
+.swipe-wrap a {
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+.swipe-wrap img {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.swipe-box {
+	position: relative;
+	overflow: hidden;
+}
+
+.slider-nav {
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	line-height: 0;
+	padding: 2px 3px 2px 8px;
+	border-radius: 5px;
+	display: none;
+}
+
+.slider-nav i {
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	border-radius: 50%;
+	background: rgba(255,255,255,.3);
+	margin-right: 8px;
+}
+
+.slider-nav .active {
+	background: #fff;
+}
+
+.icon-remove {
+	background: url(../images/icon-remove.png) center center no-repeat;
+	background-size: 12px;
+}
