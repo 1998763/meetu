@@ -18,15 +18,9 @@
 	width: 100%;
 }
 
-.news-text {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
+.news-wrap .news-text {
 	padding: 4px 10px;
-	background: linear-gradient(left,rgba(0,0,0,.2),rgba(0,0,0,.0));
-	background: -webkit-linear-gradient(left,rgba(0,0,0,.2),rgba(0,0,0,.0));
-	color: #fff;
+	height: auto;
 }
 
 .news-text h3 {
