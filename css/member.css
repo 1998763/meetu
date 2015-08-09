@@ -79,7 +79,7 @@
 	vertical-align: middle;
 }
 
-.member-nav .nav-text {	
+.member-nav .nav-text {
 	text-align: center;
 	line-height: 15px;
 	margin: 6px 0 0 5px;
@@ -181,4 +181,36 @@
 .icon-add {
 	background: url(../images/icon-add.png) center center no-repeat;
 	background-size: 15px;
+}
+
+.add-ticket {
+	background: #fff;
+	border-radius: 2px;
+	border: 1px dashed #dcdcdc;
+	color: #dcdcdc;
+	text-align: center;
+	padding: 6px 0 10px;
+	margin-bottom: 11px;
+}
+
+.add-ticket i {
+	display: block;
+	margin: 0 auto;
+	width: 19px;
+	height: 19px;
+	background: url(../images/icon-add2.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	margin-bottom: 4px;
+}
+
+.ticket-box {
+	height: 76px;
+	background: url(../images/card-bg.png) 0 0 repeat-x;
+	background-size: 6px 76px;
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+.ticket-box-l {
+	float: left;
 }
