@@ -209,8 +209,52 @@
 	background-size: 6px 76px;
 	overflow: hidden;
 	border-radius: 3px;
+	line-height: 1;
+	position: relative;
+	margin-bottom: 11px;
+}
+
+.ticket-box i {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -8px;
+	width: 16px;
+	height: 16px;
+	background: url(../images/icon-check2.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.ticket-box.active i {
+	background: url(../images/icon-check1.png) 0 0 no-repeat;
+	background-size: 100% 100%;
 }
 
 .ticket-box-l {
 	float: left;
+	padding: 34px 0 0 19px;
+	color: #63a0ed;
+	font-size: 30px;
+}
+
+.ticket-box-l span {
+	font-size: 18px;
+	position: relative;
+	top: -1px;
+	padding-right: 2px;
+}
+
+.ticket-box-r {
+	float: right;
+	padding: 32px 42px 0 0;
+	font-size: 10px;
+	text-align: right;
+}
+
+.ticket-box-r h1 {
+	font-size: 10px;
+}
+
+.ticket-box-r p {
+	line-height: 18px;
 }
