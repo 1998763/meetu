@@ -244,16 +244,26 @@
 	    	}
 	    };
 
+	    var headerDown = {
+	    	show : function(index) {
+	    		sidebar.hide();
+	    		$('.cover-body,#btn-search,.header-down:eq(' + index + ')').show();
+	    		$('#btn-menu').hide();
+	    		$('.cover-body').one('click', function() {headerDown.hide(index)})
+	    	},
+	    	hide : function(index) {
+	    		$('.cover-body,#btn-search,.header-down:eq(' + index + ')').hide();
+	    		$('#btn-menu').show();
+	    	}
+	    };
+
         $(function() {
         	//search
         	$('input.short').on('focus', function() {
-        		// $('.header-down:eq(1)').height($(window).height()-$('header').height());
-        		$('.header-down:eq(1), #btn-search').show();
-        		$('#btn-menu').hide();
+        		headerDown.show(1);
         	})
         	$('#btn-search').on('click', function() {
-        		$('.header-down:eq(1), #btn-search').hide();
-        		$('#btn-menu').show();
+        		headerDown.hide(1);
         	})
 
             //swipe
