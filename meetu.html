@@ -13,8 +13,9 @@
 	<header>
 		<a class="city left">广州<i class="icon-down"></i></a>
 		<input type="text" class="short">
-		<a class="icon-menu right btn-menu"></a>
-		<a class="icon-search right btn-search" style="display: none"></a>
+		<a id="btn-menu" class="icon-menu right"></a>
+		<a id="close-menu" class="icon-erro right" style="display: none"></a>
+		<a id="btn-search" class="icon-search right" style="display: none"></a>
 	</header>
 
 	<div class="header-down">
@@ -60,8 +61,18 @@
 		</div>
 	</div>
 
+	<ul class="side-bar">
+		<li>约伴</li>
+		<li>我的收藏</li>
+		<li>关于我们</li>
+		<li>联系我们</li>
+		<li>登陆</li>
+		<li>注册</li>
+	</ul>
+
 	<!-- 背景 -->
-	<div class="cover-bg"></div>
+	<div class="cover-all"></div>
+	<div class="cover-body"></div>
 
 	<!-- 日历 -->
 	<!-- <div class="js-calendar"> -->
@@ -119,6 +130,45 @@
 		</table>
 	<!-- </div> -->
 
+	<div class="filter-box">
+		<h2>接待人数</h2>
+		<ul class="filter-list">
+			<li>1人</li>
+			<li>2人</li>
+			<li>3人</li>
+			<li>4人</li>
+			<li class="active">5人或以上</li>
+		</ul>
+		<h2>价格</h2>
+		<ul class="filter-list">
+			<li>0-100</li>
+			<li>100-200</li>
+			<li>200-500</li>
+			<li class="active">500-1000</li>
+			<li>1000以上</li>
+		</ul>
+		<h2>游玩日期</h2>
+		<form class="filter-form">
+			<select>
+				<option>2015-07-07   星期二</option>
+				<option>2015-07-08   星期三</option>
+			</select>
+		</form>
+		<h2>性别</h2>
+		<ul class="filter-list">
+			<li>我要帅哥</li>
+			<li>我要美女</li>
+			<li>都行</li>
+		</ul>
+		<h2>需求</h2>
+		<ul class="filter-list">
+			<li>无车</li>
+			<li>专车</li>
+			<li>都行</li>
+		</ul>
+		<div class="filter-button">确定</div>
+	</div>
+
 	<div class="container">
 		<div class="swipe-box">
 			<div id='slider' class='swipe'>
@@ -162,25 +212,49 @@
     <script>
 	    var calendar = {
 	    	show : function() {
-	    		$('.cover-bg,.calendar').show();
-	    		$('.cover-bg').one('click', calendar.hide);
+	    		$('.cover-all,.calendar').show();
+	    		$('.cover-all').one('click', this.hide);
 
 	    	},
 	    	hide : function() {
-	    		$('.cover-bg,.calendar').hide();
+	    		$('.cover-all,.calendar').hide();
 	    	}
-	    }
+	    };
+
+	    var sidebar = {
+	    	show : function() {
+	    		// $('.side-bar').height($(window).height()-$('header').height());
+	    		$('.cover-body,.side-bar,#close-menu').show();
+	    		$('#btn-menu').hide();
+	    		$('.cover-body,#close-menu').one('click', this.hide);
+	    	},
+	    	hide : function() {
+	    		$('.cover-body,.side-bar,#close-menu').hide();
+	    		$('#btn-menu').show();
+	    	}
+	    };
+
+	    var filter = {
+	    	show : function() {
+	    		$('.cover-all,.filter-box').show();
+	    		$('.cover-all').one('click', this.hide);
+	    	},
+	    	hide : function() {
+	    		$('.cover-all,.filter-box').hide();
+	    	}
+	    };
 
         $(function() {
         	//search
         	$('input.short').on('focus', function() {
-        		$('.header-down:eq(1), .btn-search').show();
-        		$('.btn-menu').hide();
+        		// $('.header-down:eq(1)').height($(window).height()-$('header').height());
+        		$('.header-down:eq(1), #btn-search').show();
+        		$('#btn-menu').hide();
         	})
-        	// $('input.short').on('blur', function() {
-        	// 	$('.header-down:eq(1), .btn-search').hide();
-        	// 	$('.btn-menu').show();
-        	// })
+        	$('#btn-search').on('click', function() {
+        		$('.header-down:eq(1), #btn-search').hide();
+        		$('#btn-menu').show();
+        	})
 
             //swipe
 			window.mySwipe = Swipe(document.getElementById('slider'), {
@@ -199,6 +273,16 @@
 			//calendar
 			$('#btn-calendar').on('click', function() {
 				calendar.show();
+			})
+
+			//sidebar
+			$('#btn-menu').on('click', function() {
+				sidebar.show();
+			})
+
+			//filter
+			$('.city').on('click', function() {
+				filter.show();
 			})
         });
     </script>
