@@ -58,6 +58,7 @@ header .right {
 	position: absolute;
 	right: 0;
 	top: 0;
+	background-color: #5d9cec;
 }
 
 header a {
@@ -109,6 +110,11 @@ header .icon-ring .icon-red{
 .icon-search {
 	background: url(../images/icon-search.png) center center no-repeat;
 	background-size: 22px;
+}
+
+.icon-erro {
+	background: url(../images/icon-erro.png) center center no-repeat;
+	background-size: 18px;
 }
 
 .icon-down {
