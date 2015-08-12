@@ -1,3 +1,109 @@
+.order-box {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+    background: #fff;
+    font-size: 12px;
+}
+
+.order-box.mt8 {
+    margin-top: 8px;
+    border-top: 1px solid #dcdcdc;
+}
+
+.order-box dl {
+    line-height: 1;
+    padding: 0px 9px;
+}
+
+.order-box dt {
+    float: left;
+    width: 100px;
+    padding: 12px 0;
+    color: #888;
+}
+
+.order-box dd {
+    overflow: hidden;
+    min-height: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.order-box dl:last-child dd {
+    border: none;
+}
+
+dd.order-coupon {
+    color: #ccc
+}
+
+dd.order-total {
+    font-size: 14px;
+    padding: 11px 0;
+}
+
+dd.order-link {
+    background: url(../images/icon-right.png) right center no-repeat;
+    background-size: 8px;
+}
+
+.order-link.head {
+    min-height: 56px;
+}
+
+.order-link.head h5,
+.order-link.head p {
+    width: 120px;
+}
+
+.order-box dd h5 i {
+    display: inline-block;
+    width: 15px;
+    height: 9px;
+    vertical-align: middle;
+}
+
+.order-box dd p {
+    line-height: 24px;
+    /*padding-bottom: 21px; */
+    font-size: 10px;
+}
+
+.order-box .trip-detail {
+    line-height: 15px;
+    margin-top: 6px;
+}
+
+.order-box .face {
+    position: absolute;
+    top: 11px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #e7e7e7;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.order-box .face img {
+    width: 100%;
+}
+
+/* public */
+
+.text-red {
+    color: #e0174d;
+}
+
+.text-orange {
+    color: #fc6e51;
+}
+
+.bold {
+    font-weight: 700;
+}
+
 .result-box {
     background: #fff;
     border-bottom: 1px solid #e2e2e2;

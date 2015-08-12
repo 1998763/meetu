@@ -104,3 +104,12 @@
     font-size: 12px;
     color: #fff;
 }
+
+.row.mg0,
+.row.mg0 textarea {
+  margin: 0;
+}
+
+.row.mg0:last-child {
+  padding-bottom: 0;
+}
