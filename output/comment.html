@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我要点评</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+    <link rel="stylesheet" href="css/g.css">
+</head>
+<body>
+
+    <header>
+		<a href="javascript:history.back();" class="icon-back left"></a>
+		<h1>我要点评</h1>
+		<a href="#" class="icon-ring right"><i class="icon-red">9</i></a>
+	</header>
+
+    <div class="container">
+        <div class="comments-box">
+			<div class="comments-head border">
+				<div class="comments"><i></i><i></i><i></i><i></i><i></i></div><span id="score">0</span>.0分
+			</div>
+			<div class="comments-foot">
+				<textarea class="comments-area" placeholder="好不好吃，有啥亮点，说说嘛..."></textarea>
+			</div>
+		</div>
+    </div>
+
+    <div class="fixed-bar">提 交</div>
+
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script>
+
+        $(function() {
+            var $i = $('.comments i');
+            $i.on('click', function() {
+                $i.removeClass('active');
+                var index = $(this).index() + 1;
+                for (var i = 0; i < index; i++) {
+                    $i.eq(i).addClass('active');
+                }
+                $('#score').html(index);
+            });
+        });
+
+    </script>
+</body>
+</html>

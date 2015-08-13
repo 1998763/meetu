@@ -180,6 +180,27 @@ header .icon-ring .icon-red{
     display: none;
 }
 
+.tab-nav .active .icon-arrow {
+    display: inline-block;
+}
+
+.tab-nav .desc .icon-arrow {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.tab-nav .icon-arrow {
+    display: none;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #5d9cec;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    margin-left: 10px;
+    position: relative;
+    top: -1px;
+}
+
 .p3-box {
   display: block;
   margin-bottom: 8px;
@@ -254,4 +275,82 @@ header .icon-ring .icon-red{
     margin-right: 3px;
     position: relative;
     top: 2px;
+}
+
+.search-box {
+    height: 146px;
+    background: url(../images/search.png) center 40px no-repeat;
+    background-size: 72px 59px;
+}
+
+.search-box h1, .search-box p {
+    color: #999;
+    padding-top: 112px;
+    text-align: center;
+}
+
+.search-box h1 {
+    font-size: 16px;
+}
+
+.search-box p {
+    font-size: 12px;
+}
+
+.md-list {
+    padding: 10px;
+}
+
+.md-box {
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 1px solid #d0d0d0;
+    margin-bottom: 3px;
+    position: relative;
+}
+
+.md-box:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 3px;
+    width: 7px;
+    height: 12px;
+    background: url(../images/icon-link-arrow.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+
+.md-box img {
+    float: left;
+    width: 62px;
+    height: 62px;
+}
+
+.md-main {
+    margin-left: 62px;
+    padding: 10px 22px 10px 10px;
+}
+
+.md-box .comments {
+    font-size: 0;
+    float: right;
+}
+
+.md-box .comments i {
+    width: 12px;
+    height: 12px;
+}
+
+.md-box h1 {
+    font-size: 16px;
+    padding-top: 2px;
+}
+
+.md-box p {
+    padding-top: 6px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
