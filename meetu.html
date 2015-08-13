@@ -7,11 +7,11 @@
 	<meta name="format-detection"content="telephone=no, email=no" />
 	<meta name="full-screen" content="yes">
 	<meta name="x5-fullscreen" content="true">
-	<link rel="stylesheet" type="text/css" href="css/g.css">
+	<link rel="stylesheet" type="text/css" href="css/g.css?v=0">
 </head>
 <body>
 	<header>
-		<a class="city left">广州<i class="icon-down"></i></a>
+		<a id="btn-city" class="city left">广州<i class="icon-down"></i></a>
 		<input type="text" class="short">
 		<a id="btn-menu" class="icon-menu right"></a>
 		<a id="close-menu" class="icon-erro right" style="display: none"></a>
@@ -43,7 +43,7 @@
 
 	<div class="header-down">
 		<div class="filter-search">
-			<a id="btn-calendar" href="javascript:;">筛选搜索</a>
+			<a id="btn-filter" href="javascript:;">筛选搜索</a>
 		</div>
 		<div class="hot-recommend">
 			<h2>热门推荐</h2>
@@ -78,7 +78,7 @@
 	<!-- <div class="js-calendar"> -->
 		<table class="calendar">
 			<thead>
-				<tr><th colspan="7">2015年<span class="text-blue">6</span>月</th></tr>
+				<tr><th colspan="7">2015年<span class="text-blue">6</span>月<i class="icon-right react"></i></th></tr>
 			</thead>
 			<tbody>
 				<tr class="weeks">
@@ -122,9 +122,9 @@
 					<td class="disable">17</td>
 					<td class="disable">18</td>
 					<td class="disable">19</td>
-					<td class="onSell today">今天</td>
-					<td class="onSell active">21</td>
-					<td class="onSell">22</td>
+					<td class="onSell today" data-day="2015-06-20">今天</td>
+					<td class="onSell active" data-day="2015-06-21">21</td>
+					<td class="onSell" data-day="2015-06-22">22</td>
 				</tr>
 			</tbody>
 		</table>
@@ -149,10 +149,7 @@
 		</ul>
 		<h2>游玩日期</h2>
 		<form class="filter-form">
-			<select>
-				<option>2015-07-07   星期二</option>
-				<option>2015-07-08   星期三</option>
-			</select>
+			<input type="text" class="filter-date" value="2015-06-21 星期五" readonly>
 		</form>
 		<h2>性别</h2>
 		<ul class="filter-list">
@@ -218,12 +215,22 @@
     <script>
 	    var calendar = {
 	    	show : function() {
+	    		filter.hide();
 	    		$('.cover-all,.calendar').show();
 	    		$('.cover-all').one('click', this.hide);
-
 	    	},
 	    	hide : function() {
-	    		$('.cover-all,.calendar').hide();
+	    		filter.show();
+	    		$('.calendar').hide();
+	    	},
+	    	bindEvent : function() {
+	    		$('.calendar .onSell').on('click', function(){
+	    			var str = $(this).data('day') + ' 星期' + $('.weeks>td').eq($(this).index()).text().replace('周', '');
+	    			$('.onSell.active').removeClass('active');
+	    			$(this).addClass('active');
+	    			$('.filter-date').val(str);
+	    			calendar.hide();
+	    		});
 	    	}
 	    };
 
@@ -253,7 +260,8 @@
 	    var headerDown = {
 	    	show : function(index) {
 	    		sidebar.hide();
-	    		$('.cover-body,#btn-search,.header-down:eq(' + index + ')').show();
+	    		$('.cover-body,#btn-search').show();
+	    		$('.header-down').eq(index).show().siblings('.header-down').hide();
 	    		$('#btn-menu').hide();
 	    		$('.cover-body').one('click', function() {headerDown.hide(index)})
 	    	},
@@ -264,6 +272,11 @@
 	    };
 
         $(function() {
+        	//city
+        	$('#btn-city').on('click', function() {
+        		headerDown.show(0);
+        	})
+
         	//search
         	$('input.short').on('focus', function() {
         		headerDown.show(1);
@@ -287,9 +300,10 @@
 			$('.slider-nav').show().append(sliderNav).css('margin-left', -($('.slider-nav').width()/2) + 'px');
 
 			//calendar
-			$('#btn-calendar').on('click', function() {
+			$('.filter-date').on('focus', function() {
 				calendar.show();
 			})
+			calendar.bindEvent();
 
 			//sidebar
 			$('#btn-menu').on('click', function() {
@@ -297,8 +311,22 @@
 			})
 
 			//filter
-			$('.city').on('click', function() {
+			$('#btn-filter').on('click', function() {
 				filter.show();
+			})
+			//确认
+			$('.filter-button').on('click', function() {
+				filter.hide();
+			})
+			$('.filter-list>li').on('click', function() {
+				$(this).addClass('active').siblings().removeClass('active');
+			})
+
+			//delete
+			$('.condition-list i').on('click', function() {
+				$(this).parent().remove();
+				if(!$('.condition-list li').length) 
+					$('.condition-box').hide();
 			})
         });
     </script>
