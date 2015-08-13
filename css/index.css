@@ -1,15 +1,17 @@
 .header-down {
 	display: none;
+	/*position: fixed;*/
 	position: absolute;
 	left: 0;
 	top: 45px;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
+	right: 0;
+	/*bottom: 0;*/
+	z-index: 15;
 	background: #f2f2f2
 }
 
-.header-down h2 {
+.header-down h2,
+.filter-box h2 {
 	line-height: 30px;
 	border-bottom: 1px solid #dcdcdc;
 	font-size: 16px;
@@ -69,14 +71,18 @@
 	padding: 0 9px;
 }
 
-.hot-list {
+.hot-list,
+.filter-list,
+.filter-form {
 	padding-bottom: 8px;
 	border-bottom: 1px solid #dcdcdc;
 	margin-right: -16px;
 	overflow: hidden;
 }
 
-.hot-list li {
+.hot-list li,
+.filter-list li,
+.filter-form select {
 	float: left;
 	width: 88px;
 	height: 18px;
@@ -89,17 +95,110 @@
 	color: #5d9cec;
 }
 
-.cover-bg {
+.filter-list li.active {
+	border-color: #5d9cec;
+	background: #5d9cec;
+	color: #f2f2f2;
+}
+
+/* side-bar */
+
+.side-bar {
+	display: none;
+	/*position: fixed;*/
+	position: absolute;
+	top: 45px;
+	right: 0;
+	/*bottom: 0;*/
+	padding-left: 20px;
+	z-index: 10;
+	background: #f2f2f2;
+}
+
+.side-bar li {
+	width: 204px;
+	line-height: 1;
+	padding: 15px 0;
+	border-bottom: 1px solid #dcdcdc;
+	font-size: 12px;
+}
+
+/* cover */
+
+.cover-all {
 	display: none;
 	position: fixed;
 	top: 0;
+	right: 0;
 	bottom: 0;
-	width: 100%;
+	left: 0;
 	background: #000;
 	-webkit-transition: all .4s cubic-bezier(.4,.01,.165,.99);
 	transition: all .4s cubic-bezier(.4,.01,.165,.99);
 	opacity: 0.6;
 	z-index: 99;
+}
+
+.cover-body {
+	display: none;
+	position: fixed;
+	top: 45px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	-webkit-transition: all .4s cubic-bezier(.4,.01,.165,.99);
+	transition: all .4s cubic-bezier(.4,.01,.165,.99);
+	opacity: 0.6;
+	z-index: 9;
+}
+
+/* filter-box */
+
+.filter-box {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 150px;
+	z-index: 100;
+	padding: 9px 9px 0;
+	background: #f2f2f2;
+}
+
+.filter-list,
+.filter-form {
+	padding-bottom: 4px;
+	margin-bottom: 14px;
+}
+
+.filter-form select {
+	width: 148px;
+	padding-left: 23px;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	background: url(../images/icon-select.png) 152px center no-repeat;
+	background-size: 8px;
+	background-color: #f2f2f2;
+}
+
+.filter-form select:focus {
+	outline: none;
+}
+
+.filter-form select option {
+	background: #fff;
+}
+
+.filter-button {
+	line-height: 1;
+	padding: 12px 0;
+	margin-left: -9px;
+	margin-right: -9px;
+	margin-top: 20px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	background: #5d9cec;
 }
 
 /* calendar */
@@ -160,6 +259,8 @@
 	color: #fff;
 	background: #48cfad
 }
+
+/* swipe */
 
 .swipe {
 	overflow: hidden;

@@ -91,6 +91,16 @@ header .icon-ring .icon-red{
 	color: #fff;
 }
 
+.icon-right {
+	background: url(../images/icon-right.png) center center no-repeat;
+	background-size: 8px;
+}
+
+.icon-male {
+	background: url(../images/icon-male.png) center center no-repeat;
+	background-size: 9px;
+}
+
 .icon-back {
 	background: url(../images/icon-back.png) center center no-repeat;
 	background-size: 18px;
@@ -109,6 +119,11 @@ header .icon-ring .icon-red{
 .icon-search {
 	background: url(../images/icon-search.png) center center no-repeat;
 	background-size: 22px;
+}
+
+.icon-erro {
+	background: url(../images/icon-erro.png) center center no-repeat;
+	background-size: 18px;
 }
 
 .icon-down {
