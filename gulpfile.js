@@ -8,7 +8,7 @@ gulp.task('default', function() {
 	gulp.watch(['./*.html', './css/*.css', '!./css/g.css'], function(){
 		console.log('compress CSS start...');
 		gulp.src(['css/*.css', '!css/g.css'])
-		// .pipe(minifyCSS())
+		.pipe(minifyCSS())
 		.pipe(concat('g.css'))
 		.pipe(gulp.dest('./css'));
 		console.log('compress CSS finish...');
