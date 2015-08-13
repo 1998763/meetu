@@ -7,10 +7,10 @@ gulp.task('default', function() {
 	// CSS-MINIFY
 	gulp.watch(['*.html', 'css/*.css', '!css/g.css'], function(){
 		console.log('compress CSS start...');
-		gulp.src(['**/*.css'])
+		gulp.src(['css/*.css', '!css/g.css'])
 		.pipe(minifyCSS())
 		.pipe(concat('g.css'))
-		.pipe(gulp.dest('css'));
+		.pipe(gulp.dest('./'));
 		console.log('compress CSS finish...');
 	});
 });
