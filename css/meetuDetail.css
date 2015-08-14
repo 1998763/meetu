@@ -1,0 +1,103 @@
+.mdt-title {
+    padding: 10px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.mdt-title h1 {
+    font-size: 16px;
+}
+
+.mdt-title p {
+    font-size: 12px;
+    color: #888;
+}
+
+.mdt-title-foot {
+    padding-top: 10px;
+    position: relative;
+}
+
+.mdt-title-foot:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.mdt-title-foot .comments {
+    background: #f2f2f2;
+    font-size: 0;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.mdt-title-foot .comments:before, .mdt-title-foot .comments:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    width: 6px;
+    height: 6px;
+    background: #dcdcdc;
+    border-radius: 50%;
+}
+
+.mdt-title-foot .comments:before {
+    left: 0;
+}
+
+.mdt-title-foot .comments:after {
+    right: 0;
+}
+
+.mdt-title-foot .comments i {
+    width: 12px;
+    height: 12px;
+}
+
+.mdt-list {
+    display: -webkit-box;
+    display: box;
+    padding: 4px 0 20px;
+}
+
+.mdt-list li, .mdt-boxlist li {
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.mdt-list li h1 {
+    font-size: 12px;
+    color: #888;
+}
+
+.mdt-boxlist {
+    background: #5d9cec;
+    display: -webkit-box;
+    display: box;
+    padding: 4px 0;
+    border-bottom: 1px solid #4b86d4;
+}
+
+.mdt-boxlist li {
+    font-size: 16px;
+    color: #fff;
+    line-height: 33px;
+}
+
+.mdt-boxlist li span {
+    position: relative;
+}
+
+.mdt-boxlist .active span:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid #fff;
+}

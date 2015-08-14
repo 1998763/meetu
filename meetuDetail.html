@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>觅游-MEET U</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<link rel="stylesheet" type="text/css" href="css/g.css">
+</head>
+<body>
+
+	<header>
+		<a href="javascript:history.back();" class="icon-back left"></a>
+		<h1>详情介绍</h1>
+	</header>
+
+	<div class="container">
+		<div class="swipe-box meetuDetail">
+			<div id='slider' class='swipe'>
+				<div class='swipe-wrap'>
+	                <a href="">
+	                  	<img src="images/index-swipe.jpg" alt="">
+	                </a>
+	                <a href="">
+	                	<img src="images/index-swipe.jpg" alt="">
+	            	</a>
+	                <a href="">
+	                	<img src="images/index-swipe.jpg" alt="">
+	            	</a>
+				</div>
+			</div>
+			<span class="slider-nav"></span>
+		</div>
+
+		<div class="mdt-title">
+			<h1>Mandy</h1>
+			<p>23岁</p>
+			<p>在职文员  狮子座</p>
+			<div class="mdt-title-foot">
+				<div class="comments">
+					<i class="active"></i>
+					<i class="active"></i>
+					<i class="active"></i>
+					<i class="active"></i>
+					<i class="active"></i>
+				</div>
+			</div>
+		</div>
+
+		<ul class="mdt-list">
+			<li>
+				<img src="images/Calendar1.png" width="50" heigh="50">
+				<h1>日程表<br>查看好再约我</h1>
+			</li>
+			<li>
+				<img src="images/love1.png" width="50" heigh="50">
+				<h1>请关注我<br>已9人关注</h1>
+			</li>
+			<li>
+				<img src="images/comment1.png" width="50" heigh="50">
+				<h1>查看留言<br>已有74人留言</h1>
+			</li>
+		</ul>
+
+		<ul class="mdt-boxlist">
+			<li class="active"><span>行程介绍</span></li>
+			<li><span>关于导游</span></li>
+		</ul>
+
+		<div class="box">
+			<div class="mdt-xc-title">历史与繁华的痕迹—沙面</div>
+			<ul class="mdt-xc-list">
+				<li>
+					<h1>7小时</h1>
+					<p>时间</p>
+				</li>
+				<li>
+					<h1>大概50KM</h1>
+					<p>里程</p>
+				</li>
+				<li>
+					<h1>徒步</h1>
+					<p>交通</p>
+				</li>
+			</ul>
+			<div class="mdt-fw-box">
+				<h1>服务详情</h1>
+				<ul>
+					<li>招待人数：1人；</li>
+					<li>性别：本人只招待女神；</li>
+					<li>时间：每周末的星期六、星期日,其他时间不招待；</li>
+					<li>主要交通工具:专车配送（飞度）；</li>
+					<li>行程计划：按固定行程，不做变换。</li>
+					<li>接头地点：地铁岗顶站A出口（不负责接送）</li>
+				</ul>
+				<p>备注说明：</p>
+				<p>该行程的费用(包括行程中的过路费、门票、停车费以及餐补费)都由用户支付；</p>
+				<p>行程超时，按10元/小时支付；</p>
+				<p>行程包括100公里油费，超出部分，旅行者需当天结束补齐。</p>
+			</div>
+			<div class="news-content">
+				<p>说一说其他的，南门广场原是银川城的市中心，各种重要的集会典礼在现代化的人民广场未建成前都是在这里，现在的南门广场已成为普通居民夜游的好地方，晚上来到这里，广场舞，黑暗料理摊贩，小商品市场应有尽有，这里可以体验到银川当地人生活；南门广场旁的小巷子里早上有各种面食，香喷喷的羊肉汤，推荐。</p>
+				<div class="news-pic">
+					<img src="/images/news-detail.jpg">
+				</div>
+				<p>南关清真寺在我住的酒店旁边，游客身份进入门票10元，建议游览30分钟，早上进入有教民在读书朗读教义，切勿打扰喧哗；二层的礼堂游客不能进入，一楼有个小的参观馆，去的比较早未开放，少许遗憾。</p>
+			</div>
+		</div>
+
+
+	</div>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/swipe.min.js"></script>
+    <script>
+
+        $(function() {
+
+            //swipe
+			window.mySwipe = Swipe(document.getElementById('slider'), {
+				auto: 4000,
+				continuous: true,
+				transitionEnd: function(index) {
+					$('.slider-nav i').removeClass('active').eq(index).addClass('active');
+				}
+			});
+			var sliderNav = '<i class="active"></i>';
+			for(var i = 1; i < mySwipe.getNumSlides(); i++) {
+				sliderNav += '<i></i>';
+			}
+			$('.slider-nav').show().append(sliderNav).css('margin-left', -($('.slider-nav').width()/2) + 'px');
+
+
+        });
+    </script>
+</body>
+</html>

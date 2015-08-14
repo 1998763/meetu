@@ -321,10 +321,14 @@
 /* public */
 
 .text-blue {
-	color: #5d9cec
+	color: #5d9cec;
 }
 
 .icon-remove {
 	background: url(../images/icon-remove.png) center center no-repeat;
 	background-size: 12px;
+}
+
+.meetuDetail .slider-nav i {
+	box-shadow: 0 0 3px rgba(0, 0, 0, .75);
 }

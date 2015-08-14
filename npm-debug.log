@@ -1,0 +1,488 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--prefix',
+1 verbose cli   '/Users/TEARS/.fis3-tmp/www',
+1 verbose cli   '--loglevel',
+1 verbose cli   'info',
+1 verbose cli   '--registry',
+1 verbose cli   'https://registry.npmjs.org',
+1 verbose cli   'gulp@^3.9.0',
+1 verbose cli   'gulp-concat@^2.6.0',
+1 verbose cli   'gulp-minify-css@^1.2.0' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of /Users/TEARS/.fis3-tmp/www/package.json
+5 warn package.json meetu@1.0.0 No description
+6 verbose installManyTop reading scoped package data from /Users/TEARS/.fis3-tmp/www/node_modules/express/package.json
+7 verbose installManyTop reading scoped package data from /Users/TEARS/.fis3-tmp/www/node_modules/serve-index/package.json
+8 verbose installManyTop reading scoped package data from /Users/TEARS/.fis3-tmp/www/node_modules/yog-devtools/package.json
+9 verbose readDependencies loading dependencies from /Users/TEARS/.fis3-tmp/www/package.json
+10 silly cache add args [ 'gulp@^3.9.0', null ]
+11 verbose cache add spec gulp@^3.9.0
+12 silly cache add args [ 'gulp-concat@^2.6.0', null ]
+13 verbose cache add spec gulp-concat@^2.6.0
+14 silly cache add args [ 'gulp-minify-css@^1.2.0', null ]
+15 verbose cache add spec gulp-minify-css@^1.2.0
+16 silly cache add parsed spec { raw: 'gulp@^3.9.0',
+16 silly cache add   scope: null,
+16 silly cache add   name: 'gulp',
+16 silly cache add   rawSpec: '^3.9.0',
+16 silly cache add   spec: '>=3.9.0 <4.0.0',
+16 silly cache add   type: 'range' }
+17 silly addNamed gulp@>=3.9.0 <4.0.0
+18 verbose addNamed ">=3.9.0 <4.0.0" is a valid semver range for gulp
+19 silly addNameRange { name: 'gulp', range: '>=3.9.0 <4.0.0', hasData: false }
+20 silly mapToRegistry name gulp
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/gulp
+24 verbose addNameRange registry:https://registry.npmjs.org/gulp not in flight; fetching
+25 silly cache add parsed spec { raw: 'gulp-concat@^2.6.0',
+25 silly cache add   scope: null,
+25 silly cache add   name: 'gulp-concat',
+25 silly cache add   rawSpec: '^2.6.0',
+25 silly cache add   spec: '>=2.6.0 <3.0.0',
+25 silly cache add   type: 'range' }
+26 silly addNamed gulp-concat@>=2.6.0 <3.0.0
+27 verbose addNamed ">=2.6.0 <3.0.0" is a valid semver range for gulp-concat
+28 silly addNameRange { name: 'gulp-concat', range: '>=2.6.0 <3.0.0', hasData: false }
+29 silly mapToRegistry name gulp-concat
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/gulp-concat
+33 verbose addNameRange registry:https://registry.npmjs.org/gulp-concat not in flight; fetching
+34 silly cache add parsed spec { raw: 'gulp-minify-css@^1.2.0',
+34 silly cache add   scope: null,
+34 silly cache add   name: 'gulp-minify-css',
+34 silly cache add   rawSpec: '^1.2.0',
+34 silly cache add   spec: '>=1.2.0 <2.0.0',
+34 silly cache add   type: 'range' }
+35 silly addNamed gulp-minify-css@>=1.2.0 <2.0.0
+36 verbose addNamed ">=1.2.0 <2.0.0" is a valid semver range for gulp-minify-css
+37 silly addNameRange { name: 'gulp-minify-css',
+37 silly addNameRange   range: '>=1.2.0 <2.0.0',
+37 silly addNameRange   hasData: false }
+38 silly mapToRegistry name gulp-minify-css
+39 silly mapToRegistry using default registry
+40 silly mapToRegistry registry https://registry.npmjs.org/
+41 silly mapToRegistry uri https://registry.npmjs.org/gulp-minify-css
+42 verbose addNameRange registry:https://registry.npmjs.org/gulp-minify-css not in flight; fetching
+43 verbose request uri https://registry.npmjs.org/gulp-concat
+44 verbose request no auth needed
+45 info attempt registry request try #1 at 10:31:40
+46 verbose request id 1926f921c9b47283
+47 verbose etag "20S6CWL334R2AELO8HVN87BFV"
+48 http request GET https://registry.npmjs.org/gulp-concat
+49 verbose request uri https://registry.npmjs.org/gulp
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 10:31:40
+52 verbose etag "3MIX2BGWRLAKR9L2Y94OZ7X6M"
+53 http request GET https://registry.npmjs.org/gulp
+54 verbose request uri https://registry.npmjs.org/gulp-minify-css
+55 verbose request no auth needed
+56 info attempt registry request try #1 at 10:31:40
+57 verbose etag "1LIT3Q4SQT0Y68RGG5V3SOXLO"
+58 http request GET https://registry.npmjs.org/gulp-minify-css
+59 http 200 https://registry.npmjs.org/gulp-concat
+60 silly get cb [ 200,
+60 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+60 silly get     etag: '"5M2CXB8P8LSGBON193W28BOPV"',
+60 silly get     'content-type': 'application/json',
+60 silly get     'cache-control': 'max-age=60',
+60 silly get     'content-length': '37078',
+60 silly get     'accept-ranges': 'bytes',
+60 silly get     date: 'Fri, 14 Aug 2015 02:31:41 GMT',
+60 silly get     via: '1.1 varnish',
+60 silly get     age: '51',
+60 silly get     connection: 'keep-alive',
+60 silly get     'x-served-by': 'cache-nrt6125-NRT',
+60 silly get     'x-cache': 'HIT',
+60 silly get     'x-cache-hits': '1',
+60 silly get     'x-timer': 'S1439519501.294893,VS0,VE0',
+60 silly get     vary: 'Accept' } ]
+61 verbose get saving gulp-concat to /Users/TEARS/.npm/registry.npmjs.org/gulp-concat/.cache.json
+62 silly addNameRange number 2 { name: 'gulp-concat', range: '>=2.6.0 <3.0.0', hasData: true }
+63 silly addNameRange versions [ 'gulp-concat',
+63 silly addNameRange   [ '0.0.1',
+63 silly addNameRange     '1.0.0',
+63 silly addNameRange     '1.1.0',
+63 silly addNameRange     '2.0.0',
+63 silly addNameRange     '2.1.0',
+63 silly addNameRange     '2.1.1',
+63 silly addNameRange     '2.1.2',
+63 silly addNameRange     '2.1.3',
+63 silly addNameRange     '2.1.4',
+63 silly addNameRange     '2.1.5',
+63 silly addNameRange     '2.1.6',
+63 silly addNameRange     '2.1.7',
+63 silly addNameRange     '2.2.0',
+63 silly addNameRange     '2.3.0',
+63 silly addNameRange     '2.3.3',
+63 silly addNameRange     '2.3.4',
+63 silly addNameRange     '2.3.5',
+63 silly addNameRange     '2.4.0',
+63 silly addNameRange     '2.4.1',
+63 silly addNameRange     '2.4.2',
+63 silly addNameRange     '2.4.3',
+63 silly addNameRange     '2.5.0',
+63 silly addNameRange     '2.5.1',
+63 silly addNameRange     '2.5.2',
+63 silly addNameRange     '2.6.0' ] ]
+64 silly addNamed gulp-concat@2.6.0
+65 verbose addNamed "2.6.0" is a plain semver version for gulp-concat
+66 silly cache afterAdd gulp-concat@2.6.0
+67 verbose afterAdd /Users/TEARS/.npm/gulp-concat/2.6.0/package/package.json not in flight; writing
+68 verbose afterAdd /Users/TEARS/.npm/gulp-concat/2.6.0/package/package.json written
+69 http 200 https://registry.npmjs.org/gulp-minify-css
+70 silly get cb [ 200,
+70 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+70 silly get     etag: '"61YVU3MSRKZDVXVX5X9DVJ7U8"',
+70 silly get     'content-type': 'application/json',
+70 silly get     'cache-control': 'max-age=60',
+70 silly get     'content-length': '58844',
+70 silly get     'accept-ranges': 'bytes',
+70 silly get     date: 'Fri, 14 Aug 2015 02:31:44 GMT',
+70 silly get     via: '1.1 varnish',
+70 silly get     age: '53',
+70 silly get     connection: 'keep-alive',
+70 silly get     'x-served-by': 'cache-nrt6124-NRT',
+70 silly get     'x-cache': 'HIT',
+70 silly get     'x-cache-hits': '2',
+70 silly get     'x-timer': 'S1439519504.031695,VS0,VE0',
+70 silly get     vary: 'Accept' } ]
+71 verbose get saving gulp-minify-css to /Users/TEARS/.npm/registry.npmjs.org/gulp-minify-css/.cache.json
+72 silly addNameRange number 2 { name: 'gulp-minify-css',
+72 silly addNameRange   range: '>=1.2.0 <2.0.0',
+72 silly addNameRange   hasData: true }
+73 silly addNameRange versions [ 'gulp-minify-css',
+73 silly addNameRange   [ '0.0.1',
+73 silly addNameRange     '0.1.0',
+73 silly addNameRange     '0.2.0',
+73 silly addNameRange     '0.3.0',
+73 silly addNameRange     '0.3.1',
+73 silly addNameRange     '0.3.2',
+73 silly addNameRange     '0.3.3',
+73 silly addNameRange     '0.3.4',
+73 silly addNameRange     '0.3.5',
+73 silly addNameRange     '0.3.6',
+73 silly addNameRange     '0.3.7',
+73 silly addNameRange     '0.3.8',
+73 silly addNameRange     '0.3.9',
+73 silly addNameRange     '0.3.10',
+73 silly addNameRange     '0.3.11',
+73 silly addNameRange     '0.3.12',
+73 silly addNameRange     '0.3.13',
+73 silly addNameRange     '0.4.0',
+73 silly addNameRange     '0.4.1',
+73 silly addNameRange     '0.4.2',
+73 silly addNameRange     '0.4.3',
+73 silly addNameRange     '0.4.4',
+73 silly addNameRange     '0.4.5',
+73 silly addNameRange     '0.4.6',
+73 silly addNameRange     '0.5.0',
+73 silly addNameRange     '0.5.1',
+73 silly addNameRange     '1.0.0',
+73 silly addNameRange     '1.1.0',
+73 silly addNameRange     '1.1.1',
+73 silly addNameRange     '1.1.2',
+73 silly addNameRange     '1.1.2-1',
+73 silly addNameRange     '1.1.3',
+73 silly addNameRange     '1.1.4',
+73 silly addNameRange     '1.1.5',
+73 silly addNameRange     '1.1.6',
+73 silly addNameRange     '1.2.0' ] ]
+74 silly addNamed gulp-minify-css@1.2.0
+75 verbose addNamed "1.2.0" is a plain semver version for gulp-minify-css
+76 silly cache afterAdd gulp-minify-css@1.2.0
+77 verbose afterAdd /Users/TEARS/.npm/gulp-minify-css/1.2.0/package/package.json not in flight; writing
+78 verbose afterAdd /Users/TEARS/.npm/gulp-minify-css/1.2.0/package/package.json written
+79 http 200 https://registry.npmjs.org/gulp
+80 silly get cb [ 200,
+80 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+80 silly get     etag: '"B57IIUDDQ1EUO2H0CR4JYYI9R"',
+80 silly get     'content-type': 'application/json',
+80 silly get     'cache-control': 'max-age=60',
+80 silly get     'content-length': '105255',
+80 silly get     'accept-ranges': 'bytes',
+80 silly get     date: 'Fri, 14 Aug 2015 02:31:42 GMT',
+80 silly get     via: '1.1 varnish',
+80 silly get     age: '52',
+80 silly get     connection: 'keep-alive',
+80 silly get     'x-served-by': 'cache-nrt6127-NRT',
+80 silly get     'x-cache': 'HIT',
+80 silly get     'x-cache-hits': '2',
+80 silly get     'x-timer': 'S1439519502.497497,VS0,VE0',
+80 silly get     vary: 'Accept' } ]
+81 verbose get saving gulp to /Users/TEARS/.npm/registry.npmjs.org/gulp/.cache.json
+82 silly addNameRange number 2 { name: 'gulp', range: '>=3.9.0 <4.0.0', hasData: true }
+83 silly addNameRange versions [ 'gulp',
+83 silly addNameRange   [ '0.0.1',
+83 silly addNameRange     '0.0.2',
+83 silly addNameRange     '0.0.3',
+83 silly addNameRange     '0.0.4',
+83 silly addNameRange     '0.0.5',
+83 silly addNameRange     '0.0.7',
+83 silly addNameRange     '0.0.8',
+83 silly addNameRange     '0.0.9',
+83 silly addNameRange     '0.1.0',
+83 silly addNameRange     '0.2.0',
+83 silly addNameRange     '1.0.0',
+83 silly addNameRange     '1.1.0',
+83 silly addNameRange     '1.2.0',
+83 silly addNameRange     '1.2.1',
+83 silly addNameRange     '2.0.0',
+83 silly addNameRange     '2.0.1',
+83 silly addNameRange     '2.1.0',
+83 silly addNameRange     '2.2.0',
+83 silly addNameRange     '2.3.0',
+83 silly addNameRange     '2.4.0',
+83 silly addNameRange     '2.4.1',
+83 silly addNameRange     '2.6.0',
+83 silly addNameRange     '2.6.1',
+83 silly addNameRange     '2.7.0',
+83 silly addNameRange     '3.0.0',
+83 silly addNameRange     '3.1.1',
+83 silly addNameRange     '3.1.2',
+83 silly addNameRange     '3.1.3',
+83 silly addNameRange     '3.1.4',
+83 silly addNameRange     '3.2.0',
+83 silly addNameRange     '3.2.1',
+83 silly addNameRange     '3.2.2',
+83 silly addNameRange     '3.2.3',
+83 silly addNameRange     '3.2.4',
+83 silly addNameRange     '3.2.5',
+83 silly addNameRange     '3.3.0',
+83 silly addNameRange     '3.3.1',
+83 silly addNameRange     '3.3.2',
+83 silly addNameRange     '3.3.4',
+83 silly addNameRange     '3.4.0',
+83 silly addNameRange     '3.5.0',
+83 silly addNameRange     '3.5.1',
+83 silly addNameRange     '3.5.2',
+83 silly addNameRange     '3.5.5',
+83 silly addNameRange     '3.5.6',
+83 silly addNameRange     '3.6.0',
+83 silly addNameRange     '3.6.1',
+83 silly addNameRange     '3.6.2',
+83 silly addNameRange     '3.7.0',
+83 silly addNameRange     '3.8.0',
+83 silly addNameRange     '3.8.1',
+83 silly addNameRange     '3.8.2',
+83 silly addNameRange     '3.8.3',
+83 silly addNameRange     '3.8.4',
+83 silly addNameRange     '3.8.5',
+83 silly addNameRange     '3.8.6',
+83 silly addNameRange     '3.8.7',
+83 silly addNameRange     '3.8.8',
+83 silly addNameRange     '3.8.9',
+83 silly addNameRange     '3.8.10',
+83 silly addNameRange     '3.8.11',
+83 silly addNameRange     '3.9.0' ] ]
+84 silly addNamed gulp@3.9.0
+85 verbose addNamed "3.9.0" is a plain semver version for gulp
+86 silly cache afterAdd gulp@3.9.0
+87 verbose afterAdd /Users/TEARS/.npm/gulp/3.9.0/package/package.json not in flight; writing
+88 verbose afterAdd /Users/TEARS/.npm/gulp/3.9.0/package/package.json written
+89 silly install resolved [ { name: 'gulp-concat',
+89 silly install resolved     description: 'Concatenates files',
+89 silly install resolved     version: '2.6.0',
+89 silly install resolved     repository:
+89 silly install resolved      { type: 'git',
+89 silly install resolved        url: 'git+https://github.com/wearefractal/gulp-concat.git' },
+89 silly install resolved     author:
+89 silly install resolved      { name: 'Fractal',
+89 silly install resolved        email: 'contact@wearefractal.com',
+89 silly install resolved        url: 'http://wearefractal.com/' },
+89 silly install resolved     files: [ 'index.js' ],
+89 silly install resolved     keywords: [ 'gulpplugin' ],
+89 silly install resolved     dependencies:
+89 silly install resolved      { 'concat-with-sourcemaps': '^1.0.0',
+89 silly install resolved        'gulp-util': '^3.0.1',
+89 silly install resolved        through2: '^0.6.3' },
+89 silly install resolved     devDependencies:
+89 silly install resolved      { gulp: '^3.8.7',
+89 silly install resolved        'gulp-sourcemaps': '^1.1.4',
+89 silly install resolved        istanbul: '^0.3.2',
+89 silly install resolved        mocha: '^2.0.1',
+89 silly install resolved        'mocha-lcov-reporter': '0.0.1',
+89 silly install resolved        should: '^5.0.0',
+89 silly install resolved        'stream-array': '^1.0.1',
+89 silly install resolved        'stream-assert': '^2.0.1' },
+89 silly install resolved     scripts: { test: 'mocha', coverage: 'istanbul cover _mocha' },
+89 silly install resolved     engines: { node: '>= 0.10' },
+89 silly install resolved     license: 'MIT',
+89 silly install resolved     gitHead: '48e757a90687a8c5bca9d2945285ac0689aa7023',
+89 silly install resolved     bugs: { url: 'https://github.com/wearefractal/gulp-concat/issues' },
+89 silly install resolved     homepage: 'https://github.com/wearefractal/gulp-concat#readme',
+89 silly install resolved     _id: 'gulp-concat@2.6.0',
+89 silly install resolved     _shasum: '585cfb115411f348773131140566b6a81c69cb91',
+89 silly install resolved     _from: 'gulp-concat@>=2.6.0 <3.0.0',
+89 silly install resolved     _npmVersion: '2.10.0',
+89 silly install resolved     _nodeVersion: '2.0.1',
+89 silly install resolved     _npmUser: { name: 'fractal', email: 'contact@wearefractal.com' },
+89 silly install resolved     maintainers: [ [Object] ],
+89 silly install resolved     dist:
+89 silly install resolved      { shasum: '585cfb115411f348773131140566b6a81c69cb91',
+89 silly install resolved        tarball: 'http://registry.npmjs.org/gulp-concat/-/gulp-concat-2.6.0.tgz' },
+89 silly install resolved     directories: {},
+89 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-concat/-/gulp-concat-2.6.0.tgz',
+89 silly install resolved     readme: 'ERROR: No README data found!' },
+89 silly install resolved   { name: 'gulp-minify-css',
+89 silly install resolved     description: 'Minify css with clean-css.',
+89 silly install resolved     version: '1.2.0',
+89 silly install resolved     repository:
+89 silly install resolved      { type: 'git',
+89 silly install resolved        url: 'git+https://github.com/murphydanger/gulp-minify-css.git' },
+89 silly install resolved     author:
+89 silly install resolved      { name: 'Jonathan Pollack',
+89 silly install resolved        email: 'jonathan@gnobel.com',
+89 silly install resolved        url: 'gnobel.com' },
+89 silly install resolved     contributors: [ [Object] ],
+89 silly install resolved     keywords:
+89 silly install resolved      [ 'gulpplugin',
+89 silly install resolved        'minify',
+89 silly install resolved        'optimize',
+89 silly install resolved        'optimise',
+89 silly install resolved        'compress',
+89 silly install resolved        'css',
+89 silly install resolved        'clean-css' ],
+89 silly install resolved     license: 'MIT',
+89 silly install resolved     files: [ 'index.js' ],
+89 silly install resolved     scripts:
+89 silly install resolved      { pretest: 'eslint --config node_modules/@shinnn/eslintrc-node/rc.json --env mocha index.js test',
+89 silly install resolved        test: '_mocha --full-trace',
+89 silly install resolved        'test-dot': '_mocha --reporter dot --full-trace',
+89 silly install resolved        coverage: 'istanbul cover _mocha -- --full-trace',
+89 silly install resolved        coveralls: '${npm_package_scripts_coverage} && istanbul-coveralls' },
+89 silly install resolved     dependencies:
+89 silly install resolved      { 'clean-css': '^3.3.3',
+89 silly install resolved        'gulp-util': '^3.0.5',
+89 silly install resolved        'object-assign': '^3.0.0',
+89 silly install resolved        'readable-stream': '^2.0.0',
+89 silly install resolved        'vinyl-bufferstream': '^1.0.1',
+89 silly install resolved        'vinyl-sourcemaps-apply': '^0.1.4' },
+89 silly install resolved     devDependencies:
+89 silly install resolved      { '@shinnn/eslintrc-node': '^1.0.2',
+89 silly install resolved        chai: '^3.0.0',
+89 silly install resolved        eslint: '^0.23.0',
+89 silly install resolved        'from2-string': '^1.0.2',
+89 silly install resolved        'gulp-sourcemaps': '^1.5.2',
+89 silly install resolved        'gulp-stylus': '^2.0.5',
+89 silly install resolved        istanbul: '^0.3.15',
+89 silly install resolved        'istanbul-coveralls': '^1.0.3',
+89 silly install resolved        mocha: '^2.2.5',
+89 silly install resolved        'stream-combiner2': '^1.0.2',
+89 silly install resolved        vinyl: '^0.5.0' },
+89 silly install resolved     gitHead: '22e3cc11d69ec4e466ed2c9ea340b0ccf6440101',
+89 silly install resolved     bugs: { url: 'https://github.com/murphydanger/gulp-minify-css/issues' },
+89 silly install resolved     homepage: 'https://github.com/murphydanger/gulp-minify-css#readme',
+89 silly install resolved     _id: 'gulp-minify-css@1.2.0',
+89 silly install resolved     _shasum: '7855fb653ce5c848dadec07c62bcdc06d92efcc7',
+89 silly install resolved     _from: 'gulp-minify-css@>=1.2.0 <2.0.0',
+89 silly install resolved     _npmVersion: '2.11.3',
+89 silly install resolved     _nodeVersion: '2.3.0',
+89 silly install resolved     _npmUser: { name: 'shinnn', email: 'snnskwtnb@gmail.com' },
+89 silly install resolved     maintainers: [ [Object], [Object] ],
+89 silly install resolved     dist:
+89 silly install resolved      { shasum: '7855fb653ce5c848dadec07c62bcdc06d92efcc7',
+89 silly install resolved        tarball: 'http://registry.npmjs.org/gulp-minify-css/-/gulp-minify-css-1.2.0.tgz' },
+89 silly install resolved     directories: {},
+89 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-minify-css/-/gulp-minify-css-1.2.0.tgz',
+89 silly install resolved     readme: 'ERROR: No README data found!' },
+89 silly install resolved   { name: 'gulp',
+89 silly install resolved     description: 'The streaming build system',
+89 silly install resolved     version: '3.9.0',
+89 silly install resolved     homepage: 'http://gulpjs.com',
+89 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/gulpjs/gulp.git' },
+89 silly install resolved     author:
+89 silly install resolved      { name: 'Fractal',
+89 silly install resolved        email: 'contact@wearefractal.com',
+89 silly install resolved        url: 'http://wearefractal.com/' },
+89 silly install resolved     tags: [ 'build', 'stream', 'system', 'make', 'tool', 'asset', 'pipeline' ],
+89 silly install resolved     files: [ 'index.js', 'lib', 'bin', 'completion' ],
+89 silly install resolved     bin: { gulp: './bin/gulp.js' },
+89 silly install resolved     man: [ 'gulp.1' ],
+89 silly install resolved     dependencies:
+89 silly install resolved      { archy: '^1.0.0',
+89 silly install resolved        chalk: '^1.0.0',
+89 silly install resolved        deprecated: '^0.0.1',
+89 silly install resolved        'gulp-util': '^3.0.0',
+89 silly install resolved        interpret: '^0.6.2',
+89 silly install resolved        liftoff: '^2.1.0',
+89 silly install resolved        minimist: '^1.1.0',
+89 silly install resolved        orchestrator: '^0.3.0',
+89 silly install resolved        'pretty-hrtime': '^1.0.0',
+89 silly install resolved        semver: '^4.1.0',
+89 silly install resolved        tildify: '^1.0.0',
+89 silly install resolved        v8flags: '^2.0.2',
+89 silly install resolved        'vinyl-fs': '^0.3.0' },
+89 silly install resolved     devDependencies:
+89 silly install resolved      { coveralls: '^2.7.0',
+89 silly install resolved        'graceful-fs': '^3.0.0',
+89 silly install resolved        istanbul: '^0.3.0',
+89 silly install resolved        jscs: '~1.12.0',
+89 silly install resolved        jshint: '^2.5.0',
+89 silly install resolved        'jshint-stylish': '^1.0.0',
+89 silly install resolved        'marked-man': '^0.1.3',
+89 silly install resolved        mkdirp: '^0.5.0',
+89 silly install resolved        mocha: '^2.0.1',
+89 silly install resolved        'mocha-lcov-reporter': '^0.0.1',
+89 silly install resolved        q: '^1.0.0',
+89 silly install resolved        rimraf: '^2.2.5',
+89 silly install resolved        should: '^5.0.1' },
+89 silly install resolved     scripts:
+89 silly install resolved      { prepublish: 'marked-man --name gulp docs/CLI.md > gulp.1',
+89 silly install resolved        lint: 'jshint lib bin test index.js --reporter node_modules/jshint-stylish/stylish.js --exclude node_modules && jscs lib bin test index.js',
+89 silly install resolved        test: 'npm run-script lint && mocha --reporter spec',
+89 silly install resolved        coveralls: 'istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage' },
+89 silly install resolved     engines: { node: '>= 0.9' },
+89 silly install resolved     license: 'MIT',
+89 silly install resolved     gitHead: '657213a52d5e9c19b85df6a42f76341a98c08ae8',
+89 silly install resolved     bugs: { url: 'https://github.com/gulpjs/gulp/issues' },
+89 silly install resolved     _id: 'gulp@3.9.0',
+89 silly install resolved     _shasum: 'cf1fba4cb558bb8c6ae6c9613f583ae2620d214a',
+89 silly install resolved     _from: 'gulp@>=3.9.0 <4.0.0',
+89 silly install resolved     _npmVersion: '2.8.3',
+89 silly install resolved     _nodeVersion: '0.10.36',
+89 silly install resolved     _npmUser: { name: 'phated', email: 'blaine@iceddev.com' },
+89 silly install resolved     maintainers: [ [Object], [Object] ],
+89 silly install resolved     dist:
+89 silly install resolved      { shasum: 'cf1fba4cb558bb8c6ae6c9613f583ae2620d214a',
+89 silly install resolved        tarball: 'http://registry.npmjs.org/gulp/-/gulp-3.9.0.tgz' },
+89 silly install resolved     directories: {},
+89 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp/-/gulp-3.9.0.tgz',
+89 silly install resolved     readme: 'ERROR: No README data found!' } ]
+90 info install gulp-concat@2.6.0 into /Users/TEARS/.fis3-tmp/www
+91 info install gulp-minify-css@1.2.0 into /Users/TEARS/.fis3-tmp/www
+92 info install gulp@3.9.0 into /Users/TEARS/.fis3-tmp/www
+93 info installOne gulp-concat@2.6.0
+94 verbose installOne of gulp-concat to /Users/TEARS/.fis3-tmp/www not in flight; installing
+95 info installOne gulp-minify-css@1.2.0
+96 verbose installOne of gulp-minify-css to /Users/TEARS/.fis3-tmp/www not in flight; installing
+97 info installOne gulp@3.9.0
+98 verbose installOne of gulp to /Users/TEARS/.fis3-tmp/www not in flight; installing
+99 warn locking Error: EACCES, open '/Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock'
+99 warn locking     at Error (native)
+99 warn locking  /Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock failed { [Error: EACCES, open '/Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock']
+99 warn locking   errno: -13,
+99 warn locking   code: 'EACCES',
+99 warn locking   path: '/Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock' }
+100 verbose stack Error: Attempt to unlock /Users/TEARS/.fis3-tmp/www/node_modules/gulp-concat, which hasn't been locked
+100 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+100 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1017:5)
+100 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1021:20
+100 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+100 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+100 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+100 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+101 verbose cwd /Users/TEARS/Documents/meetu
+102 error Darwin 14.4.0
+103 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--prefix" "/Users/TEARS/.fis3-tmp/www" "--loglevel" "info" "--registry" "https://registry.npmjs.org" "gulp@^3.9.0" "gulp-concat@^2.6.0" "gulp-minify-css@^1.2.0"
+104 error node v0.12.5
+105 error npm  v2.11.2
+106 error Attempt to unlock /Users/TEARS/.fis3-tmp/www/node_modules/gulp-concat, which hasn't been locked
+107 error If you need help, you may report this error at:
+107 error     <https://github.com/npm/npm/issues>
+108 verbose exit [ 1, true ]
