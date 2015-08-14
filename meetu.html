@@ -62,12 +62,12 @@
 	</div>
 
 	<ul class="side-bar">
-		<li>约伴</li>
-		<li>我的收藏</li>
-		<li>关于我们</li>
-		<li>联系我们</li>
-		<li>登陆</li>
-		<li>注册</li>
+		<a href="#"><li>约伴</li></a>
+		<a href="#"><li>我的收藏</li></a>
+		<a href="#"><li>关于我们</li></a>
+		<a href="#"><li>联系我们</li></a>
+		<a href="#"><li>登陆</li></a>
+		<a href="#"><li>注册</li></a>
 	</ul>
 
 	<!-- 背景 -->
@@ -236,7 +236,7 @@
 
 	    var sidebar = {
 	    	show : function() {
-	    		// $('.side-bar').height($(window).height()-$('header').height());
+	    		headerDown.hide(0);
 	    		$('.cover-body,.side-bar,#close-menu').show();
 	    		$('#btn-menu').hide();
 	    		$('.cover-body,#close-menu').one('click', this.hide);
@@ -260,14 +260,24 @@
 	    var headerDown = {
 	    	show : function(index) {
 	    		sidebar.hide();
-	    		$('.cover-body,#btn-search').show();
+	    		$('.cover-body').show();
+	    		if (index == 1) {
+	    			$('#btn-search').show();
+	    			$('#btn-menu').hide();
+	    		}
+	    		else {
+	    			$('#btn-search').hide();
+	    			$('#btn-menu').show();
+	    		}
 	    		$('.header-down').eq(index).show().siblings('.header-down').hide();
-	    		$('#btn-menu').hide();
 	    		$('.cover-body').one('click', function() {headerDown.hide(index)})
 	    	},
 	    	hide : function(index) {
-	    		$('.cover-body,#btn-search,.header-down:eq(' + index + ')').hide();
-	    		$('#btn-menu').show();
+	    		$('.cover-body,.header-down:eq(' + index + ')').hide();
+	    		if (index == 1) {
+	    			$('#btn-search').hide();
+	    			$('#btn-menu').show();
+	    		};
 	    	}
 	    };
 
