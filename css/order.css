@@ -57,7 +57,8 @@ dd.order-link {
     width: 120px;
 }
 
-.order-box dd h5 i {
+.order-box dd .icon-male,
+.order-box dd .icon-female {
     display: inline-block;
     width: 15px;
     height: 9px;
@@ -88,6 +89,19 @@ dd.order-link {
 
 .order-box .face img {
     width: 100%;
+}
+
+.order-people.order-link {
+    padding: 10px 0 8px;
+}
+
+.order-people .icon-minus,
+.order-people .icon-plus {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    margin-top: -2px;
+    vertical-align: middle;
 }
 
 /* public */

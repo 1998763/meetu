@@ -91,9 +91,42 @@ header .icon-ring .icon-red{
 	color: #fff;
 }
 
+.icon-plus {
+	background: url(../images/icon-plus.png) center center no-repeat;
+	background-size: 20px;
+}
+
+.icon-plus.disable {
+	background-image: url(../images/icon-plus2.png);
+}
+
+.icon-minus {
+	background: url(../images/icon-minus.png) center center no-repeat;
+	background-size: 20px;
+}
+
+.icon-minus.disable {
+	background-image: url(../images/icon-minus2.png);
+}
+
+.icon-chat {
+	background: url(../images/icon-chat.png) center center no-repeat;
+	background-size: 15px;
+}
+
+.icon-call {
+	background: url(../images/icon-call.png) center center no-repeat;
+	background-size: 11px;
+}
+
 .icon-right {
 	background: url(../images/icon-right.png) center center no-repeat;
 	background-size: 8px;
+}
+
+.icon-female {
+	background: url(../images/icon-female.png) center center no-repeat;
+	background-size: 7px;
 }
 
 .icon-male {

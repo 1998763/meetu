@@ -76,13 +76,13 @@
 .filter-form {
 	padding-bottom: 8px;
 	border-bottom: 1px solid #dcdcdc;
-	margin-right: -16px;
+	/*margin-right: -16px;*/
 	overflow: hidden;
 }
 
 .hot-list li,
 .filter-list li,
-.filter-form select {
+.filter-date {
 	float: left;
 	width: 88px;
 	height: 18px;
@@ -105,11 +105,10 @@
 
 .side-bar {
 	display: none;
-	/*position: fixed;*/
 	position: absolute;
 	top: 45px;
 	right: 0;
-	/*bottom: 0;*/
+	bottom: 0;
 	padding-left: 20px;
 	z-index: 10;
 	background: #f2f2f2;
@@ -158,8 +157,9 @@
 .filter-box {
 	display: none;
 	position: absolute;
-	left: 0;
 	top: 150px;
+	right: 0;
+	left: 0;
 	z-index: 100;
 	padding: 9px 9px 0;
 	background: #f2f2f2;
@@ -171,21 +171,22 @@
 	margin-bottom: 14px;
 }
 
-.filter-form select {
-	width: 148px;
+.filter-date {
+	width: 134px;
 	padding-left: 23px;
 	box-sizing: content-box;
 	-webkit-box-sizing: content-box;
-	background: url(../images/icon-select.png) 152px center no-repeat;
+	background: url(../images/icon-select.png) 138px center no-repeat;
 	background-size: 8px;
 	background-color: #f2f2f2;
+	text-align: left;
 }
 
-.filter-form select:focus {
+.filter-date:focus {
 	outline: none;
 }
 
-.filter-form select option {
+.filter-date option {
 	background: #fff;
 }
 
@@ -219,6 +220,14 @@
 	font-size: 14px;
 }
 
+.calendar th i {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 38px;
+	height: 38px;
+}
+
 .calendar .weeks {
 	font-size: 12px;
 	color: #fff;
@@ -248,6 +257,11 @@
 
 .calendar td.onSell {
 	color: #414141
+}
+
+.react:active,
+.calendar td.onSell:active {
+	background-color: #eae6da
 }
 
 .calendar td.today {
