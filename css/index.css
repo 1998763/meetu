@@ -95,6 +95,11 @@
 	color: #5d9cec;
 }
 
+.hot-list li:nth-child(3n),
+.filter-list li:nth-child(3n) {
+  margin-right: 0;
+}
+
 .filter-list li.active {
 	border-color: #5d9cec;
 	background: #5d9cec;
