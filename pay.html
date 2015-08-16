@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在线支付</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<link rel="stylesheet" href="css/g.css">
+</head>
+<body>
+	<header>
+		<a class="icon-back left"></a>
+		<h1>在线支付</h1>
+	</header>
+	<div class="order-box">
+		<div class="pay-fold">
+			<dl>
+				<dt>约定行程</dt>
+				<dd class="order-link head">
+					<h5>历史与繁华</h5>
+					<p class="trip-detail text-888">
+						雯雯<i class="icon-female"></i>
+						<br>23岁 文员
+					</p>
+					<div class="face">
+						<img src="https://avatars1.githubusercontent.com/u/10151065?v=3&amp;s=460">
+					</div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>行程实付总额</dt>
+				<dd class="text-red">&yen;650</dd>
+			</dl>
+			<dl>
+				<dt>行程费用</dt>
+				<dd>&yen;300/人</dd>
+			</dl>
+			<dl>
+				<dt>接待人数</dt>
+				<dd>2人</dd>
+			</dl>
+			<dl>
+				<dt>游玩时间</dt>
+				<dd>2015-08-07</dd>
+			</dl>
+			<dl>
+				<dt>游玩始发地</dt>
+				<dd>广州 荔湾区</dd>
+			</dl>
+			<dl>
+				<dt>优惠券</dt>
+				<dd><span class="text-red">&yen;600</span>&emsp;11.11单身优惠</dd>
+			</dl>
+		</div>
+		<div class="pay-btn">
+			<i class="icon-right rotate90"></i>
+			<p>点击展开</p>
+		</div>
+	</div>
+
+	<div class="pay-box mt8">
+		<h2>请选择支付方式</h2>
+		<a href="">
+			<dl>
+				<dt class="pay-ali"></dt>
+				<dd>
+					<p>支付宝支付</p>
+					<p class="pay-info">推荐支付用户使用</p>
+				</dd>
+			</dl>
+		</a>
+		<a href="">
+			<dl>
+				<dt class="pay-wx"></dt>
+				<dd>
+					<p>微信支付</p>
+					<p class="pay-info">推荐微信支付用户使用</p>
+				</dd>
+			</dl>
+		</a>
+		<a href="">
+			<dl>
+				<dt class="pay-yl"></dt>
+				<dd>
+					<p>银联支付</p>
+					<p class="pay-info">推荐银联用户使用</p>
+				</dd>
+			</dl>
+		</a>
+		<a href="">
+			<dl>
+				<dt class="pay-card"></dt>
+				<dd>
+					<p>信用卡支付</p>
+					<p class="pay-info">推荐信用卡用户使用，无需网银</p>
+				</dd>
+			</dl>
+		</a>
+	</div>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		$(function() {
+			$('.pay-btn').on('click', function() {
+				if ($('.pay-fold').hasClass('pay-unfold')) {
+					$('.pay-fold').removeClass('pay-unfold');
+					$('.pay-btn i').removeClass('rotate270')
+					$('.pay-btn p').text('点击展开');
+				} else {
+					$('.pay-fold').addClass('pay-unfold');
+					$('.pay-btn i').addClass('rotate270')
+					$('.pay-btn p').text('点击收起');
+				}
+			})
+		});
+	</script>
+</body>
+</html>
