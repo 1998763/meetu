@@ -210,13 +210,25 @@
 /* calendar */
 
 .calendar {
-	display: none;
+	/*display: none;*/
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	z-index: 100;
 	background: #f8f8f8
+}
+
+.calendarTitle {
+  /* margin-bottom: 10px; */
+  /*color: #fff;*/
+  padding: 12px;
+  /*background: #81B835;*/
+  text-align: center;
+  height: 25px;
+  line-height: 20px;
+  font-size: 14px;
+  clear: both;
 }
 
 .calendar th {
