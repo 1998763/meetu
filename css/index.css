@@ -5,7 +5,7 @@
 	left: 0;
 	top: 45px;
 	right: 0;
-	/*bottom: 0;*/
+	bottom: 0;
 	z-index: 15;
 	background: #f2f2f2
 }
@@ -68,15 +68,15 @@
 }
 
 .hot-recommend {
-	padding: 0 9px;
+	margin: 0 9px 20px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #dcdcdc;
 }
 
 .hot-list,
 .filter-list,
 .filter-form {
-	padding-bottom: 8px;
-	border-bottom: 1px solid #dcdcdc;
-	/*margin-right: -16px;*/
+	margin-left: -16px;
 	overflow: hidden;
 }
 
@@ -89,10 +89,15 @@
 	line-height: 18px;
 	border: 1px solid #dcdcdc;
 	border-radius: 10px;
-	margin: 10px 16px 7px 0;
+	margin: 10px 0 7px 16px;
 	text-align: center;
 	font-size: 12px;
 	color: #5d9cec;
+}
+
+.hot-list li:nth-child(3n),
+.filter-list li:nth-child(3n) {
+  /*margin-right: 0;*/
 }
 
 .filter-list li.active {
@@ -165,10 +170,10 @@
 	background: #f2f2f2;
 }
 
-.filter-list,
-.filter-form {
+.filter-area {
 	padding-bottom: 4px;
 	margin-bottom: 14px;
+	border-bottom: 1px solid #dcdcdc;
 }
 
 .filter-date {
