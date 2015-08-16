@@ -6,7 +6,8 @@
     font-size: 12px;
 }
 
-.order-box.mt8 {
+.order-box.mt8,
+.pay-box.mt8 {
     margin-top: 8px;
     border-top: 1px solid #dcdcdc;
 }
@@ -28,6 +29,7 @@
     min-height: 12px;
     padding: 12px 0;
     border-bottom: 1px solid #dcdcdc;
+    color: #414141;
 }
 
 .order-box dl:last-child dd {
@@ -107,11 +109,19 @@ dd.order-link {
 /* public */
 
 .text-red {
-    color: #e0174d;
+    color: #e0174d !important;
+}
+
+.text-green {
+    color: #48cfad
 }
 
 .text-orange {
     color: #fc6e51;
+}
+
+.text-yellow {
+    color: #ffce54;
 }
 
 .bold {
@@ -242,4 +252,106 @@ dd.order-link {
 .result-kf-phone span {
     position: relative;
     top: -12px;
+}
+
+/* pay */
+
+.pay-fold {
+    height: 115px;
+    overflow: hidden;
+}
+
+.pay-unfold {
+    height: auto;
+}
+
+.pay-btn {
+    line-height: 1;
+    margin: 4px 0 6px;
+    text-align: center;
+    color: #ccc
+}
+
+.pay-btn i {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+}
+
+.pay-box {
+    padding: 0px 9px;
+    background: #fff;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.pay-box h2 {
+    line-height: 30px;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 12px;
+    color: #414141;
+}
+
+.pay-box dl {
+    position: relative;
+    padding: 9px 2px;
+    border-bottom: 1px solid #dcdcdc;
+    overflow: hidden;
+}
+
+.pay-box dl:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 19px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background: #48cfad url(../images/icon-down.png) center center no-repeat;
+    background-size: 10px;
+    transform: rotate(270deg);
+}
+
+.pay-box dt {
+    float: left;
+    width: 32px;
+    height: 33px;
+    margin-right: 9px;
+    background-size: 32px
+}
+
+.pay-box dd {
+    overflow: hidden;
+    line-height: 17px;
+    color: #414141;
+}
+
+.pay-ali {
+    background: url(../images/pay-ali.png) 0 0 no-repeat;
+}
+
+.pay-wx {
+    background: url(../images/pay-wx.png) 0 0 no-repeat;
+}
+
+.pay-yl {
+    background: url(../images/pay-yl.png) 0 0 no-repeat;
+}
+
+.pay-card {
+    background: url(../images/pay-card.png) 0 0 no-repeat;
+}
+
+.pay-info {
+    font-size: 10px;
+    color: #888
+}
+
+.rotate90 {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90);
+}
+
+.rotate270 {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270);
 }
