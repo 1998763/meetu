@@ -153,15 +153,15 @@ var zeroize = function (value, length) {
         style +=".order{width:100%;margin:0 auto;background-color: #808080;filter:alpha(opacity=90);-moz-opacity:0.9;opacity:0.9;position:absolute;z-index:1;}";
         // style +=".calendar {width:300px; height:auto; font-family:'微软雅黑',Arial; font-size:12px; margin:10px 0px 0 3px;background:#fff;position:absolute;top:55px;z-index:99;}";
         style +=".calendar ul {list-style-type:none; margin:0; padding:0;}";
-        style +=".calendar .day {display:box; display:-webkit-box; background-color:#FFFFFF; height:20px;}";
+        style +=".calendar .day {display:box; display:-webkit-box; background-color:#FFFFFF; height:20px; line-height:20px}";
         style +=".calendar .date {display:box; display:-webkit-box; border-right:#AAABB0 1px solid;}";
-        style +=".calendar .day li{box-flex: 1; -webkit-box-flex: 1; width: 38px; line-height: 1; padding: 6px 0; font-size: 12px; color: #fff; background: #5d9cec; text-align: center}";
+        style +=".calendar .day li{box-flex: 1; -webkit-box-flex: 1; width: 38px; font-size: 12px; color: #fff; background: #5d9cec; text-align: center}";
         style +=".calendar .date li{box-flex: 1; -webkit-box-flex: 1; background:#f8f8f8; width:38px; height:48px; line-height:48px; text-align:center;}";
         // style +=".calendar .day li{display:block;height:25px;color:#333333;}";
         style +=".calendar .date li span{display:block;height:20px;color:#333333;}";
         style +=".calendar li a {display:block; height:100%; background:#f8f8f8;text-decoration:none; font-size:16px; color:#333333}";
         style +=".calendar li a span{font-size:12px;color:#666666 !important;}";
-        style +=".calendar li a:active{background:#FFF4C3; text-decoration:none;color:#666666;}";
+        style +=".calendar li a:active{background:#e6e6e6; text-decoration:none;color:#666666;}";
         //style +=".calendar li a.hasArticle {width:38px; height:40px;font-weight:bold; color:#f60 !important}";
         // style +=".calendar .date .lastMonthDate, .calendar .date .nextMonthDate {background:#FFFFFF;color:#bbb;font-size:11px}";
         style +=".selectThisYear a, .selectThisMonth a{text-decoration:none; margin:0 2px; color:#000; font-weight:bold}";
@@ -171,12 +171,12 @@ var zeroize = function (value, length) {
         // style +=".calendarBody {width:275px;clear:both;margin:10px 0px 10px 12px;}";
         // style +=".calendarTitle {margin-bottom:10px;color:#fff;padding:10px;background:#81B835;text-align:center;height:25px; line-height:20px;font-size:17px; clear:both}";
         // style +=".calendarTitle span a{color:#fff;font-size:17px;font-weight:normal;}";
-        style +=".calendarBottom {clear:both;  padding: 5px 0; text-align:left}";
-        style +=".calendarBottom a {text-decoration:none; margin:2px !important; font-weight:bold; color:#000}";
-        style +=".calendarBottom a.closeCalendar{float:right}";
+        // style +=".calendarBottom {clear:both;  padding: 5px 0; text-align:left}";
+        // style +=".calendarBottom a {text-decoration:none; margin:2px !important; font-weight:bold; color:#000}";
+        // style +=".calendarBottom a.closeCalendar{float:right}";
         style +=".closeCalendarBox {float:right; border:1px solid #000; background:#fff; font-size:9px; width:11px; height:11px; line-height:11px; text-align:center;overflow:hidden; font-weight:normal !important}";
-        style +=".cancel{float:left;background:#81B835;border-right:1px solid #AAABB0;width:149px;height:30px;text-align:center;font-size:16px;color:#fff;padding-top:10px;}";
-        style +=".cancel a{text-decoration:none;color:#fff;}";
+        // style +=".cancel{float:left;background:#81B835;border-right:1px solid #AAABB0;width:149px;height:30px;text-align:center;font-size:16px;color:#fff;padding-top:10px;}";
+        // style +=".cancel a{text-decoration:none;color:#fff;}";
         style +=".submit{float:left;background:#81B835;width:150px;height:30px;text-align:center;font-size:16px;color:#fff;padding-top:10px;}";
         style +=".submit a{text-decoration:none;color:#fff;}";
         style +="</style>";
@@ -240,7 +240,8 @@ var zeroize = function (value, length) {
             if (i == 5) lis += '</ul>';
             j++;
         }
-        lis += style;
+        // lis += style;
+        var CalendarTitle = "<a href='javascript:void(0)' class='NextMonth' onclick=HS_calendar(HS_DateAdd('m',1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Next Month'><img style='margin-top:0px;height:20px;width:10px;' src='http://m.yikuaiqu.com/images/order/right_arrow.png' /></a>";
         var CalendarTitle = "<a href='javascript:void(0)' class='NextMonth' onclick=HS_calendar(HS_DateAdd('m',1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Next Month'><img style='margin-top:0px;height:20px;width:10px;' src='http://m.yikuaiqu.com/images/order/right_arrow.png' /></a>";
         CalendarTitle += "<a href='javascript:void(0)' class='LastMonth' onclick=HS_calendar(HS_DateAdd('m',-1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Previous Month'><img style='margin-top:0px;height:20px;width:10px;' src='http://m.yikuaiqu.com/images/order/left_arrow.png' /></a>";
         CalendarTitle += "<span class='selectThisYear'><a href='javascript:void(0)'  title='Click here to select other year' >"+now.getFullYear()+"</a></span>年<span class='selectThisMonth'><a href='javascript:void(0)' title='Click here to select other month'>"+(parseInt(now.getMonth())+1).toString()+"</a></span>月";
@@ -249,7 +250,8 @@ var zeroize = function (value, length) {
             document.getElementById("thisMonthDate").innerHTML = lis;
             arguments[1].parentNode.innerHTML = CalendarTitle;
         }else{
-            var CalendarBox = style+"<div class='calendar' id='calendar' ><div class='calendarTitle'>"+CalendarTitle+"</div><div class='calendarBody'><ul class='day'><li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li></ul><div id='thisMonthDate'>"+lis+"</div></div><div class='calendarBottom'></div><a href='javascript:void(0)' onclick='closeCalendar(this)'><div class='cancel'>取消</div></a><a href='javascript:void(0)' onclick='_selectThisDay(this)'><div class='submit'>确定</div></a></div>";
+            var CalendarBox = style+"<div class='calendar' id='calendar' ><div class='calendarTitle'>"+CalendarTitle+"</div><div class='calendarBody'><ul class='day'><li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li></ul><div id='thisMonthDate'>"+lis+"</div></div></div>";
+            // var CalendarBox = style+"<div class='calendar' id='calendar' ><div class='calendarTitle'>"+CalendarTitle+"</div><div class='calendarBody'><ul class='day'><li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li></ul><div id='thisMonthDate'>"+lis+"</div></div><div class='calendarBottom'></div><a href='javascript:void(0)' onclick='closeCalendar(this)'><div class='cancel'>取消</div></a><a href='javascript:void(0)' onclick='_selectThisDay(this)'><div class='submit'>确定</div></a></div>";
             return CalendarBox;
         }
     }
@@ -265,15 +267,29 @@ var zeroize = function (value, length) {
     
     function selectday_title(d){
         if(exist('date_select')){
-            document.getElementById('date_select').style.background = "#FFF4C3";
+            document.getElementById('date_select').id = "";
         }
         if(last_id>""){
-            last_id.style.background = "#FFF4C3";
+            last_id.style.background = "";
+            last_id.style.color = "";
         }
             title = d.title;
-            d.style.background = "#FF7440";
+            d.style.background = "#48cfad";
+            d.style.color = "#fff";
             last_id = d;
     }
+
+    // function selectday_title(d){
+    //     if(exist('date_select')){
+    //         document.getElementById('date_select').style.background = "#FFF4C3";
+    //     }
+    //     if(last_id>""){
+    //         last_id.style.background = "#FFF4C3";
+    //     }
+    //         title = d.title;
+    //         d.style.background = "#FF7440";
+    //         last_id = d;
+    // }
     
     //选择今天
     function _selectThisDay(d){
