@@ -264,19 +264,32 @@ var zeroize = function (value, length) {
         
     var last_id = "";
     var title = play_date;
+    var week_day = "";
     
     function selectday_title(d){
-        if(exist('date_select')){
-            document.getElementById('date_select').id = "";
-        }
+        // if(exist('date_select')){
+        //     document.getElementById('date_select').id = "";
+        // }
         if(last_id>""){
+            last_id.id = "";
             last_id.style.background = "";
             last_id.style.color = "";
-        }
-            title = d.title;
+        };
             d.style.background = "#48cfad";
             d.style.color = "#fff";
+            title = d.title;
+            var arr = title.split("-");
+            arr[1]--;
+            var judge = WeekDay(arr.join("-"));
+            if (judge == 0) {week_day = "星期日"};
+            if (judge == 1) {week_day = "星期一"};
+            if (judge == 2) {week_day = "星期二"};
+            if (judge == 3) {week_day = "星期三"};
+            if (judge == 4) {week_day = "星期四"};
+            if (judge == 5) {week_day = "星期五"};
+            if (judge == 6) {week_day = "星期六"};
             last_id = d;
+            calendar.appendDate();
     }
 
     // function selectday_title(d){
@@ -346,6 +359,10 @@ var zeroize = function (value, length) {
 
     //主函数
     function HS_setDate(inputObj,paNode){
+        if (document.getElementById('calendar')) {
+            calendar.show();
+            return false;
+        };
         var calendarObj = document.createElement("span");
         calendarObj.innerHTML = HS_calendar(new Date());
         calendarObj.targetObj = inputObj;
