@@ -76,59 +76,7 @@
 
 	<!-- 日历 -->
 	<div class="js-calendar">
-		<!-- <table class="calendar">
-			<thead>
-				<tr><th colspan="7">2015年<span class="text-blue">6</span>月<i class="icon-right react"></i></th></tr>
-			</thead>
-			<tbody>
-				<tr class="weeks">
-					<td>周日</td>
-					<td>周一</td>
-					<td>周二</td>
-					<td>周三</td>
-					<td>周四</td>
-					<td>周五</td>
-					<td>周六</td>
-				</tr>
-				<tr class="days">
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="disable">1</td>
-				</tr>
-				<tr class="days">
-					<td class="disable">2</td>
-					<td class="disable">3</td>
-					<td class="disable">4</td>
-					<td class="disable">5</td>
-					<td class="disable">6</td>
-					<td class="disable">7</td>
-					<td class="disable">8</td>
-				</tr>
-				<tr class="days">
-					<td class="disable">9</td>
-					<td class="disable">10</td>
-					<td class="disable">11</td>
-					<td class="disable">12</td>
-					<td class="disable">13</td>
-					<td class="disable">14</td>
-					<td class="disable">15</td>
-				</tr>
-				<tr class="days">
-					<td class="disable">16</td>
-					<td class="disable">17</td>
-					<td class="disable">18</td>
-					<td class="disable">19</td>
-					<td class="onSell today" data-day="2015-06-20">今天</td>
-					<td class="onSell active" data-day="2015-06-21">21</td>
-					<td class="onSell" data-day="2015-06-22">22</td>
-				</tr>
-			</tbody>
-		</table> -->
-		<div id="order"></div>
+		<div id="before"></div>
 	</div>
 
 	<div class="filter-box">
@@ -175,15 +123,16 @@
 				<li>都行</li>
 			</ul>
 		</div>
-		<div class="filter-area">
+		<!-- <div class="filter-area">
 			<h2>行程需求</h2>
 			<ul class="filter-list">
 				<li>固定行程</li>
 				<li>可作变化</li>
 				<li>都行</li>
 			</ul>
-		</div>
-		<div class="filter-button">确定</div>
+		</div> -->
+		<div style="height: 38px"></div>
+		<div id="confirm" class="button-bottom bg-blue">确定</div>
 	</div>
 
 	<div class="container">
@@ -331,21 +280,16 @@
 	    var calendar = {
 	    	show : function() {
 	    		filter.hide();
-	    		$('.cover-all').show();
+	    		$('.cover-all,.calendar').show();
 	    		$('.cover-all').one('click', this.hide);
 	    	},
 	    	hide : function() {
 	    		filter.show();
-	    		// $('.calendar').hide();
+	    		$('.calendar').hide();
 	    	},
-	    	bindEvent : function() {
-	    		$('.calendar .onSell').on('click', function(){
-	    			var str = $(this).data('day') + ' 星期' + $('.weeks>td').eq($(this).index()).text().replace('周', '');
-	    			$('.onSell.active').removeClass('active');
-	    			$(this).addClass('active');
-	    			$('.filter-date').val(str);
-	    			calendar.hide();
-	    		});
+	    	appendDate : function() {
+				$('.filter-date').val(title + ' ' + week_day);	    		
+    			calendar.hide();
 	    	}
 	    };
 
@@ -364,6 +308,8 @@
 
 	    var filter = {
 	    	show : function() {
+	    		var h = $('body').height() - $('.filter-box').height();
+	    		$('.filter-box').css('top', h);
 	    		$('.cover-all,.filter-box').show();
 	    		$('.cover-all').one('click', this.hide);
 	    	},
@@ -413,12 +359,15 @@
         		headerDown.show(0);
         	})
 
-        	//search
+        	//filter
         	$('input.short').on('focus', function() {
         		headerDown.show(1);
         	})
         	$('#btn-search').on('click', function() {
         		headerDown.hide(1);
+        	})
+        	$('#confirm').on('click', function() {
+        		filter.hide();
         	})
 
             //swipe
@@ -468,7 +417,7 @@
 
 		    // 日历
 		    $(".filter-date").on('click',function(e){
-				HS_setDate($('.play_time')[0],$('#order')[0])
+				HS_setDate($('.play_time')[0],$('#before')[0])
 			})
         });
     </script>
