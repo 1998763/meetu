@@ -53,7 +53,7 @@
         style +=".order{width:100%;margin:0 auto;background-color: #808080;filter:alpha(opacity=90);-moz-opacity:0.9;opacity:0.9;position:absolute;z-index:1;}";
         style +=".calendar ul {list-style-type:none; margin:0; padding:0;}";
         style +=".calendar .day {display:box; display:-webkit-box; background-color:#FFFFFF; height:20px; line-height:20px}";
-        style +=".calendar .date {display:box; display:-webkit-box; border-right:#AAABB0 1px solid;}";
+        style +=".calendar .date {display:box; display:-webkit-box;}";
         style +=".calendar .day li{box-flex: 1; -webkit-box-flex: 1; width: 38px; font-size: 12px; color: #fff; background: #5d9cec; text-align: center}";
         style +=".calendar .date li{box-flex: 1; -webkit-box-flex: 1; background:#f8f8f8; width:38px; height:48px; line-height:48px; text-align:center;}";
         style +=".calendar .date .today{background:#5d9cec;color:#fff}";
@@ -91,26 +91,42 @@
         }
         
         for (i=1; i<=thisMonthEndDate; i++){ // Current Month's Date
+            var thisStr = now.getFullYear()+"-"+pad((parseInt(now.getMonth())+1),2)+"-"+pad(i,2);
             var timeArr = today.split("-");
             var date = [now.getFullYear(), zeroize((parseInt(now.getMonth())+1).toString()), zeroize(i)];
             // 周日
             if (new Date(date[0],date[1]-1,date[2]).getDay() == "0") {
                 lis += "<ul class='date'>";
             };
+            // 判断无空
+            if (typeof(busyDays)!=='undefined') {
+                var busyBool = false;
+                $.each(busyDays, function(index, data) {
+                    console.log(thisStr);
+                    if (data == thisStr) {
+                        busyBool = true;
+                        return false;
+                    };
+                })
+            };
+            // 无空
+            if (busyBool) {
+                lis += "<li><a id='not_click' style='color:#fff; background:#ed5565' title=''>"+i+"</a></li>";
             // 今天
-            if (today == now.getFullYear() + "-" + now.getMonth() + "-" + i) {
-                lis += "<li><a id='date_select' href='javascript:void(0)' class='today' onclick='selectday_title(this)' title='"+now.getFullYear()+"-"+pad((parseInt(now.getMonth())+1),2)+"-"+pad(i,2)+"'>今日</a></li>";
+            } else if (today == now.getFullYear() + "-" + now.getMonth() + "-" + i) {
+                lis += "<li><a id='date_select' href='javascript:void(0)' class='today' onclick='selectday_title(this)' title='"+ thisStr +"'>今日</a></li>";
             // 明天
             } else if (today == now.getFullYear() + "-" + now.getMonth() + "-" + (i - 1)) {
-                lis += "<li><a id='date_select' href='javascript:void(0)' onclick='selectday_title(this)' title='"+now.getFullYear()+"-"+pad((parseInt(now.getMonth())+1),2)+"-"+pad(i,2)+"'>明日</a></li>";
+                lis += "<li><a id='date_select' href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>明日</a></li>";
             }
             // 今明 以后
             else if (timeArr[0] < now.getFullYear() || (timeArr[0] == now.getFullYear() && timeArr[1] < now.getMonth()) || (timeArr[0] == now.getFullYear() && timeArr[1] == now.getMonth() && parseInt(timeArr[2]) + 1 < i)) {
-                lis += "<li><a id='date_select' href='javascript:void(0)' onclick='selectday_title(this)' title='"+now.getFullYear()+"-"+pad((parseInt(now.getMonth())+1),2)+"-"+pad(i,2)+"'>"+i+"</a></li>";
+                lis += "<li><a id='date_select' href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>"+i+"</a></li>";
             // 以前
             } else {
-                lis +="<li><a id='not_click' style='color:#ccc;' title=''>"+i+"</a></li>";
+                lis += "<li><a id='not_click' style='color:#ccc;' title=''>"+i+"</a></li>";
             }
+            
             // 周六
             if (new Date(date[0],date[1]-1,date[2]).getDay() == "6") {
                 lis += "</ul>";
@@ -151,7 +167,7 @@
     }
 
     //主函数
-    function HS_setDate(inputObj,paNode){
+    function HS_setDate(paNode){
         if (document.getElementById('calendar')) {
             calendar.show();
             return false;
@@ -159,10 +175,7 @@
         var calendarObj = document.createElement("span");
         calendarObj.id = "calendar";
         calendarObj.innerHTML = HS_calendar(new Date());
-        calendarObj.targetObj = inputObj;
         paNode.parentNode.insertBefore(calendarObj,paNode);
         var order_height = document.getElementById('order');
         high = document.body.scrollHeight+'px';
-        //order_height.style.height=high;
-        // document.getElementById('date_select').style.background = "#FF7440";
     }
