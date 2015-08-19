@@ -242,6 +242,11 @@
 		    	calendar.show();
 				HS_setDate($('.play_time')[0],$('#before')[0])
 			})
+
+			$('.date-reset').on('click',function(){
+				$('input').val('');
+				title = last_title = '';
+			})
 		});
 	</script>
 </body>
