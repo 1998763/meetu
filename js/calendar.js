@@ -122,10 +122,9 @@
             if (i == 5) lis += '</ul>';
             j++;
         }
-        // lis += style;
-        var CalendarTitle = "<a href='javascript:void(0)' class='NextMonth' onclick=HS_calendar(HS_DateAdd('m',1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Next Month'><img style='margin-top:0px;height:20px;width:10px;' src='http://m.yikuaiqu.com/images/order/right_arrow.png' /></a>";
-        var CalendarTitle = "<a href='javascript:void(0)' class='NextMonth' onclick=HS_calendar(HS_DateAdd('m',1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Next Month'><img style='margin-top:0px;height:20px;width:10px;' src='http://m.yikuaiqu.com/images/order/right_arrow.png' /></a>";
-        CalendarTitle += "<a href='javascript:void(0)' class='LastMonth' onclick=HS_calendar(HS_DateAdd('m',-1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Previous Month'><img style='margin-top:0px;height:20px;width:10px;' src='http://m.yikuaiqu.com/images/order/left_arrow.png' /></a>";
+        
+        var CalendarTitle = "<a href='javascript:void(0)' class='NextMonth' onclick=HS_calendar(HS_DateAdd('m',1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Next Month'><img style='margin-top:0px;height:20px;width:10px;' src='images/icon-right.png' /></a>";
+        CalendarTitle += "<a href='javascript:void(0)' class='LastMonth' onclick=HS_calendar(HS_DateAdd('m',-1,'"+now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate()+"'),this) title='Previous Month'><img style='margin-top:0px;height:20px;width:10px;' src='images/icon-left.png' /></a>";
         CalendarTitle += "<span class='selectThisYear'><a href='javascript:void(0)'  title='Click here to select other year' >"+now.getFullYear()+"</a></span>年<span class='selectThisMonth'><a href='javascript:void(0)' title='Click here to select other month'>"+(parseInt(now.getMonth())+1).toString()+"</a></span>月";
         
         if (arguments.length>1){
@@ -133,7 +132,6 @@
             arguments[1].parentNode.innerHTML = CalendarTitle;
         }else{
             var CalendarBox = style+"<div class='calendar' ><div class='calendarTitle'>"+CalendarTitle+"</div><div class='calendarBody'><ul class='day'><li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li></ul><div id='thisMonthDate'>"+lis+"</div></div></div>";
-            // var CalendarBox = style+"<div class='calendar' id='calendar' ><div class='calendarTitle'>"+CalendarTitle+"</div><div class='calendarBody'><ul class='day'><li>周日</li><li>周一</li><li>周二</li><li>周三</li><li>周四</li><li>周五</li><li>周六</li></ul><div id='thisMonthDate'>"+lis+"</div></div><div class='calendarBottom'></div><a href='javascript:void(0)' onclick='closeCalendar(this)'><div class='cancel'>取消</div></a><a href='javascript:void(0)' onclick='_selectThisDay(this)'><div class='submit'>确定</div></a></div>";
             return CalendarBox;
         }
     }
