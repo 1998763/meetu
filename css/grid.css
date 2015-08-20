@@ -48,6 +48,16 @@ header input.long {
 	width: 270px;
 }
 
+header input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff;
+}
+header input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+}
+header input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;
+}
+
 header .left {
 	position: absolute;
 	left: 0;

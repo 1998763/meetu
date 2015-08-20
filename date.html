@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>约游</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<link rel="stylesheet" href="css/g.css">
+</head>
+<body>
+	<header>
+		<a href="javascript:history.back();" class="icon-back left"></a>
+		<h1>约游</h1>
+		<a class="icon-ring right"><i class="icon-red">9</i></a>
+	</header>
+	
+	<div class="container">
+		<div class="box">
+			<div class="row mg0">
+				<div class="input-box">
+					<input type="text" class="form-input" placeholder="行程标题">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 form-box">
+					<div class="input-box">
+						<input type="text" class="form-input" placeholder="行程费用">
+					</div>
+				</div>
+				<div class="span6 form-box">
+					<div class="input-box select-box">
+						<input type="text" class="form-input" placeholder="人数">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 form-box">
+					<div class="input-box select-box">
+						<input type="text" class="form-input" placeholder="其他费用说明">
+					</div>
+				</div>
+				<div class="span6 form-box">
+					<div class="input-box select-box">
+						<input type="text" class="form-input" placeholder="约游地点">
+					</div>
+				</div>
+			</div>
+			<div class="row mg0">
+				<div class="input-box select-box">
+					<input type="text" class="form-input date-time" placeholder="什么时候去...">
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6 form-box">
+					<div class="input-box select-box">
+						<input type="text" class="form-input" placeholder="性别要求">
+					</div>
+				</div>
+				<div class="span6 form-box">
+					<div class="input-box select-box">
+						<input type="text" class="form-input" placeholder="交通要求">
+					</div>
+				</div>
+			</div>
+			<div class="row mg0">
+				<div class="input-box">
+					<input type="text" class="form-input" placeholder="备注">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 背景 -->
+	<div class="cover-all"></div>
+
+	<!-- 选择时间 -->
+	<!-- <div class="release-time start">
+		<ul class="hour fl">
+			<li>01</li>
+			<li>02</li>
+			<li>03</li>
+			<li>04</li>
+			<li>05</li>
+			<li>06</li>
+			<li>07</li>
+			<li>08</li>
+			<li>09</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+			<li>23</li>
+			<li>24</li>
+		</ul>
+		<ul class="min fr">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+			<li>23</li>
+			<li>24</li>
+			<li>25</li>
+			<li>26</li>
+			<li>27</li>
+			<li>28</li>
+			<li>29</li>
+			<li>30</li>
+			<li>31</li>
+			<li>32</li>
+			<li>33</li>
+			<li>34</li>
+			<li>35</li>
+			<li>36</li>
+			<li>37</li>
+			<li>38</li>
+			<li>39</li>
+			<li>40</li>
+			<li>41</li>
+			<li>42</li>
+			<li>43</li>
+			<li>44</li>
+			<li>45</li>
+			<li>46</li>
+			<li>47</li>
+			<li>48</li>
+			<li>49</li>
+			<li>50</li>
+			<li>51</li>
+			<li>52</li>
+			<li>53</li>
+			<li>54</li>
+			<li>55</li>
+			<li>56</li>
+			<li>57</li>
+			<li>58</li>
+			<li>59</li>
+			<li>00</li>
+		</ul>
+	</div>
+	<div class="release-time end">
+		<ul class="hour fl"></ul>
+		<ul class="min fr"></ul>
+	</div> -->
+
+	<div style="height: 38px"></div>
+	<div class="button-bottom">
+		<div class="date-reset">重置</div>
+		<div class="date-confirm bg-blue">确定</div>
+	</div>
+	
+	<!-- 背景 -->
+	<div class="cover-all"></div>
+
+	<!-- 日历 -->
+	<div class="js-calendar">
+		<div id="before"></div>
+	</div>
+	
+	<script type="text/javascript">
+		var busyDays = ['2015-07-23','2015-08-22'];
+	</script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/calendar.js"></script>
+	<script>
+		 var calendar = {
+	    	show : function() {
+	    		$('.cover-all,.calendar').show();
+	    		$('.cover-all').one('click', this.hide);
+	    	},
+	    	hide : function() {
+	    		$('.calendar,.cover-all').hide();
+	    	},
+	    	appendDate : function(week_day) {
+				$('.date-time').val(title + ' ' + week_day);	    		
+    			calendar.hide();
+	    	}
+	    };
+
+		// 日历选择
+		function selectday_title(d){
+			var week_day = "";
+	        if(last_title>""){
+	            last_title.id = "";
+	            last_title.style.background = "";
+	            last_title.style.color = "";
+	        };
+	            d.style.background = "#48cfad";
+	            d.style.color = "#fff";
+	            title = d.title;
+	            var arr = title.split("-");
+	            arr[1]--;
+	            var judge = WeekDay(arr.join("-"));
+	            if (judge == 0) {week_day = "星期日"};
+	            if (judge == 1) {week_day = "星期一"};
+	            if (judge == 2) {week_day = "星期二"};
+	            if (judge == 3) {week_day = "星期三"};
+	            if (judge == 4) {week_day = "星期四"};
+	            if (judge == 5) {week_day = "星期五"};
+	            if (judge == 6) {week_day = "星期六"};
+	            last_title = d;
+	            calendar.appendDate(week_day);
+	    }
+
+	    $(function(){
+			// 日历
+		    $(".date-time").on('click',function(e){
+				HS_setDate($('#before')[0]);
+		    	calendar.show();
+			})
+			$(".date-time").one('click',function(){
+		    	var str = '<p class="text-red" style="padding: 15px; border-top: 1px solid #ccc">注：选中日期，即红色模块，为未空闲时间。</p>';
+				$('.calendar').append(str);
+			})
+
+			$('.date-reset').on('click',function(){
+				$('input').val('');
+				title = '';
+			})
+		});
+	</script>
+</body>
+</html>

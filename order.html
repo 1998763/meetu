@@ -34,8 +34,8 @@
 		</dl>
 		<dl>
 			<dt>接待人数</dt>
-			<dd class="order-link order-people">
-				<i class="icon-minus disable"></i>2<i class="icon-plus"></i>
+			<dd class="order-people">
+				<i class="icon-minus disable"></i><span id="order-count">1</span><i class="icon-plus"></i>
 			</dd>
 		</dl>
 		<dl>
@@ -52,9 +52,42 @@
 		</dl>
 		<dl>
 			<dt>行程实付总额</dt>
-			<dd class="text-red order-total">&yen;600</dd>
+			<dd class="text-red order-total">&yen;<span>600</span></dd>
 		</dl>
 	</div>
+
+	<div style="height: 38px"></div>
 	<a href="#" class="button-bottom bg-red">下一步</a>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		var calculate = {
+			plus: function() {
+				var c = parseInt($('#order-count').text());
+				var m = parseInt($('.order-total span').text());
+				$('#order-count').text(++c);
+				$('.order-total span').text(m*2);
+				if (c >= calculate.max) $('.icon-plus').addClass('disable');
+				if (c > calculate.min) $('.icon-minus').removeClass('disable');
+			},
+			minus: function() {
+				var c = parseInt($('#order-count').text());
+				var m = parseInt($('.order-total span').text());
+				$('#order-count').text(--c);
+				$('.order-total span').text(m/2);
+				if (c <= calculate.min) $('.icon-minus').addClass('disable');
+				if (c < calculate.max) $('.icon-plus').removeClass('disable');
+			},
+			min: 1,
+			max: 3
+		};
+
+		$('.icon-plus').on('click', function() {
+			if (!$(this).hasClass('disable')) calculate.plus();
+		});
+		$('.icon-minus').on('click', function() {
+			if (!$(this).hasClass('disable')) calculate.minus();
+		})
+	</script>
 </body>
 </html>

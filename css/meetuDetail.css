@@ -1,8 +1,4 @@
-.mdt-title {
-    padding: 10px;
-    text-align: center;
-    line-height: 1.4;
-}
+
 
 .mdt-title h1 {
     font-size: 16px;
@@ -481,4 +477,160 @@
     bottom: 6px;
     color: #ccc;
     font-size: 10px;
+}
+
+.present-test {
+    padding-bottom: 34px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.present-test:before, .present-test:after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 9px;
+}
+
+.present-test:before {
+    background: url(../images/left3.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-right: 6px;
+    position: relative;
+    top: -3px;
+}
+
+.present-test:after {
+    background: url(../images/right3.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+
+.present-title {
+    line-height: 31px;
+    font-size: 16px;
+    color: #fff;
+    background: #5d9cec;
+    text-align: center;
+}
+
+.present-fixed {
+    background: #48cfad;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    line-height: 36px;
+    height: 36px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.mdt-title {
+    padding: 10px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.safe-box {
+    padding-top: 70px;
+    text-align: center;
+}
+
+.safe-box i {
+    display: block;
+    width: 48px;
+    height: 46px;
+    background: url(../images/icon-safety.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+.safe-box p {
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.safe-box a {
+    display: block;
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background: #5d9cec;
+    border-radius: 2px;
+    margin: 24px auto 0;
+}
+
+.city-place {
+    border-bottom: 1px solid #ddd;
+    padding: 4px 2px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #414141;
+    margin-bottom: 26px;
+}
+
+.icon-place2 {
+    float: right;
+    width: 19px;
+    height: 18px;
+    background: url(../images/city-re.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 1px;
+}
+
+.icon-city {
+    float: right;
+    padding: 3px 22px;
+    background: #5d9cec;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #fff;
+    margin-right: 6px;
+}
+
+.icon-city i {
+    display: inline-block;
+    width: 9px;
+    height: 13px;
+    background: url(../images/icon-place2.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-right: 7px;
+    position: relative;
+    top: 1px;
+}
+
+.city-list-wrap {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.city-list {
+    padding: 10px 0;
+    overflow: hidden;
+    margin: 0 -10px;
+}
+
+.city-list li {
+    width: 33.3333%;
+    float: left;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+.city-list a {
+    display: block;
+    font-size: 12px;
+    color: #5d9cec;
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    text-align: center;
+    height: 19px;
+    line-height: 19px;
 }

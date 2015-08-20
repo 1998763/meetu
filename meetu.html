@@ -12,7 +12,7 @@
 <body>
 	<header>
 		<a id="btn-city" class="city left">广州<i class="icon-down"></i></a>
-		<input type="text" class="short">
+		<input type="text" class="short" placeholder="搜索城市、景区、游记名">
 		<a id="btn-menu" class="icon-menu right"></a>
 		<a id="close-menu" class="icon-erro right" style="display: none"></a>
 		<a id="btn-search" class="icon-search right" style="display: none"></a>
@@ -59,6 +59,7 @@
 				<li></li>
 			</ul>
 		</div>
+		<div class="close-header"></div>
 	</div>
 
 	<ul class="side-bar">
@@ -76,59 +77,7 @@
 
 	<!-- 日历 -->
 	<div class="js-calendar">
-		<!-- <table class="calendar">
-			<thead>
-				<tr><th colspan="7">2015年<span class="text-blue">6</span>月<i class="icon-right react"></i></th></tr>
-			</thead>
-			<tbody>
-				<tr class="weeks">
-					<td>周日</td>
-					<td>周一</td>
-					<td>周二</td>
-					<td>周三</td>
-					<td>周四</td>
-					<td>周五</td>
-					<td>周六</td>
-				</tr>
-				<tr class="days">
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="null"></td>
-					<td class="disable">1</td>
-				</tr>
-				<tr class="days">
-					<td class="disable">2</td>
-					<td class="disable">3</td>
-					<td class="disable">4</td>
-					<td class="disable">5</td>
-					<td class="disable">6</td>
-					<td class="disable">7</td>
-					<td class="disable">8</td>
-				</tr>
-				<tr class="days">
-					<td class="disable">9</td>
-					<td class="disable">10</td>
-					<td class="disable">11</td>
-					<td class="disable">12</td>
-					<td class="disable">13</td>
-					<td class="disable">14</td>
-					<td class="disable">15</td>
-				</tr>
-				<tr class="days">
-					<td class="disable">16</td>
-					<td class="disable">17</td>
-					<td class="disable">18</td>
-					<td class="disable">19</td>
-					<td class="onSell today" data-day="2015-06-20">今天</td>
-					<td class="onSell active" data-day="2015-06-21">21</td>
-					<td class="onSell" data-day="2015-06-22">22</td>
-				</tr>
-			</tbody>
-		</table> -->
-		<div id="order"></div>
+		<div id="before"></div>
 	</div>
 
 	<div class="filter-box">
@@ -156,7 +105,6 @@
 		<h2>游玩日期</h2>
 			<form class="filter-form">
 				<input type="text" class="filter-date" value="2015-06-21 星期五" readonly>
-				<span class="play_date"></span>
 			</form>
 		</div>
 		<div class="filter-area">
@@ -175,15 +123,16 @@
 				<li>都行</li>
 			</ul>
 		</div>
-		<div class="filter-area">
+		<!-- <div class="filter-area">
 			<h2>行程需求</h2>
 			<ul class="filter-list">
 				<li>固定行程</li>
 				<li>可作变化</li>
 				<li>都行</li>
 			</ul>
-		</div>
-		<div class="filter-button">确定</div>
+		</div> -->
+		<div style="height: 38px"></div>
+		<div id="confirm" class="button-bottom bg-blue">确定</div>
 	</div>
 
 	<div class="container">
@@ -207,123 +156,57 @@
 			<a href="#" class="p3-box">
 				<div class="img-box">
 					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="icon"><i class="icon-saved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
-						<p><i></i>广州 荔湾区 by 雯雯 文员</p>
+						<p><i></i>广州&nbsp;荔湾区&emsp;by&nbsp;雯雯&nbsp;文员</p>
 					</div>
 				</div>
 			</a>
 			<a href="#" class="p3-box">
 				<div class="img-box">
 					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="icon"><i class="icon-unsaved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
-						<p><i></i>广州 荔湾区 by 雯雯 文员</p>
+						<p><i></i>广州&nbsp;荔湾区&emsp;by&nbsp;雯雯&nbsp;文员</p>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="p3-box">
+				<div class="img-box">
+					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="icon"><i class="icon-unsaved"></i></div>
+					<div class="product-foot">
+						<h1>历史与繁华的痕迹—沙面</h1>
+						<p><i></i>广州&nbsp;荔湾区&emsp;by&nbsp;雯雯&nbsp;文员</p>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="p3-box">
+				<div class="img-box">
+					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="icon"><i class="icon-unsaved"></i></div>
+					<div class="product-foot">
+						<h1>历史与繁华的痕迹—沙面</h1>
+						<p><i></i>广州&nbsp;荔湾区&emsp;by&nbsp;雯雯&nbsp;文员</p>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="p3-box">
+				<div class="img-box">
+					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="icon"><i class="icon-unsaved"></i></div>
+					<div class="product-foot">
+						<h1>历史与繁华的痕迹—沙面</h1>
+						<p><i></i>广州&nbsp;荔湾区&emsp;by&nbsp;雯雯&nbsp;文员</p>
 					</div>
 				</div>
 			</a>
 		</div>
 	</div>
 
-	<script>
-		//价格日历参数
-	    var play_date = "2015-09-01",
-		last_date = "2015-09-16",
-		tickets_num = 15,		
-		day = "1",
-		ticket_arr = [];
-		if(tickets_num != 0){
-			var r = 0;
-			ticket_arr = [];
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-01";
-			ticket_arr[r]['stop_date'] = "2015-09-01";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-02";
-			ticket_arr[r]['stop_date'] = "2015-09-02";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-03";
-			ticket_arr[r]['stop_date'] = "2015-09-03";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-04";
-			ticket_arr[r]['stop_date'] = "2015-09-04";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-05";
-			ticket_arr[r]['stop_date'] = "2015-09-05";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-06";
-			ticket_arr[r]['stop_date'] = "2015-09-06";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-07";
-			ticket_arr[r]['stop_date'] = "2015-09-07";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-08";
-			ticket_arr[r]['stop_date'] = "2015-09-08";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-09";
-			ticket_arr[r]['stop_date'] = "2015-09-09";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-10";
-			ticket_arr[r]['stop_date'] = "2015-09-10";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-11";
-			ticket_arr[r]['stop_date'] = "2015-09-11";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-12";
-			ticket_arr[r]['stop_date'] = "2015-09-12";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-13";
-			ticket_arr[r]['stop_date'] = "2015-09-13";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-14";
-			ticket_arr[r]['stop_date'] = "2015-09-14";
-			ticket_arr[r]['price'] = "230";
-			r++;
-			ticket_arr[r] = [];
-			ticket_arr[r]['start_date'] = "2015-09-15";
-			ticket_arr[r]['stop_date'] = "2015-09-15";
-			ticket_arr[r]['price'] = "230";
-			r++;
-					}else{
-			var rejects_num = "0";
-			var available_date = "2015-06-01 08:00:00";
-			var expire_date = "2015-12-31 08:00:00";
-			var product_price = 230;
-			var ahead_day = 1;
-			//alert(ahead_day);
-			var ahead_time = "23:59";
-			var n = 0;
-			reject_arr = [];
-						var weeks_day=0;
-			weeks_agree = [];
-					}
-	</script>
+	
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/swipe.min.js"></script>
     <script src="js/calendar.js"></script>
@@ -331,21 +214,16 @@
 	    var calendar = {
 	    	show : function() {
 	    		filter.hide();
-	    		$('.cover-all').show();
+	    		$('.cover-all,.calendar').show();
 	    		$('.cover-all').one('click', this.hide);
 	    	},
 	    	hide : function() {
 	    		filter.show();
-	    		// $('.calendar').hide();
+	    		$('.calendar').hide();
 	    	},
-	    	bindEvent : function() {
-	    		$('.calendar .onSell').on('click', function(){
-	    			var str = $(this).data('day') + ' 星期' + $('.weeks>td').eq($(this).index()).text().replace('周', '');
-	    			$('.onSell.active').removeClass('active');
-	    			$(this).addClass('active');
-	    			$('.filter-date').val(str);
-	    			calendar.hide();
-	    		});
+	    	appendDate : function(week_day) {
+				$('.filter-date').val(title + ' ' + week_day);	    		
+    			calendar.hide();
 	    	}
 	    };
 
@@ -364,11 +242,14 @@
 
 	    var filter = {
 	    	show : function() {
+	    		//var h = $('body').height() - $('.filter-box').height();
+	    		//$('.filter-box').css('top', h);
 	    		$('.cover-all,.filter-box').show();
 	    		$('.cover-all').one('click', this.hide);
 	    	},
 	    	hide : function() {
 	    		$('.cover-all,.filter-box,.calendar').hide();
+	    		$(window).scrollTop(0);
 	    	}
 	    };
 
@@ -385,7 +266,8 @@
 	    			$('#btn-menu').show();
 	    		}
 	    		$('.header-down').eq(index).show().siblings('.header-down').hide();
-	    		$('.cover-body').one('click', function() {headerDown.hide(index)})
+	    		$('.cover-body').one('click', function() {headerDown.hide(index)});
+	    		$(window).scrollTop(0);
 	    	},
 	    	hide : function(index) {
 	    		$('.cover-body,.header-down:eq(' + index + ')').hide();
@@ -396,32 +278,49 @@
 	    	}
 	    };
 
-	    var data =  [
-			{
-			"zone": "广州出发6天4晚马尔代夫马累",
-			"id": "159078",
-			"product": "一块去门票测试专用-请勿付款",
-			"count": "1",
-			"clientCount": "1",
-			"playDate": "2015-08-16"
-			}
-		];
+		// 日历选择
+		function selectday_title(d){
+			var week_day = "";
+	        if(last_title>""){
+	            last_title.id = "";
+	            last_title.style.background = "";
+	            last_title.style.color = "";
+	        };
+	            d.style.background = "#48cfad";
+	            d.style.color = "#fff";
+	            title = d.title;
+	            var arr = title.split("-");
+	            arr[1]--;
+	            var judge = WeekDay(arr.join("-"));
+	            if (judge == 0) {week_day = "星期日"};
+	            if (judge == 1) {week_day = "星期一"};
+	            if (judge == 2) {week_day = "星期二"};
+	            if (judge == 3) {week_day = "星期三"};
+	            if (judge == 4) {week_day = "星期四"};
+	            if (judge == 5) {week_day = "星期五"};
+	            if (judge == 6) {week_day = "星期六"};
+	            last_title = d;
+	            calendar.appendDate(week_day);
+	    }
 
         $(function() {
-        	//city
+        	// city
         	$('#btn-city').on('click', function() {
         		headerDown.show(0);
         	})
 
-        	//search
+        	// filter
         	$('input.short').on('focus', function() {
         		headerDown.show(1);
         	})
         	$('#btn-search').on('click', function() {
         		headerDown.hide(1);
         	})
+			$('.close-header').on('click', function() {
+				headerDown.hide(1);
+			})
 
-            //swipe
+            // swipe
 			window.mySwipe = Swipe(document.getElementById('slider'), {
 				auto: 4000,
 				continuous: true,
@@ -435,40 +334,43 @@
 			}
 			$('.slider-nav').show().append(sliderNav).css('margin-left', -($('.slider-nav').width()/2) + 'px');
 
-			//calendar
+			// calendar
 			$('.filter-date').on('click', function() {
 				calendar.show();
 			})
 			// calendar.bindEvent();
 
-			//sidebar
+			// sidebar
 			$('#btn-menu').on('click', function() {
 				sidebar.show();
 			})
 
-			//filter
+			// filter
 			$('#btn-filter').on('click', function() {
 				filter.show();
 			})
-			//确认
-			$('.filter-button').on('click', function() {
-				filter.hide();
-			})
+        	$('#confirm').on('click', function() {
+        		filter.hide();
+        	})
 			$('.filter-list>li').on('click', function() {
 				$(this).addClass('active').siblings().removeClass('active');
 			})
 
-			//delete
+			// delete
 			$('.condition-list i').on('click', function() {
 				$(this).parent().remove();
 				if(!$('.condition-list li').length) 
 					$('.condition-box').hide();
 			})
 
+			// 禁止滚动
+			$(document).on('touchmove',function(e){
+				if($('.header-down:visible').length && $('.filter-box:hidden').length) e.preventDefault();
+			});
 
 		    // 日历
 		    $(".filter-date").on('click',function(e){
-				HS_setDate($('.play_time')[0],$('#order')[0])
+				HS_setDate($('#before')[0]);
 			})
         });
     </script>

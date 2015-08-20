@@ -71,36 +71,36 @@
 42 verbose addNameRange registry:https://registry.npmjs.org/gulp-minify-css not in flight; fetching
 43 verbose request uri https://registry.npmjs.org/gulp-concat
 44 verbose request no auth needed
-45 info attempt registry request try #1 at 10:31:40
-46 verbose request id 1926f921c9b47283
-47 verbose etag "20S6CWL334R2AELO8HVN87BFV"
+45 info attempt registry request try #1 at 10:47:46
+46 verbose request id a29f4182fe24660b
+47 verbose etag "5M2CXB8P8LSGBON193W28BOPV"
 48 http request GET https://registry.npmjs.org/gulp-concat
-49 verbose request uri https://registry.npmjs.org/gulp
+49 verbose request uri https://registry.npmjs.org/gulp-minify-css
 50 verbose request no auth needed
-51 info attempt registry request try #1 at 10:31:40
-52 verbose etag "3MIX2BGWRLAKR9L2Y94OZ7X6M"
-53 http request GET https://registry.npmjs.org/gulp
-54 verbose request uri https://registry.npmjs.org/gulp-minify-css
+51 info attempt registry request try #1 at 10:47:46
+52 verbose etag "61YVU3MSRKZDVXVX5X9DVJ7U8"
+53 http request GET https://registry.npmjs.org/gulp-minify-css
+54 verbose request uri https://registry.npmjs.org/gulp
 55 verbose request no auth needed
-56 info attempt registry request try #1 at 10:31:40
-57 verbose etag "1LIT3Q4SQT0Y68RGG5V3SOXLO"
-58 http request GET https://registry.npmjs.org/gulp-minify-css
+56 info attempt registry request try #1 at 10:47:46
+57 verbose etag "B57IIUDDQ1EUO2H0CR4JYYI9R"
+58 http request GET https://registry.npmjs.org/gulp
 59 http 200 https://registry.npmjs.org/gulp-concat
 60 silly get cb [ 200,
 60 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-60 silly get     etag: '"5M2CXB8P8LSGBON193W28BOPV"',
+60 silly get     etag: '"EITMH451LUJG0D1111QS3IXJA"',
 60 silly get     'content-type': 'application/json',
 60 silly get     'cache-control': 'max-age=60',
-60 silly get     'content-length': '37078',
+60 silly get     'content-length': '37131',
 60 silly get     'accept-ranges': 'bytes',
-60 silly get     date: 'Fri, 14 Aug 2015 02:31:41 GMT',
+60 silly get     date: 'Thu, 20 Aug 2015 02:47:46 GMT',
 60 silly get     via: '1.1 varnish',
-60 silly get     age: '51',
+60 silly get     age: '0',
 60 silly get     connection: 'keep-alive',
 60 silly get     'x-served-by': 'cache-nrt6125-NRT',
 60 silly get     'x-cache': 'HIT',
 60 silly get     'x-cache-hits': '1',
-60 silly get     'x-timer': 'S1439519501.294893,VS0,VE0',
+60 silly get     'x-timer': 'S1440038866.271028,VS0,VE118',
 60 silly get     vary: 'Accept' } ]
 61 verbose get saving gulp-concat to /Users/TEARS/.npm/registry.npmjs.org/gulp-concat/.cache.json
 62 silly addNameRange number 2 { name: 'gulp-concat', range: '>=2.6.0 <3.0.0', hasData: true }
@@ -138,19 +138,19 @@
 69 http 200 https://registry.npmjs.org/gulp-minify-css
 70 silly get cb [ 200,
 70 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-70 silly get     etag: '"61YVU3MSRKZDVXVX5X9DVJ7U8"',
+70 silly get     etag: '"343ALFAZMPH59L0T3FPX63TK1"',
 70 silly get     'content-type': 'application/json',
 70 silly get     'cache-control': 'max-age=60',
-70 silly get     'content-length': '58844',
+70 silly get     'content-length': '58892',
 70 silly get     'accept-ranges': 'bytes',
-70 silly get     date: 'Fri, 14 Aug 2015 02:31:44 GMT',
+70 silly get     date: 'Thu, 20 Aug 2015 02:47:46 GMT',
 70 silly get     via: '1.1 varnish',
-70 silly get     age: '53',
+70 silly get     age: '45',
 70 silly get     connection: 'keep-alive',
-70 silly get     'x-served-by': 'cache-nrt6124-NRT',
+70 silly get     'x-served-by': 'cache-nrt6126-NRT',
 70 silly get     'x-cache': 'HIT',
-70 silly get     'x-cache-hits': '2',
-70 silly get     'x-timer': 'S1439519504.031695,VS0,VE0',
+70 silly get     'x-cache-hits': '3',
+70 silly get     'x-timer': 'S1440038866.322900,VS0,VE0',
 70 silly get     vary: 'Accept' } ]
 71 verbose get saving gulp-minify-css to /Users/TEARS/.npm/registry.npmjs.org/gulp-minify-css/.cache.json
 72 silly addNameRange number 2 { name: 'gulp-minify-css',
@@ -201,19 +201,19 @@
 79 http 200 https://registry.npmjs.org/gulp
 80 silly get cb [ 200,
 80 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-80 silly get     etag: '"B57IIUDDQ1EUO2H0CR4JYYI9R"',
+80 silly get     etag: '"4HRBFUM99DG9B9A5H4OSITU83"',
 80 silly get     'content-type': 'application/json',
 80 silly get     'cache-control': 'max-age=60',
-80 silly get     'content-length': '105255',
+80 silly get     'content-length': '105446',
 80 silly get     'accept-ranges': 'bytes',
-80 silly get     date: 'Fri, 14 Aug 2015 02:31:42 GMT',
+80 silly get     date: 'Thu, 20 Aug 2015 02:47:46 GMT',
 80 silly get     via: '1.1 varnish',
-80 silly get     age: '52',
+80 silly get     age: '12',
 80 silly get     connection: 'keep-alive',
-80 silly get     'x-served-by': 'cache-nrt6127-NRT',
+80 silly get     'x-served-by': 'cache-nrt6125-NRT',
 80 silly get     'x-cache': 'HIT',
-80 silly get     'x-cache-hits': '2',
-80 silly get     'x-timer': 'S1439519502.497497,VS0,VE0',
+80 silly get     'x-cache-hits': '1',
+80 silly get     'x-timer': 'S1440038866.324567,VS0,VE1',
 80 silly get     vary: 'Accept' } ]
 81 verbose get saving gulp to /Users/TEARS/.npm/registry.npmjs.org/gulp/.cache.json
 82 silly addNameRange number 2 { name: 'gulp', range: '>=3.9.0 <4.0.0', hasData: true }
@@ -463,13 +463,13 @@
 96 verbose installOne of gulp-minify-css to /Users/TEARS/.fis3-tmp/www not in flight; installing
 97 info installOne gulp@3.9.0
 98 verbose installOne of gulp to /Users/TEARS/.fis3-tmp/www not in flight; installing
-99 warn locking Error: EACCES, open '/Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock'
+99 warn locking Error: EACCES, open '/Users/TEARS/.npm/_locks/gulp-minify-css-5a06e35dc71cb1e8.lock'
 99 warn locking     at Error (native)
-99 warn locking  /Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock failed { [Error: EACCES, open '/Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock']
+99 warn locking  /Users/TEARS/.npm/_locks/gulp-minify-css-5a06e35dc71cb1e8.lock failed { [Error: EACCES, open '/Users/TEARS/.npm/_locks/gulp-minify-css-5a06e35dc71cb1e8.lock']
 99 warn locking   errno: -13,
 99 warn locking   code: 'EACCES',
-99 warn locking   path: '/Users/TEARS/.npm/_locks/gulp-concat-c22ecdc6afc18a38.lock' }
-100 verbose stack Error: Attempt to unlock /Users/TEARS/.fis3-tmp/www/node_modules/gulp-concat, which hasn't been locked
+99 warn locking   path: '/Users/TEARS/.npm/_locks/gulp-minify-css-5a06e35dc71cb1e8.lock' }
+100 verbose stack Error: Attempt to unlock /Users/TEARS/.fis3-tmp/www/node_modules/gulp-minify-css, which hasn't been locked
 100 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
 100 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1017:5)
 100 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1021:20
@@ -478,11 +478,11 @@
 100 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
 100 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
 101 verbose cwd /Users/TEARS/Documents/meetu
-102 error Darwin 14.4.0
+102 error Darwin 14.5.0
 103 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--prefix" "/Users/TEARS/.fis3-tmp/www" "--loglevel" "info" "--registry" "https://registry.npmjs.org" "gulp@^3.9.0" "gulp-concat@^2.6.0" "gulp-minify-css@^1.2.0"
 104 error node v0.12.5
 105 error npm  v2.11.2
-106 error Attempt to unlock /Users/TEARS/.fis3-tmp/www/node_modules/gulp-concat, which hasn't been locked
+106 error Attempt to unlock /Users/TEARS/.fis3-tmp/www/node_modules/gulp-minify-css, which hasn't been locked
 107 error If you need help, you may report this error at:
 107 error     <https://github.com/npm/npm/issues>
 108 verbose exit [ 1, true ]
