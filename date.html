@@ -31,14 +31,14 @@
 				</div>
 				<div class="span6 form-box">
 					<div class="input-box select-box">
-						<input type="text" class="form-input" placeholder="人数">
+						<input type="text" data-id="js-number" class="form-input js-bottom" placeholder="人数">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span6 form-box">
 					<div class="input-box select-box">
-						<input type="text" class="form-input" placeholder="其他费用说明">
+						<input type="text" data-id="js-spend" class="form-input js-bottom" placeholder="其他费用说明">
 					</div>
 				</div>
 				<div class="span6 form-box">
@@ -55,12 +55,12 @@
 			<div class="row">
 				<div class="span6 form-box">
 					<div class="input-box select-box">
-						<input type="text" class="form-input" placeholder="性别要求">
+						<input type="text" data-id="js-sex" class="form-input js-bottom" placeholder="性别要求">
 					</div>
 				</div>
 				<div class="span6 form-box">
 					<div class="input-box select-box">
-						<input type="text" class="form-input" placeholder="交通要求">
+						<input type="text" data-id="js-traffic" class="form-input js-bottom" placeholder="交通要求">
 					</div>
 				</div>
 			</div>
@@ -181,8 +181,42 @@
 	<div class="cover-all"></div>
 
 	<!-- 日历 -->
-	<div class="js-calendar">
-		<div id="before"></div>
+	<div id="before"></div>
+	<div class="date-bottom">
+		<div class="js-traffic">
+			<h3>请选择约游交通工具</h3>
+			<ul class="filter-list">
+				<li class="active">我要专车</li>
+				<li>不需要专车</li>
+				<li>都可以</li>
+			</ul>
+		</div>
+		<div class="js-spend">
+			<h3>请选择其他花费方式</h3>
+			<ul class="filter-list">
+				<li class="active">AA制</li>
+				<li>用户埋单</li>
+				<li>导游埋单</li>
+			</ul>
+		</div>
+		<div class="js-number">
+			<h3>请选择约游人数</h3>
+			<ul class="filter-list">
+				<li class="active">1人</li>
+				<li>2人</li>
+				<li>3人</li>
+				<li>4人</li>
+				<li>5人或以上</li>
+			</ul>
+		</div>
+		<div class="js-sex">
+			<h3>请选择导游性别</h3>
+			<ul class="filter-list">
+				<li class="active">我要男神</li>
+				<li>我要女神</li>
+				<li>都可以</li>
+			</ul>
+		</div>
 	</div>
 	
 	<script type="text/javascript">
@@ -203,6 +237,14 @@
 				$('.date-time').val(title + ' ' + week_day);	    		
     			calendar.hide();
 	    	}
+	    };
+
+	    function showBottom(which) {
+	    	$('.cover-all,.date-bottom').show();
+	    	$('.' + which).show().siblings().hide();
+	    	$('.cover-all').one('click', function(){
+	    		$('.cover-all,.date-bottom').hide();
+	    	});
 	    };
 
 		// 日历选择
@@ -244,6 +286,17 @@
 			$('.date-reset').on('click',function(){
 				$('input').val('');
 				title = '';
+			})
+
+			$('.js-bottom').on('click', function(){
+				showBottom($(this).data('id'));
+			})
+
+			$('.filter-list li').on('click',function(){
+				var id = $(this).parent().parent().attr('class');
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.js-bottom[data-id="'+id+'"]').val($(this).text());
+				$('.cover-all,.date-bottom').hide();
 			})
 		});
 	</script>
