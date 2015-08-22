@@ -77,7 +77,7 @@
     //   }
 
       if (this.$city) {
-        this.$city.on(EVENT_CHANGE, $.proxy(function (e) {
+        this.$city.find('li').on('click', $.proxy(function (e) {
           $(this.$city).find('li').removeClass('active');
           $(e.target).addClass('active');
           this.output('district');

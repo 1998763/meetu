@@ -637,3 +637,7 @@
     height: 19px;
     line-height: 19px;
 }
+
+.date-distpicker ul {
+    margin-bottom: 20px;
+}
