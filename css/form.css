@@ -186,7 +186,7 @@ dl.release-box {
     text-align: center;
 }
 
-.release-expense dd em:nth-child(3) {
+.release-expense dd em:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -230,11 +230,15 @@ dd.setting em {
     overflow: hidden;
 }
 
-dd.setting em:nth-child(3) {
+dd.setting em:nth-child(3n) {
     margin-right: 0;
 }
 
 /* pull.html */
+
+.guide-list {
+  margin: 10px 0 0;
+}
 
 .guide-list li {
     display: inline-block;

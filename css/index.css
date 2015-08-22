@@ -84,7 +84,7 @@
 .filter-list li,
 .filter-date {
 	float: left;
-	width: 27.67%;
+	width: 28.02%;
 	height: 18px;
 	line-height: 18px;
 	border: 1px solid #dcdcdc;
@@ -104,6 +104,10 @@
 	border-color: #5d9cec;
 	background: #5d9cec;
 	color: #f2f2f2;
+}
+
+.filter-list.tag li:nth-child(5n+4) {
+	margin-left: 21.7%
 }
 
 .close-header {
