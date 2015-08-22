@@ -364,6 +364,13 @@
 	    	};
 	    	var tagStr = '<li>'+ str +'<i class="icon-remove"></i></li>';
 	    	$('.condition-list').append(tagStr);
+	    	$('.condition-list i').off('click', function() {
+				$(this).parent().remove();
+			})
+	    	$('.condition-list i').on('click', function() {
+				$(this).parent().remove();
+			})
+
 	    }
 
 	    function setTag() {
