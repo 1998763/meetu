@@ -71,6 +71,15 @@ dd.setting {
     width: 120px;
 }
 
+.order-link.birthday {
+    padding: 0;
+}
+
+.order-link.birthday div {
+    padding: 12px 0;
+}
+
+
 .order-box dd .icon-male,
 .order-box dd .icon-female {
     display: inline-block;
