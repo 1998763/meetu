@@ -84,12 +84,12 @@
 .filter-list li,
 .filter-date {
 	float: left;
-	width: 88px;
+	width: 27.67%;
 	height: 18px;
 	line-height: 18px;
 	border: 1px solid #dcdcdc;
 	border-radius: 10px;
-	margin: 10px 0 7px 16px;
+	margin: 10px 0 7px 5.03%;
 	text-align: center;
 	font-size: 12px;
 	color: #5d9cec;
