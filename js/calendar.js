@@ -126,7 +126,7 @@
             } else {
                 lis += "<li><a id='not_click' style='color:#ccc;' title=''>"+i+"</a></li>";
             }
-            
+
             // 周六
             if (new Date(date[0],date[1]-1,date[2]).getDay() == "6") {
                 lis += "</ul>";
@@ -172,7 +172,7 @@
             calendar.show();
             return false;
         };
-        var calendarObj = document.createElement("span");
+        var calendarObj = document.createElement("div");
         calendarObj.id = "calendar";
         calendarObj.innerHTML = HS_calendar(new Date());
         paNode.parentNode.insertBefore(calendarObj,paNode);
