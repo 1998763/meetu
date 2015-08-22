@@ -333,7 +333,10 @@
             	districtCallback: function() {
         			var city = $('#city-node .active').attr('data-value');
         			var district = $('#district-node .active').attr('data-value');
-        			console.log(city,district);
+        			$('.js-place').val(city + ' ' + district);
+					setTimeout(function() {
+						$('.cover-all, .date-bottom').hide();
+					}, 0);
             	}
             });
 
