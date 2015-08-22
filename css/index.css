@@ -76,7 +76,8 @@
 .hot-list,
 .filter-list,
 .filter-form {
-	margin-left: -16px;
+	margin-left: -5.03%;
+	/*margin-left: -16px;*/
 	overflow: hidden;
 }
 
@@ -451,4 +452,8 @@
 	border-radius: 3px;
 	margin: 18px 0;
 	color: #fff;
+}
+
+.date-bottom .condition-list {
+	border-top: 1px solid #dcdcdc;
 }
