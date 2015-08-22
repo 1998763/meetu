@@ -237,7 +237,7 @@ dd.setting em:nth-child(3n) {
 /* pull.html */
 
 .guide-list {
-  margin: 10px 0 0;
+    margin: 15px 0 20px;
 }
 
 .guide-list li {
