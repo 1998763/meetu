@@ -9,13 +9,11 @@
 	<meta name="x5-fullscreen" content="true">
 	<link rel="stylesheet" href="css/g.css">
 
-    <link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
-    <link href="css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
-
-    <link href="css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
-	<link href="css/mobiscroll.android-holo-light.css" rel="stylesheet" type="text/css" />
-	
-    <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
+	<link href="mobiscroll/css/mobiscroll.android-holo-light.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<header>
@@ -58,6 +56,7 @@
 			<div class="row mg0">
 				<div class="input-box select-box">
 					<input readonly type="text" class="form-input date-time" placeholder="什么时候去...">
+					<input type="hidden" class="js-time">
 				</div>
 			</div>
 			<div class="row">
@@ -248,7 +247,7 @@
 	<script src="js/distpicker.data.min.js"></script>
 	<script src="js/distpicker.js"></script>
 	<script>
-		 var calendar = {
+		var calendar = {
 	    	show : function() {
 	    		$('.cover-all,.calendar').show();
 	    		$('.cover-all').one('click', this.hide);
@@ -351,5 +350,25 @@
 
 		});
 	</script>
+
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.frame.js"></script>
+    <script src="js/mobiscroll.scroller.js"></script>
+    <script src="js/mobiscroll.i18n.zh.js"></script>
+    <script src="js/mobiscroll.util.datetime.js"></script>
+    <script src="js/mobiscroll.datetimebase.js"></script>
+    <script src="js/mobiscroll.datetime.js"></script>
+    <script src="js/mobiscroll.android-holo-light.js"></script>
+
+    <script type="text/javascript">
+    	$('.js-time').mobiscroll().time({
+    	    theme: 'android-holo-light',
+    	    mode: 'scroller',
+    	    display: 'bottom',
+    	    lang: 'zh',
+    	    demo: 'time'
+    	});
+    	$('.js-time').trigger('click');
+    </script>
 </body>
 </html>

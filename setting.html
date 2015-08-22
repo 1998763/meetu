@@ -8,6 +8,12 @@
 	<meta name="full-screen" content="yes">
 	<meta name="x5-fullscreen" content="true">
 	<link rel="stylesheet" href="css/g.css">
+
+    <link href="mobiscroll/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
+	<link href="mobiscroll/css/mobiscroll.android-holo-light.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<header>
@@ -42,7 +48,8 @@
 		</dl>
 		<dl>
 			<dt>出生年月</dt>
-			<dd class="order-link">1985-06-07</dd>
+			<dd class="order-link js-birthday">1985-06-07</dd>
+			<input type="hidden" id="js-birthday">
 		</dl>
 		<a href="#">
 			<dl>
@@ -169,6 +176,14 @@
 	</div>
 
 	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.frame.js"></script>
+    <script src="js/mobiscroll.scroller.js"></script>
+    <script src="js/mobiscroll.i18n.zh.js"></script>
+    <script src="js/mobiscroll.util.datetime.js"></script>
+    <script src="js/mobiscroll.datetimebase.js"></script>
+    <script src="js/mobiscroll.datetime.js"></script>
+    <script src="js/mobiscroll.android-holo-light.js"></script>
 	<script>
 
 	    function showBottom(which) {
@@ -191,9 +206,20 @@
 				$('.cover-all,.date-bottom').hide();
 			})
 
-			$('#btn-mobile').on('click', function(){
+			$('#js-birthday').mobiscroll().date({
+	    	    theme: 'android-holo-light',     // Specify theme like: theme: 'ios' or omit setting to use default 
+	    	    mode: 'scroller',       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+	    	    display: 'bottom', // Specify display mode like: display: 'bottom' or omit setting to use default 
+	    	    lang: 'zh'        // Specify language like: lang: 'pl' or omit setting to use default 
+	    	});
 
-			})
+	    	$('.js-birthday').on('click', function() {
+	    		$('#js-birthday').trigger('click');
+	    	});
+
+	    	$('#js-birthday').on('change', function() {
+	    		$('.js-birthday').text($('#js-birthday').val().replace(/\//g,'-'));
+	    	});
 		});
 	</script>
 </body>
