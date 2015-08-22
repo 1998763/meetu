@@ -38,7 +38,7 @@
 			<div class="row">
 				<div class="span6 form-box">
 					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-city" class="form-input js-bottom" placeholder="行程地点">
+						<input readonly type="text" data-id="js-place" class="form-input js-bottom" placeholder="行程地点">
 					</div>
 				</div>
 				<div class="span6 form-box">
@@ -178,19 +178,19 @@
 	<div id="before"></div>
 
 	<div class="date-bottom">
-		<div class="js-city">
+		<div class="js-place">
 			<h3>请选择行程所在的城市</h3>
-			<ul class="filter-list">
-				<li>北京</li>
-				<li>上海</li>
-				<li>深圳</li>
-				<li>广州</li>
-				<li>杭州</li>
-				<li>青岛</li>
-				<li>哈尔滨</li>
-				<li>成都</li>
-				<li>厦门</li>
-			</ul>
+			<div class="distpicker date-distpicker">
+				<ul id="city-node" class="filter-list">
+					<li data-value="北京市" data-zipcode="110100">北京市</li>
+					<li data-value="上海市" data-zipcode="310100">上海市</li>
+					<li data-value="广州市" data-zipcode="440100">广州市</li>
+					<li data-value="深圳市" data-zipcode="440300">深圳市</li>
+					<li data-value="杭州市" data-zipcode="330100">杭州市</li>
+					<li data-value="成都市" data-zipcode="510100">成都市</li>
+				</ul>
+				<ul id="district-node" class="filter-list"></ul>
+			</div>
 		</div>
 		<div class="js-pay">
 			<h3>请选择行程付费方式</h3>
@@ -214,6 +214,15 @@
 				<li>没事</li>
 				<li>没事</li>
 			</ul>
+			<ul class="condition-list">
+			</ul>
+			<div class="row">
+				<div class="span form-box" style="width: 80%">
+					<input id="add-text" type="tel" class="form-input mg0">
+				</div>
+				<div id="add-submit" class="submit bg-blue">提交</div>
+			</div>
+			<div id="tag-submit" class="button bg-blue">确定</div>
 		</div>
 	</div>
 
@@ -323,6 +332,8 @@
 	</script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/calendar.js"></script>
+	<script src="js/distpicker.data.min.js"></script>
+	<script src="js/distpicker.js"></script>
 	<script>
 		 var calendar = {
 	    	show : function() {
@@ -345,6 +356,25 @@
 	    		$('.cover-all,.date-bottom').hide();
 	    	});
 	    };
+
+	    function addTag(str) {
+	    	for (var i = 0; i < $('.condition-list li').length; i++) {
+	    		if (str == $('.condition-list li').eq(i).text())
+	    			return;
+	    	};
+	    	var tagStr = '<li>'+ str +'<i class="icon-remove"></i></li>';
+	    	$('.condition-list').append(tagStr);
+	    }
+
+	    function setTag() {
+	    	var str = '';
+	    	var count = $('.condition-list li').length;
+	    	for (var i = 0; i < count; i++) {
+	    		str += $('.condition-list li').eq(i).text();
+	    		if (i !== count - 1) str += '、';
+	    	};
+	    	$('input[data-id="js-tag"]').val(str);
+	    }
 
 		// 日历选择
 		function selectday_title(d){
@@ -382,13 +412,16 @@
 				$('.calendar').append(str);
 			})
 
+			// 弹出选项
 			$('.js-bottom').on('click', function(){
 				showBottom($(this).data('id'));
 			})
 
-			$('.filter-list li').on('click',function(){
+			// 选项选择
+			$('.filter-list:not(#city-node,.tag) li').on('click',function(){
 				var id = $(this).parent().parent().attr('class');
 				$(this).addClass('active').siblings().removeClass('active');
+				if ($(this).parent().hasClass('tag')) return;
 				$('.js-bottom[data-id="'+id+'"]').val($(this).text());
 				$('.cover-all,.date-bottom').hide();
 			})
@@ -396,6 +429,45 @@
 			$('.release-box dd em').on('click',function(){
 				$(this).addClass('active').siblings().removeClass('active');
 			})
+
+			// 标签delete
+			$('.condition-list i').on('click', function() {
+				$(this).parent().remove();
+			})
+
+			// 增加标签
+			$('.filter-list.tag li').on('click', function() {
+				$(this).addClass('active');
+				addTag($(this).text());
+			})
+			$('#add-submit').on('click', function() {
+				addTag($('#add-text').val());
+			})
+
+			// 标签确认
+			$('#tag-submit').on('click', function() {
+				setTag();
+				$('.cover-all,.date-bottom').hide();
+			})
+
+			// 地区
+			$('.distpicker').distpicker({
+            	placeholder: false,
+            	provinceCallback: function(province) {
+            		//$('#city-node');
+            	},
+            	cityCallback: function() {
+            		$('#city-node').hide();
+            	},
+            	districtCallback: function() {
+        			var city = $('#city-node .active').attr('data-value');
+        			var district = $('#district-node .active').attr('data-value');
+        			$('input[data-id="js-place"]').val(city + ' ' + district);
+					setTimeout(function() {
+						$('.cover-all, .date-bottom').hide();
+					}, 0);
+            	}
+            });
 		});
 	</script>
 </body>
