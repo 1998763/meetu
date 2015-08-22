@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>账户设置</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<link rel="stylesheet" href="css/g.css">
+</head>
+<body>
+	<header>
+		<a href="javascript:history.back();" class="icon-back left"></a>
+		<h1>约游</h1>
+		<a class="icon-ring right"><i class="icon-red">9</i></a>
+	</header>
+	<div class="order-box setting">
+		<a href="#">
+			<dl>
+				<dt>个性头像</dt>
+				<dd class="order-link">
+					<div class="fr face setting">
+						<img src="https://avatars1.githubusercontent.com/u/10151065?v=3&amp;s=460">
+					</div>
+				</dd>
+			</dl>
+		</a>
+	</div>
+	<div class="order-box mt8">
+		<dl>
+			<dt>姓名</dt>
+			<dd class="order-link js-bottom" data-id="js-name">Snk_Yip</dd>
+		</dl>
+		<dl>
+			<dt>昵称</dt>
+			<dd class="order-link js-bottom" data-id="js-nick">snoopydogg</dd>
+		</dl>
+		<dl>
+			<dt>手机号</dt>
+			<dd class="order-link js-bottom" data-id="js-mobile">15802021754</dd>
+		</dl>
+		<dl>
+			<dt>出生年月</dt>
+			<dd class="order-link">1985-06-07</dd>
+		</dl>
+		<a href="#">
+			<dl>
+				<dt>邮箱</dt>
+				<dd class="order-link">snoopydogg@qq.com</dd>
+			</dl>
+		</a>
+	</div>
+	<div class="order-box mt8">
+		<dl>
+			<dt>个性签名</dt>
+			<dd class="order-link js-bottom" data-id="js-sign">07月30日&emsp;20:00~23:30</dd>
+		</dl>
+		<dl>
+			<dt>行业</dt>
+			<dd class="order-link js-bottom" data-id="js-industry">IT行业</dd>
+		</dl>
+		<dl>
+			<dt>职业</dt>
+			<dd class="order-link js-bottom" data-id="js-occupation">设计师</dd>
+		</dl>
+		<dl>
+			<dt>现在所在城市</dt>
+			<dd class="order-link js-bottom" data-id="js-city">广州</dd>
+		</dl>
+	</div>
+	<div class="order-box mt8">
+		<dl>
+			<dt>兴趣爱好</dt>
+			<dd class="order-link js-bottom" data-id="js-hobby">电影、旅游、养猫</dd>
+		</dl>
+		<dl>
+			<dt>常出没地</dt>
+			<dd class="order-link js-bottom" data-id="js-place">天河北、天娱广场</dd>
+		</dl>
+		<a href="#">
+			<dl>
+				<dt>个性标签</dt>
+				<dd class="order-link setting">
+					<em>设计师</em>
+					<em>萌胖子</em>
+					<em>萌胖子</em>
+					<em>萌胖子</em>
+					<em>萌胖子</em>
+					<em>萌胖子就是我</em>
+				</dd>
+			</dl>
+		</a>
+	</div>
+	<div class="order-box mt8">
+		<a href="#" class="order-link">
+			修改密码
+		</a>
+	</div>
+
+	<div style="height: 38px"></div>
+	<div class="button-bottom bg-red">退出</div>
+
+	<!-- 背景 -->
+	<div class="cover-all"></div>
+	<div class="date-bottom">
+		<div class="js-name">
+			<h3>请修改姓名</h3>
+			<input type="tel" class="form-input">
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-nick">
+			<h3>请修改昵称</h3>
+			<input type="tel" class="form-input">
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-mobile">
+			<h3>请修改手机号码</h3>
+			<div class="row">
+				<div class="span form-box">
+					<input type="tel" class="form-input mg0">
+				</div>
+				<div class="span6 form-box" style="width: 60%">
+					<input type="tel" class="form-input">
+				</div>
+				<div class="fl send bg-blue">发送验证码</div>
+			</div>
+			<div id="buttom-mobile" class="button bg-blue">确定</div>
+		</div>
+		<div class="js-sign">
+			<h3>请修改个性签名</h3>
+			<input type="tel" class="form-input">
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-place">
+			<h3>请修改常出没地</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-industry">
+			<h3>请修改行业</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-occupation">
+			<h3>请修改职业</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-city">
+			<h3>请修改现居所在城市</h3>
+			<ul class="filter-list">
+				<li>北京</li>
+				<li>上海</li>
+				<li>深圳</li>
+				<li class="active">广州</li>
+				<li>杭州</li>
+				<li>青岛</li>
+				<li>哈尔滨</li>
+				<li>成都</li>
+				<li>厦门</li>
+			</ul>
+		</div>
+		<div class="js-hobby">
+			<h3>请修改爱好</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+
+	    function showBottom(which) {
+	    	$('.cover-all,.date-bottom').show();
+	    	$('.' + which).show().siblings().hide();
+	    	$('.cover-all').one('click', function(){
+	    		$('.cover-all,.date-bottom').hide();
+	    	});
+	    };
+
+	    $(function(){
+			$('.js-bottom').on('click', function(){
+				showBottom($(this).data('id'));
+			})
+
+			// $('.filter-list li').on('click',function(){
+			// 	var id = $(this).parent().parent().attr('class');
+			// 	$(this).addClass('active').siblings().removeClass('active');
+			// 	$('.js-bottom[data-id="'+id+'"]').text($(this).text());
+			// 	$('.cover-all,.date-bottom').hide();
+			// })
+
+			$('#btn-mobile').on('click', function(){
+
+			})
+		});
+	</script>
+</body>
+</html>
