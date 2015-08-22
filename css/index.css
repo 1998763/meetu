@@ -401,6 +401,7 @@
 }
 
 .date-bottom {
+	display: none;
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -410,7 +411,7 @@
 	background: #f2f2f2
 }
 
-.date-bottom div {
+.date-bottom > div {
 	display: none;
 }
 
