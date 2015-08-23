@@ -8,6 +8,11 @@
 	<meta name="full-screen" content="yes">
 	<meta name="x5-fullscreen" content="true">
 	<link rel="stylesheet" href="css/g.css">
+	<link href="mobiscroll/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
+	<link href="mobiscroll/css/mobiscroll.android-holo-light.css" rel="stylesheet" type="text/css" />
+    <link href="mobiscroll/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<header>
@@ -30,15 +35,16 @@
 		</dl>
 		<dl>
 			<dt>手机号</dt>
-			<dd class="order-link order-placehoder">请你输入您的手机号</dd>
+			<dd class="order-link order-placehoder js-bottom" data-id="js-mobile">请你输入您的手机号</dd>
 		</dl>
 		<dl>
 			<dt>出生年月</dt>
-			<dd class="order-link order-placehoder">请输入您的出生年月</dd>
+			<dd class="order-link order-placehoder js-birthday">请输入您的出生年月</dd>
+			<input type="hidden" id="js-birthday">
 		</dl>
 		<dl>
 			<dt>性别</dt>
-			<dd class="order-link">男</dd>
+			<dd class="order-link js-bottom" data-id="js-sex">男</dd>
 		</dl>
 	</div>
 
@@ -49,7 +55,7 @@
 		</dl>
 		<dl>
 			<dt>行业</dt>
-			<dd class="order-link order-placehoder">请选择您的行业</dd>
+			<dd class="order-link order-placehoder js-bottom" data-id="js-industry">请选择您的行业</dd>
 		</dl>
 		<dl>
 			<dt>职业</dt>
@@ -57,7 +63,7 @@
 		</dl>
 		<dl>
 			<dt>现在所在城市</dt>
-			<dd class="order-link order-placehoder">请选择您现在所在城市</dd>
+			<dd class="order-link order-placehoder js-bottom" data-id="js-city">请选择您现在所在城市</dd>
 		</dl>
 	</div>
 
@@ -73,7 +79,7 @@
 		</dl>
 		<dl>
 			<dt>个性标签</dt>
-			<dd class="order-link order-placehoder">请您选择符合自己的标签</dd>
+			<dd class="order-link order-placehoder js-bottom" data-id="js-tag">请您选择符合自己的标签</dd>
 		</dl>
 	</div>
 
@@ -82,6 +88,203 @@
 
 	<div style="height: 38px"></div>
 	<div class="button-bottom bg-red">提 交</div>
+
+
+	<!-- 背景 -->
+	<div class="cover-all"></div>
+	<div class="date-bottom">
+		<div class="js-name">
+			<h3>请修改姓名</h3>
+			<input type="tel" class="form-input">
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-nick">
+			<h3>请修改昵称</h3>
+			<input type="tel" class="form-input">
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-mobile">
+			<h3>请修改手机号码</h3>
+			<div class="row">
+				<div class="span form-box">
+					<input type="tel" class="form-input mg0">
+				</div>
+				<div class="span6 form-box" style="width: 60%">
+					<input type="tel" class="form-input">
+				</div>
+				<div class="send bg-blue">发送验证码</div>
+			</div>
+			<div id="button-mobile" class="button bg-blue">确定</div>
+		</div>
+		<div class="js-sign">
+			<h3>请修改个性签名</h3>
+			<input type="tel" class="form-input">
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-place">
+			<h3>请修改常出没地</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-industry">
+			<h3>请修改行业</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-occupation">
+			<h3>请修改职业</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-city">
+			<h3>请修改现居所在城市</h3>
+			<ul class="filter-list js-filter-list">
+				<li>北京</li>
+				<li>上海</li>
+				<li>深圳</li>
+				<li class="active">广州</li>
+				<li>杭州</li>
+				<li>青岛</li>
+				<li>哈尔滨</li>
+				<li>成都</li>
+				<li>厦门</li>
+			</ul>
+		</div>
+		<div class="js-hobby">
+			<h3>请修改爱好</h3>
+			<input type="text" class="form-input"></input>
+			<div class="button bg-blue">确定</div>
+		</div>
+		<div class="js-sex">
+			<h3>请选择导游性别</h3>
+			<ul class="filter-list js-filter-list">
+				<li class="active">男</li>
+				<li>女</li>
+				<li>保密</li>
+			</ul>
+		</div>
+		<div class="js-tag">
+			<h3>请选择或输入<span class="fr">可多选</span></h3>
+			<ul class="filter-list tag">
+				<li>历史</li>
+				<li>天河区</li>
+				<li>电影</li>
+				<li>没事</li>
+				<li>20~25岁</li>
+				<li>没事</li>
+				<li>没事</li>
+				<li>没事</li>
+				<li>没事</li>
+				<li>没事</li>
+			</ul>
+			<ul class="condition-list">
+			</ul>
+			<div class="row">
+				<div class="span form-box" style="width: 80%">
+					<input id="add-text" type="tel" class="form-input mg0">
+				</div>
+				<div id="add-submit" class="submit bg-blue">提交</div>
+			</div>
+			<div id="tag-submit" class="button bg-blue">确定</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.frame.js"></script>
+    <script src="js/mobiscroll.scroller.js"></script>
+    <script src="js/mobiscroll.i18n.zh.js"></script>
+    <script src="js/mobiscroll.util.datetime.js"></script>
+    <script src="js/mobiscroll.datetimebase.js"></script>
+    <script src="js/mobiscroll.datetime.js"></script>
+    <script src="js/mobiscroll.android-holo-light.js"></script>
+	<script>
+
+		function showBottom(which) {
+			$('.cover-all,.date-bottom').show();
+			$('.' + which).show().siblings().hide();
+			$('.cover-all').one('click', function(){
+				$('.cover-all,.date-bottom').hide();
+			});
+		};
+
+		function addTag(str) {
+	    	for (var i = 0; i < $('.condition-list li').length; i++) {
+	    		if (str == $('.condition-list li').eq(i).text())
+	    			return;
+	    	};
+	    	var tagStr = '<li>'+ str +'<i class="icon-remove"></i></li>';
+	    	$('.condition-list').append(tagStr);
+	    	$('.condition-list i').off('click', function() {
+				$(this).parent().remove();
+			})
+	    	$('.condition-list i').on('click', function() {
+				$(this).parent().remove();
+			})
+
+	    }
+
+	    function setTag() {
+	    	var str = '';
+	    	var count = $('.condition-list li').length;
+	    	for (var i = 0; i < count; i++) {
+	    		str += $('.condition-list li').eq(i).text();
+	    		if (i !== count - 1) str += '、';
+	    	};
+	    	$('[data-id="js-tag"]').text(str);
+	    }
+
+
+		$(function() {
+			$('.js-bottom').on('click', function(){
+				showBottom($(this).data('id'));
+			})
+
+			$('#js-birthday').mobiscroll().date({
+	    	    theme: 'android-holo-light',     // Specify theme like: theme: 'ios' or omit setting to use default
+	    	    mode: 'scroller',       // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+	    	    display: 'bottom', // Specify display mode like: display: 'bottom' or omit setting to use default
+	    	    lang: 'zh'        // Specify language like: lang: 'pl' or omit setting to use default
+	    	});
+
+			$('.js-birthday').on('click', function() {
+	    		$('#js-birthday').trigger('click');
+	    	});
+
+	    	$('#js-birthday').on('change', function() {
+	    		$('.js-birthday').text($('#js-birthday').val().replace(/\//g,'-'));
+	    	});
+
+			$('.js-filter-list li').on('click',function(){
+				var id = $(this).parent().parent().attr('class');
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.js-bottom[data-id="'+id+'"]').text($(this).text());
+				$('.cover-all,.date-bottom').hide();
+			})
+
+			// 标签delete
+			$('.condition-list i').on('click', function() {
+				$(this).parent().remove();
+			})
+
+			// 增加标签
+			$('.filter-list.tag li').on('click', function() {
+				$(this).addClass('active');
+				addTag($(this).text());
+			})
+			$('#add-submit').on('click', function() {
+				addTag($('#add-text').val());
+			})
+
+			// 标签确认
+			$('#tag-submit').on('click', function() {
+				setTag();
+				$('.cover-all,.date-bottom').hide();
+			})
+
+		});
+	</script>
 
 
 
