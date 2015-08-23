@@ -30,6 +30,7 @@
     padding: 12px 0;
     border-bottom: 1px solid #dcdcdc;
     color: #414141;
+    position: relative;
 }
 
 .order-box dl:last-child dd {
