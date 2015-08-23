@@ -49,7 +49,7 @@
 				</div>
 				<div class="span6 form-box">
 					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-place" class="form-input js-place" placeholder="约游地点">
+						<input readonly type="text" data-id="js-place" class="form-input js-place-btn" placeholder="约游地点">
 					</div>
 				</div>
 			</div>
@@ -227,7 +227,7 @@
 		<div class="js-place">
 			<h3>请选择行程所在的区域</h3>
 			<div class="distpicker date-distpicker">
-			<ul id="city-node" class="filter-list">
+			<ul id="city-node" class="hot-list">
 				<li data-value="北京市" data-zipcode="110100">北京市</li>
 				<li data-value="上海市" data-zipcode="310100">上海市</li>
 				<li data-value="广州市" data-zipcode="440100">广州市</li>
@@ -235,7 +235,7 @@
 				<li data-value="杭州市" data-zipcode="330100">杭州市</li>
 				<li data-value="成都市" data-zipcode="510100">成都市</li>
 			</ul>
-			<ul id="district-node" class="filter-list"></ul>
+			<ul id="district-node" class="hot-list"></ul>
 		</div>
 	</div>
 
@@ -325,9 +325,15 @@
 				showBottom($(this).data('id'));
 			})
 
-			$('.js-place').on('click', function(){
+			$('.js-place-btn').on('click', function(){
 				showBottom($(this).data('id'));
+				$('#city-node').show();
+				$('#district-node').empty();
 			})
+
+			// $('#city-node li').on('click', function() {
+			// 	$('#city-node').hide();
+			// });
 
 			$('.distpicker').distpicker({
             	placeholder: false,
@@ -340,7 +346,7 @@
             	districtCallback: function() {
         			var city = $('#city-node .active').attr('data-value');
         			var district = $('#district-node .active').attr('data-value');
-        			$('.js-place').val(city + ' ' + district);
+        			$('.js-place-btn').val(city + ' ' + district);
 					setTimeout(function() {
 						$('.cover-all, .date-bottom').hide();
 					}, 0);
