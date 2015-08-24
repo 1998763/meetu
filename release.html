@@ -32,15 +32,15 @@
 					</div>
 					<div class="span6 form-box">
 						<div class="input-box payWay">
-							<input type="text" class="form-input" placeholder="行程费用">
+							<input type="text" class="form-input" value="&yen;500">
 						</div>
 						<div class="input-box payWay" style="display: none">
-							<input type="text" class="form-input" placeholder="&yen;50/小时">
+							<input type="text" class="form-input" value="&yen;50/小时">
 						</div>
 						<div class="payWay fl" style="margin: 0 -5px; display: none">
 							<div class="span6" style="padding: 0 5px;">
 								<div class="input-box">
-									<input type="text" class="form-input" placeholder="&yen;50/人">
+									<input type="text" class="form-input" value="&yen;50/人">
 								</div>
 							</div>
 							<div class="span6" style="padding: 0 5px;">
@@ -474,8 +474,12 @@
 				$('.cover-all,.date-bottom').hide();
 			})
 
-			$('.release-box dd em').on('click',function(){
+			$('.release-box:not(.release-expense) dd em').on('click',function(){
 				$(this).addClass('active').siblings().removeClass('active');
+			})
+
+			$('.release-expense dd em').on('click',function(){
+				$(this).toggleClass('active');
 			})
 
 			// 标签delete
