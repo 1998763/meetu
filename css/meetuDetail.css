@@ -188,7 +188,7 @@
 }
 
 .comment-box-head {
-  padding: 8px;
+  padding: 12px 8px;
   position: relative;
 }
 
@@ -720,4 +720,18 @@
 
 .order-box dl:last-child .order-input {
     border-bottom: 1px solid #dcdcdc;
+}
+
+@-webkit-keyframes rotate{
+0%{ -webkit-transform:rotate(0deg);}
+	100%{-webkit-transform:rotate(-360deg);}
+}
+
+@keyframes rotate{
+0%{ -webkit-transform:rotate(0deg);}
+	100%{-webkit-transform:rotate(-360deg);}
+}
+
+.searching-box {
+
 }
