@@ -114,14 +114,14 @@
                 lis += "<li><a id='not_click' style='color:#fff; background:#ed5565' title=''>"+i+"</a></li>";
             // 今天
             } else if (today == now.getFullYear() + "-" + now.getMonth() + "-" + i) {
-                lis += "<li><a id='date_select' href='javascript:void(0)' class='today' onclick='selectday_title(this)' title='"+ thisStr +"'>今日</a></li>";
+                lis += "<li><a href='javascript:void(0)' class='today' onclick='selectday_title(this)' title='"+ thisStr +"'>今日</a></li>";
             // 明天
             } else if (today == now.getFullYear() + "-" + now.getMonth() + "-" + (i - 1)) {
-                lis += "<li><a id='date_select' href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>明日</a></li>";
+                lis += "<li><a href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>明日</a></li>";
             }
             // 今明 以后
             else if (timeArr[0] < now.getFullYear() || (timeArr[0] == now.getFullYear() && timeArr[1] < now.getMonth()) || (timeArr[0] == now.getFullYear() && timeArr[1] == now.getMonth() && parseInt(timeArr[2]) + 1 < i)) {
-                lis += "<li><a id='date_select' href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>"+i+"</a></li>";
+                lis += "<li><a href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>"+i+"</a></li>";
             // 以前
             } else {
                 lis += "<li><a id='not_click' style='color:#ccc;' title=''>"+i+"</a></li>";
@@ -157,9 +157,6 @@
         if(s){return true;}
         else {return false;}
     }
-        
-    var last_title = ""; //开始日期
-    var title = ""; //结束日期
 
     //选择此年份
     function selectThisYear(obj){
