@@ -209,6 +209,9 @@
 	<script src="js/swipe.min.js"></script>
     <script src="js/calendar.js"></script>
     <script>
+    	var title = ''; // 选择日期
+    	var last_elm = ''; // 上次打开选择的日期
+
 	    var calendar = {
 	    	show : function() {
 	    		filter.hide();
@@ -283,10 +286,10 @@
 		// 日历选择
 		function selectday_title(d){
 			var week_day = "";
-	        if(last_title>""){
-	            last_title.id = "";
-	            last_title.style.background = "";
-	            last_title.style.color = "";
+	        if(last_elm>""){
+	            last_elm.id = "";
+	            last_elm.style.background = "";
+	            last_elm.style.color = "";
 	        };
 	            d.style.background = "#48cfad";
 	            d.style.color = "#fff";
@@ -301,7 +304,7 @@
 	            if (judge == 4) {week_day = "星期四"};
 	            if (judge == 5) {week_day = "星期五"};
 	            if (judge == 6) {week_day = "星期六"};
-	            last_title = d;
+	            last_elm = d;
 	            calendar.appendDate(week_day);
 	    }
 
