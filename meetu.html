@@ -129,7 +129,7 @@
 				<li>都行</li>
 			</ul>
 		</div> -->
-		<div style="height: 38px"></div>
+		<div style="height: 48px"></div>
 		<div id="confirm" class="button-bottom bg-blue">确定</div>
 	</div>
 
@@ -242,12 +242,15 @@
 	    	show : function() {
 	    		//var h = $('body').height() - $('.filter-box').height();
 	    		//$('.filter-box').css('top', h);
+	    		$('.filter-box').height($(window).height());
+	    		$('body').height($(window).height()).css('overflow','hidden');
 	    		$('.cover-all,.filter-box').show();
 	    		$('.cover-all').one('click', this.hide);
 	    	},
 	    	hide : function() {
 	    		$('.cover-all,.filter-box,.calendar').hide();
-	    		$(window).scrollTop(0);
+	    		$('body').height('auto').css('overflow','visible');
+	    		headerDown.hide(1);
 	    	}
 	    };
 
@@ -265,7 +268,7 @@
 	    		}
 	    		$('.header-down').eq(index).show().siblings('.header-down').hide();
 	    		$('.cover-body').one('click', function() {headerDown.hide(index)});
-	    		$(window).scrollTop(0);
+	    		$('body').height($(window).height()).css('overflow','hidden');
 	    	},
 	    	hide : function(index) {
 	    		$('.cover-body,.header-down:eq(' + index + ')').hide();
@@ -273,6 +276,7 @@
 	    			$('#btn-search').hide();
 	    			$('#btn-menu').show();
 	    		};
+	    		$('body').height('auto').css('overflow','visible');
 	    	}
 	    };
 
@@ -362,9 +366,17 @@
 			})
 
 			// 禁止滚动
-			$(document).on('touchmove',function(e){
-				if($('.header-down:visible').length && $('.filter-box:hidden').length) e.preventDefault();
-			});
+			// $(document).on('touchmove',function(e){
+			// 	var wt = $(window).scrollTop();
+				// if ($('.header-down:visible').length && $('.filter-box:hidden').length) e.preventDefault();
+				// if ($('.filter-box:visible').length) e.preventDefault();
+			// });
+			// $('.filter-box').on('touchmove',function(e){
+			// 	e.preventDefault();
+				// console.log(e);
+			// 	e.bubbles = false;
+			// 	console.log(e);
+			// })
 
 		    // 日历
 		    $(".filter-date").on('click',function(e){
