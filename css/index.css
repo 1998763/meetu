@@ -179,11 +179,12 @@
 .filter-box {
 	display: none;
 	position: absolute;
-	top: 150px;
+	top: 0px;
 	right: 0;
 	left: 0;
 	z-index: 100;
 	padding: 9px 9px 0;
+	overflow: scroll;
 	background: #f2f2f2;
 }
 
