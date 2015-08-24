@@ -102,7 +102,6 @@
             if (typeof(busyDays)!=='undefined') {
                 var busyBool = false;
                 $.each(busyDays, function(index, data) {
-                    console.log(thisStr);
                     if (data == thisStr) {
                         busyBool = true;
                         return false;
