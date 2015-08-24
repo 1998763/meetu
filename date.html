@@ -8,12 +8,22 @@
 	<meta name="full-screen" content="yes">
 	<meta name="x5-fullscreen" content="true">
 	<link rel="stylesheet" href="css/g.css">
+	<style>
+		.js-time {
+			position: absolute;
+			left: 137px;
+			top: 11px;
+			width: 120px;
+		}
+		.date-time {
+			position: relative;
+			z-index: 2;
+			background: transparent;
+			border-bottom: none;
+		}
+	</style>
 
-    <link href="mobiscroll/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
-    <link href="mobiscroll/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
-    <link href="mobiscroll/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
-	<link href="mobiscroll/css/mobiscroll.android-holo-light.css" rel="stylesheet" type="text/css" />
-    <link href="mobiscroll/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/mobiscroll.custom-2.16.1.min.css">
 </head>
 <body>
 	<header>
@@ -56,7 +66,7 @@
 			<div class="row mg0">
 				<div class="input-box select-box">
 					<input readonly type="text" class="form-input date-time" placeholder="什么时候去...">
-					<input type="hidden" class="js-time">
+					<input type="text" class="js-time" id="js-time">
 				</div>
 			</div>
 			<div class="row">
@@ -258,6 +268,7 @@
 	    	appendDate : function(week_day) {
 				$('.date-time').val(title + ' ' + week_day);
     			calendar.hide();
+				$('#js-time').trigger('click');
 	    	}
 	    };
 
@@ -357,24 +368,28 @@
 		});
 	</script>
 
-    <script src="js/mobiscroll.core.js"></script>
-    <script src="js/mobiscroll.frame.js"></script>
-    <script src="js/mobiscroll.scroller.js"></script>
-    <script src="js/mobiscroll.i18n.zh.js"></script>
-    <script src="js/mobiscroll.util.datetime.js"></script>
-    <script src="js/mobiscroll.datetimebase.js"></script>
-    <script src="js/mobiscroll.datetime.js"></script>
-    <script src="js/mobiscroll.android-holo-light.js"></script>
+    <script src="js/mobiscroll.custom-2.16.1.min.js"></script>
 
     <script type="text/javascript">
-    	$('.js-time').mobiscroll().time({
+    	$('#js-time').mobiscroll().range({
     	    theme: 'android-holo-light',
     	    mode: 'scroller',
     	    display: 'bottom',
+			controls: ['time'],
     	    lang: 'zh',
     	    demo: 'time'
     	});
-    	$('.js-time').trigger('click');
+
+		$('.dwb-s').on('click', function() {
+			var text = $('.date-time').val();
+			console.log(text + $('#js-time').val());
+			$('.date-time').val(text + $('#js-time').val());
+
+		});
+
+
+
+    	//$('.js-time').trigger('click');
     </script>
 </body>
 </html>

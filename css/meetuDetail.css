@@ -464,14 +464,14 @@
 .mt-xc-pd-main p {
     font-size: 10px;
     color: #888;
-    overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    display: box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    height: 28px;
     position: relative;
+    box-sizing: border-box;
+    height: 24px;
+    overflow: hidden;
 }
 
 .mt-xc-pd-main span {
@@ -716,4 +716,8 @@
     padding: 6px 0 0 9px;
     font-size: 10px;
     color: #ccc;
+}
+
+.order-box dl:last-child .order-input {
+    border-bottom: 1px solid #dcdcdc;
 }
