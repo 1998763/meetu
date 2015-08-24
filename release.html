@@ -358,9 +358,9 @@
 	<div style="height: 38px"></div>
 	<a class="button-bottom bg-blue">确定</a>
 	
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		var busyDays = ['2015-07-23','2015-08-22'];
-	</script>
+	</script>-->
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/calendar.js"></script>
 	<script src="js/distpicker.data.min.js"></script>
@@ -374,10 +374,29 @@
 	    	hide : function() {
 	    		$('.calendar,.cover-all').hide();
 	    	},
-	    	appendDate : function(week_day) {
-				$('.date-time').val(title + ' ' + week_day);	    		
+	    	reset : function() {
+	    		$.each(calendar.arr, function(i, v) {
+	    			$('[title="'+v[0]+'"]').css({'background':'','color':''})
+	    		})
+	    		calendar.arr = [];
+	    		$('.date-time').val('');
+	    	},
+	    	appendDate : function() {
+				var str = '';
+				for (var i = 0; i <= calendar.arr.length - 1; i++) {
+					if (i != 0) str += '，';
+					str += calendar.arr[i][0] + ' ' + calendar.arr[i][1];
+				};
+				$('.date-time').val(str);
     			calendar.hide();
-	    	}
+	    	},
+	    	pushDate : function(date, day) {
+	    		for (var i = 0; i <= calendar.arr.length - 1; i++) {
+	    			if (calendar.arr[i][0] == date) return false;
+	    		};
+	    		calendar.arr.push([date, day]);
+	    	},
+	    	arr: []
 	    };
 
 	    function showBottom(which) {
@@ -427,26 +446,20 @@
 		// 日历选择
 		function selectday_title(d){
 			var week_day = "";
-	        if(last_title>""){
-	            last_title.id = "";
-	            last_title.style.background = "";
-	            last_title.style.color = "";
-	        };
-	            d.style.background = "#48cfad";
-	            d.style.color = "#fff";
-	            title = d.title;
-	            var arr = title.split("-");
-	            arr[1]--;
-	            var judge = WeekDay(arr.join("-"));
-	            if (judge == 0) {week_day = "星期日"};
-	            if (judge == 1) {week_day = "星期一"};
-	            if (judge == 2) {week_day = "星期二"};
-	            if (judge == 3) {week_day = "星期三"};
-	            if (judge == 4) {week_day = "星期四"};
-	            if (judge == 5) {week_day = "星期五"};
-	            if (judge == 6) {week_day = "星期六"};
-	            last_title = d;
-	            calendar.appendDate(week_day);
+            var title = d.title;
+            var arr = title.split("-");
+            d.style.background = "#ed5565";
+            d.style.color = "#fff";
+            arr[1]--;
+            var judge = WeekDay(arr.join("-"));
+            if (judge == 0) {week_day = "星期日"};
+            if (judge == 1) {week_day = "星期一"};
+            if (judge == 2) {week_day = "星期二"};
+            if (judge == 3) {week_day = "星期三"};
+            if (judge == 4) {week_day = "星期四"};
+            if (judge == 5) {week_day = "星期五"};
+            if (judge == 6) {week_day = "星期六"};
+            calendar.pushDate(title, week_day);
 	    }
 
 	    $(function(){
@@ -456,7 +469,7 @@
 		    	calendar.show();
 			})
 			$(".date-time").one('click',function(){
-		    	var str = '<p class="text-red" style="padding: 15px; border-top: 1px solid #ccc">注：选中日期，即红色模块，为未空闲时间。</p>';
+		    	var str = '<p class="text-red" style="padding: 15px; border-top: 1px solid #ccc">注：选中日期，即红色模块，为未空闲时间。</p><div style="height: 38px;"></div><div class="button-bottom"><div class="date-reset" onclick="calendar.reset();">重置</div><div class="date-confirm bg-blue" onclick="calendar.appendDate();">确定</div></div>';
 				$('.calendar').append(str);
 			})
 
