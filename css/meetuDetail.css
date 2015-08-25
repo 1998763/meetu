@@ -733,5 +733,29 @@
 }
 
 .searching-box {
+    text-align: center;
+}
 
+.searching-icon {
+    position: relative;
+    margin-top: 45px;
+}
+
+.searching-icon div {
+    width: 47px;
+    height: 48px;
+    background: url(../images/aaa.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.searching-icon i {
+    position: absolute;
+    top: -8px;
+    right: -22px;
+    width: 55px;
+    height: 59px;
+    background: url(../images/bbb.png) 0 0 no-repeat;
+    background-size: 100% 100%;
 }

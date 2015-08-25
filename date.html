@@ -341,6 +341,7 @@
 			})
 
 			$('.filter-list li').on('click',function(){
+				console.log('a');
 				var id = $(this).parent().parent().attr('class');
 				$(this).addClass('active').siblings().removeClass('active');
 				$('.js-bottom[data-id="'+id+'"]').val($(this).text());

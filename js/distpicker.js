@@ -86,7 +86,7 @@
       }
 
       if (this.$district) {
-        this.$district.on(EVENT_CHANGE, $.proxy(function (e) {
+        this.$district.on('click','li', $.proxy(function (e) {
           $(this.$district).find('li').removeClass('active');
           $(e.target).addClass('active');
           this.defaults['districtCallback'] && this.defaults['districtCallback']($(e.target));
