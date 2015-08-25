@@ -478,11 +478,10 @@
 				showBottom($(this).data('id'));
 			})
 
-			// 选项选择
+			// 选项选择填入
 			$('.filter-list:not(#city-node,.tag) li').on('click',function(){
 				var id = $(this).parent().parent().attr('class');
 				$(this).addClass('active').siblings().removeClass('active');
-				if ($(this).parent().hasClass('tag')) return;
 				$('.js-bottom[data-id="'+id+'"]').val($(this).text());
 				$('.cover-all,.date-bottom').hide();
 			})
@@ -513,6 +512,13 @@
 			$('#tag-submit').on('click', function() {
 				setTag();
 				$('.cover-all,.date-bottom').hide();
+			})
+
+			// 城区选择
+			$('input[data-id="js-place"]').on('click', function() {
+				showBottom($(this).data('id'));
+				$('#city-node').show();
+				$('#district-node').empty();
 			})
 
 			// 地区
