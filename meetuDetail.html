@@ -50,8 +50,8 @@
 		</div>
 
 		<ul class="mdt-list">
-			<li>
-				<a href="#">
+			<li id="btn-calendar">
+				<a href="javascript:;">
 					<img src="images/Calendar1.png" width="50" heigh="50">
 					<h1>日程表<br>查看好再约我</h1>
 				</a>
@@ -226,12 +226,34 @@
 		费用总计：<em><span>&yen; </span>199.0</em>
 		<a href="#">预定</a>
 	</div>
+	
+	<!-- 背景 -->
+	<div class="cover-all"></div>
 
+	<!-- 日历 -->
+	<div id="before"></div>
 
-
+	<script type="text/javascript">
+		var busyDays = ['2015-07-23','2015-08-22'];
+	</script>
 	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/calendar.js"></script>
 	<script src="js/swipe.min.js"></script>
     <script>
+    	var calendar = {
+			show : function() {
+	    		$('.cover-all,.calendar').show();
+	    		$('.cover-all').one('click', this.hide);
+	    	},
+	    	hide : function() {
+	    		$('.calendar,.cover-all').hide();
+	    	}
+    	};
+
+    	// no日历选择
+    	function selectday_title(d) {
+    		return false;
+    	}
 
         $(function() {
 
@@ -259,7 +281,15 @@
 				$('.js-detail-box').hide().eq($(this).index()).show();
 			});
 
-
+			// 日历
+		    $('#btn-calendar').on('click',function(e){
+				HS_setDate($('#before')[0]);
+		    	calendar.show();
+			})
+			$('#btn-calendar').one('click',function(){
+		    	var str = '<p class="text-red" style="padding: 15px; border-top: 1px solid #ccc">注：选中日期，即红色模块，为未空闲时间。</p>';
+				$('.calendar').append(str);
+			})
 
         });
     </script>
