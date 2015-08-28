@@ -236,7 +236,7 @@
 				<li>2人</li>
 				<li>3人</li>
 				<li>4人</li>
-				<li>5人或以上</li>
+				<li class="js-bottom" data-id="overFive">5人或以上</li>
 			</ul>
 		</div>
 		<div class="js-sex">
@@ -250,15 +250,21 @@
 		<div class="js-place">
 			<h3>请选择行程所在的区域</h3>
 			<div class="distpicker date-distpicker">
-			<ul id="city-node" class="hot-list">
-				<li data-value="北京市" data-zipcode="110100">北京市</li>
-				<li data-value="上海市" data-zipcode="310100">上海市</li>
-				<li data-value="广州市" data-zipcode="440100">广州市</li>
-				<li data-value="深圳市" data-zipcode="440300">深圳市</li>
-				<li data-value="杭州市" data-zipcode="330100">杭州市</li>
-				<li data-value="成都市" data-zipcode="510100">成都市</li>
-			</ul>
-			<ul id="district-node" class="hot-list"></ul>
+				<ul id="city-node" class="hot-list">
+					<li data-value="北京市" data-zipcode="110100">北京市</li>
+					<li data-value="上海市" data-zipcode="310100">上海市</li>
+					<li data-value="广州市" data-zipcode="440100">广州市</li>
+					<li data-value="深圳市" data-zipcode="440300">深圳市</li>
+					<li data-value="杭州市" data-zipcode="330100">杭州市</li>
+					<li data-value="成都市" data-zipcode="510100">成都市</li>
+				</ul>
+				<ul id="district-node" class="hot-list"></ul>
+			</div>
+		</div>
+		<div class="overFive">
+			<h3>请输入人数</h3>
+			<input type="tel" id="peopleNumber" class="form-input">
+			<div class="button bg-blue" onclick="closePeople();">确定</div>
 		</div>
 	</div>
 
@@ -286,6 +292,12 @@
 	    	}
 	    };
 
+	    function closePeople() {
+	    	if ($('#peopleNumber')) {
+		    	$('[data-id="js-number"]').val($('#peopleNumber').val()+'人');
+	    	};
+	    	$('.cover-all,.date-bottom').hide();
+	    }
 
 	    function showBottom(which) {
 	    	$('.cover-all,.date-bottom').show();
@@ -340,7 +352,7 @@
 				showBottom($(this).data('id'));
 			})
 
-			$('.filter-list li').on('click',function(){
+			$('.filter-list li:not(.js-bottom)').on('click',function(){
 				console.log('a');
 				var id = $(this).parent().parent().attr('class');
 				$(this).addClass('active').siblings().removeClass('active');
