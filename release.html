@@ -358,9 +358,9 @@
 	<div style="height: 38px"></div>
 	<a class="button-bottom bg-blue">确定</a>
 
-	<!--<script type="text/javascript">
-		var busyDays = ['2015-07-23','2015-08-22'];
-	</script>-->
+	<script type="text/javascript">
+		var limitMonth = true;
+	</script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/calendar.js"></script>
 	<script src="js/distpicker.data.min.js"></script>
@@ -497,10 +497,16 @@
 			// 标签delete
 			$('.condition-list i').on('click', function() {
 				$(this).parent().remove();
+				var value = $(this).parent().text();
+				for (var i = 0; i <= $('.tag li').length - 1; i++) {
+					if (v.text() == value) {
+						v.removeClass('active');
+					};
+				};
 			})
 
 			// 增加标签
-			$('.filter-list.tag li').on('click', function() {
+			$('.tag li').on('click', function() {
 				$(this).addClass('active');
 				addTag($(this).text());
 			})
