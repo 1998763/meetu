@@ -111,6 +111,9 @@
             // 无空
             if (busyBool) {
                 lis += "<li><a id='not_click' style='color:#fff; background:#ed5565' title=''>"+i+"</a></li>";
+            // 限制这个月
+            } else if (typeof(limitMonth) !== 'undefined' && (timeArr[0] != now.getFullYear() || timeArr[1] != now.getMonth())) {
+                lis += "<li><a id='not_click' style='color:#ccc;' title=''>"+i+"</a></li>";
             // 今天
             } else if (today == now.getFullYear() + "-" + now.getMonth() + "-" + i) {
                 lis += "<li><a href='javascript:void(0)' class='today' onclick='selectday_title(this)' title='"+ thisStr +"'>今日</a></li>";
