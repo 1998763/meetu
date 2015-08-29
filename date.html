@@ -280,6 +280,7 @@
 			last_title = '';
 		var calendar = {
 	    	show : function() {
+	    		if (last_title) last_title = '';
 	    		$('.cover-all,.calendar').show();
 	    		$('.cover-all').one('click', this.hide);
 	    	},
@@ -294,8 +295,7 @@
 					last_title = temp;
 				};
 				var str = last_title + ' ' + this.whichDay(last_title) + ' ~ ' + title + ' ' + this.whichDay(title);
-				$('.date-time').val(str);
-				last_title = '';	    		
+				$('.date-time').val(str);		
     			this.hide();
 				$('#js-time').trigger('click');
 	    	},
