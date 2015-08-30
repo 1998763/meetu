@@ -81,7 +81,7 @@
 
 .mdt-boxlist li {
     font-size: 16px;
-    color: #fff;
+    color: rgba(255, 255, 255, .7);
     line-height: 33px;
     position: relative;
 }
@@ -103,6 +103,10 @@
 .mdt-boxlist li span {
     position: relative;
     display: inline-block;
+}
+
+.mdt-boxlist .active {
+  color: #fff;
 }
 
 .mdt-boxlist .active span:before {
@@ -298,7 +302,7 @@
   display: inline-block;
   width: 11px;
   height: 11px;
-  background: url(../images/star2.png) 0 0 no-repeat;
+  background: url(../images/star5.png) 0 0 no-repeat;
   background-size: 100% 100%;
 }
 

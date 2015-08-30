@@ -59,20 +59,20 @@
 					</div>
 				</div>
 				<div class="span6 form-box">
-					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-number" class="form-input js-bottom" placeholder="人数">
+					<div class="input-box select-box js-bottom">
+						<input readonly type="text" data-id="js-number" class="form-input" placeholder="人数">
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="span6 form-box">
-					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-spend" class="form-input js-bottom" placeholder="其他费用说明">
+					<div class="input-box select-box js-bottom">
+						<input readonly type="text" data-id="js-spend" class="form-input" placeholder="其他费用说明">
 					</div>
 				</div>
 				<div class="span6 form-box">
-					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-place" class="form-input js-place-btn" placeholder="约游地点">
+					<div class="input-box select-box js-place-btn">
+						<input readonly type="text" data-id="js-place" class="form-input" placeholder="约游地点">
 					</div>
 				</div>
 			</div>
@@ -84,13 +84,13 @@
 			</div>
 			<div class="row">
 				<div class="span6 form-box">
-					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-sex" class="form-input js-bottom" placeholder="性别要求">
+					<div class="input-box select-box js-bottom">
+						<input readonly type="text" data-id="js-sex" class="form-input" placeholder="性别要求">
 					</div>
 				</div>
 				<div class="span6 form-box">
-					<div class="input-box select-box">
-						<input readonly type="text" data-id="js-traffic" class="form-input js-bottom" placeholder="交通要求">
+					<div class="input-box select-box js-bottom">
+						<input readonly type="text" data-id="js-traffic" class="form-input" placeholder="交通要求">
 					</div>
 				</div>
 			</div>
@@ -296,7 +296,7 @@
 				};
 				// var str = last_title + ' ' + this.whichDay(last_title) + ' ~ ' + title + ' ' + this.whichDay(title);
 				var str = last_title + ' ' + ' ~ ' + title + ' ';
-				$('.date-time').val(str);		
+				$('.date-time').val(str);
     			this.hide();
 				$('#js-time').trigger('click');
 	    	},
@@ -369,23 +369,19 @@
 			})
 
 			$('.js-bottom').on('click', function(){
-				showBottom($(this).data('id'));
+				showBottom($(this).find('input').data('id'));
 			})
 
 			$('.filter-list li:not(.js-bottom)').on('click',function(){
 				console.log('a');
 				var id = $(this).parent().parent().attr('class');
 				$(this).addClass('active').siblings().removeClass('active');
-				$('.js-bottom[data-id="'+id+'"]').val($(this).text());
+				$('.js-bottom input[data-id="'+id+'"]').val($(this).text());
 				$('.cover-all,.date-bottom').hide();
 			})
 
-			$('.js-bottom').on('click', function(){
-				showBottom($(this).data('id'));
-			})
-
 			$('.js-place-btn').on('click', function(){
-				showBottom($(this).data('id'));
+				showBottom($(this).find('input').data('id'));
 				$('#city-node').show();
 				$('#district-node').empty();
 			})
@@ -405,7 +401,7 @@
             	districtCallback: function() {
         			var city = $('#city-node .active').attr('data-value');
         			var district = $('#district-node .active').attr('data-value');
-        			$('.js-place-btn').val(city + ' ' + district);
+        			$('.js-place-btn').find('input').val(city + ' ' + district);
 					setTimeout(function() {
 						$('.cover-all, .date-bottom').hide();
 					}, 0);
@@ -414,6 +410,8 @@
 
 
 		});
+
+
 	</script>
 
     <script src="js/mobiscroll.custom-2.16.1.min.js"></script>

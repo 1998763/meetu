@@ -26,8 +26,8 @@
 				</div>
 				<div class="row">
 					<div class="span6 form-box">
-						<div class="input-box select-box">
-							<input readonly type="text" data-id="js-pay" class="form-input js-bottom" placeholder="付费方式">
+						<div class="input-box select-box js-bottom">
+							<input readonly type="text" data-id="js-pay" class="form-input" placeholder="付费方式">
 						</div>
 					</div>
 					<div class="span6 form-box">
@@ -53,8 +53,8 @@
 				</div>
 				<div class="row">
 					<div class="span6 form-box">
-						<div class="input-box select-box">
-							<input readonly type="text" data-id="js-place" class="form-input js-bottom" placeholder="行程地点">
+						<div class="input-box select-box js-bottom js-place-btn">
+							<input readonly type="text" data-id="js-place" class="form-input" placeholder="行程地点">
 						</div>
 					</div>
 					<div class="span6 form-box">
@@ -64,8 +64,8 @@
 					</div>
 				</div>
 				<div class="row mg0">
-					<div class="input-box select-box">
-						<input readonly type="text" class="form-input js-bottom" data-id="js-tag" placeholder="标签">
+					<div class="input-box select-box js-bottom">
+						<input readonly type="text" class="form-input" data-id="js-tag" placeholder="标签">
 					</div>
 				</div>
 				<div class="row">
@@ -131,8 +131,8 @@
 					</div>
 				</div>
 				<div class="row mg0">
-					<div class="input-box select-box">
-						<input readonly type="text" class="form-input date-time" placeholder="游玩时间">
+					<div class="input-box select-box date-time">
+						<input readonly type="text" class="form-input" placeholder="游玩时间">
 					</div>
 				</div>
 				<div class="row">
@@ -379,7 +379,7 @@
 	    			$('[title="'+v[0]+'"]').css({'background':'','color':''})
 	    		})
 	    		calendar.arr = [];
-	    		$('.date-time').val('');
+	    		$('.date-time input').val('');
 	    	},
 	    	appendDate : function() {
 				var str = '';
@@ -387,7 +387,7 @@
 					if (i != 0) str += '，';
 					str += calendar.arr[i][0] + ' ' + calendar.arr[i][1];
 				};
-				$('.date-time').val(str);
+				$('.date-time input').val(str);
     			calendar.hide();
 	    	},
 	    	pushDate : function(date, day) {
@@ -475,14 +475,14 @@
 
 			// 弹出选项
 			$('.js-bottom').on('click', function(){
-				showBottom($(this).data('id'));
+				showBottom($(this).find('input').data('id'));
 			})
 
 			// 选项选择填入
 			$('.filter-list:not(#city-node,.tag) li').on('click',function(){
 				var id = $(this).parent().parent().attr('class');
 				$(this).addClass('active').siblings().removeClass('active');
-				$('.js-bottom[data-id="'+id+'"]').val($(this).text());
+				$('.js-bottom input[data-id="'+id+'"]').val($(this).text());
 				$('.cover-all,.date-bottom').hide();
 			})
 
@@ -521,8 +521,8 @@
 			})
 
 			// 城区选择
-			$('input[data-id="js-place"]').on('click', function() {
-				showBottom($(this).data('id'));
+			$('.js-place-btn').on('click', function() {
+				showBottom($(this).find('input').data('id'));
 				$('#city-node').show();
 				$('#district-node').empty();
 			})
