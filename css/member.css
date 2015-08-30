@@ -3,6 +3,7 @@
 }
 
 .member-banner {
+	display: block;
 	position: relative;
 	width: 100%;
 	padding-top: 40.62%;
@@ -238,6 +239,17 @@
 .icon-add {
 	background: url(../images/icon-add.png) center center no-repeat;
 	background-size: 15px;
+}
+
+.icon-link {
+	position: absolute;
+	right: 2%;
+	top: 50%;
+	width: 8px;
+	height: 20px;
+	margin-top: -10px;
+	background: url(../images/icon-right.png) center center no-repeat;
+    background-size: 8px;
 }
 
 .add-ticket {
