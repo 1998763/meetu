@@ -79,7 +79,7 @@
 			<div class="row mg0">
 				<div class="input-box select-box">
 					<input readonly type="text" class="form-input date-time" placeholder="什么时候去...">
-					<input type="text" class="js-time" id="js-time">
+					<input type="text" class="js-time" id="js-time" style="left: 170px; background: transparent">
 				</div>
 			</div>
 			<div class="row">
@@ -294,7 +294,8 @@
 					title = last_title;
 					last_title = temp;
 				};
-				var str = last_title + ' ' + this.whichDay(last_title) + ' ~ ' + title + ' ' + this.whichDay(title);
+				// var str = last_title + ' ' + this.whichDay(last_title) + ' ~ ' + title + ' ' + this.whichDay(title);
+				var str = last_title + ' ' + ' ~ ' + title + ' ';
 				$('.date-time').val(str);		
     			this.hide();
 				$('#js-time').trigger('click');
