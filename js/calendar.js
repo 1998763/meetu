@@ -122,9 +122,9 @@
                 lis += "<li><a href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>明日</a></li>";
             // 限制4天
             } else if (typeof(limitDay) !== 'undefined') {
-                var day1 = new Date(date[0],date[1]-1,date[2]);
-                var day2 = new Date(timeArr[0],timeArr[1],timeArr[2]);
-                var differ = parseInt(Math.abs(day2 - day1) / 1000 / 60 / 60 /24);
+                var day1 = new Date(timeArr[0],timeArr[1],timeArr[2]);
+                var day2 = new Date(date[0],date[1]-1,date[2]);
+                var differ = parseInt((day2 - day1) / 1000 / 60 / 60 /24);
                 if (differ>0 && differ < limitDay) {
                     lis += "<li><a href='javascript:void(0)' onclick='selectday_title(this)' title='"+ thisStr +"'>"+i+"</a></li>";
                 } else {
