@@ -60,7 +60,7 @@
 				</div>
 				<div class="span6 form-box">
 					<div class="input-box select-box js-bottom">
-						<input readonly type="text" data-id="js-number" class="form-input" placeholder="人数">
+						<input readonly type="text" data-id="js-number" class="form-input js-bottom2-test" placeholder="人数">
 					</div>
 				</div>
 			</div>
@@ -236,7 +236,8 @@
 				<li>2人</li>
 				<li>3人</li>
 				<li>4人</li>
-				<li class="js-bottom" data-id="overFive">5人或以上</li>
+				<li>5人或以上</li>
+				<li class="js-bottom2" data-id="overFive">其他</li>
 			</ul>
 		</div>
 		<div class="js-sex">
@@ -262,8 +263,8 @@
 			</div>
 		</div>
 		<div class="overFive">
-			<h3>请输入人数</h3>
-			<input type="tel" id="peopleNumber" class="form-input">
+			<h3>其他人数</h3>
+			<input type="tel" id="peopleNumber" class="form-input" style="width: 80px;">
 			<div class="button bg-blue" onclick="closePeople();">确定</div>
 		</div>
 	</div>
@@ -378,6 +379,11 @@
 				$(this).addClass('active').siblings().removeClass('active');
 				$('.js-bottom input[data-id="'+id+'"]').val($(this).text());
 				$('.cover-all,.date-bottom').hide();
+			})
+
+			$('.js-bottom2').on('click', function(){
+				$('.js-bottom2-test').val('');
+				showBottom($(this).data('id'));
 			})
 
 			$('.js-place-btn').on('click', function(){
