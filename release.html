@@ -358,15 +358,14 @@
 	<div style="height: 38px"></div>
 	<a class="button-bottom bg-blue">确定</a>
 
-	<script type="text/javascript">
-		var limitMonth = true;
-	</script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/calendar.js"></script>
 	<script src="js/distpicker.data.min.js"></script>
 	<script src="js/distpicker.js"></script>
 	<script>
-		 var calendar = {
+		var limitMonth = true; // 限制本月
+
+		var calendar = {
 	    	show : function() {
 	    		$('.cover-all,.calendar').show();
 	    		$('.cover-all').one('click', this.hide);
