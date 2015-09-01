@@ -267,18 +267,17 @@
 			<div class="button bg-blue" onclick="closePeople();">确定</div>
 		</div>
 	</div>
-
-	<script type="text/javascript">
-		var busyDays = ['2015-07-23','2015-08-22'];
-		var limitDay = 4;
-	</script>
+	
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/calendar.js"></script>
 	<script src="js/distpicker.data.min.js"></script>
 	<script src="js/distpicker.js"></script>
 	<script>
-		var title = '',
-			last_title = '';
+		var busyDays = ['2015-07-23','2015-08-22'], // 已有安排
+			limitDay = 4, // 限制天数
+			title = '', // 选择结束日期
+			last_title = ''; // 选择开始日期
+
 		var calendar = {
 	    	show : function() {
 	    		if (last_title) last_title = '';
@@ -339,11 +338,6 @@
 		//日历选择
 		function selectday_title(d){
             title = d.title;
-            var isFour = calendar.differDay();
-            if (isFour && isFour >= 4) {
-            	alert('请选择4天之内的日期');
-            	return;
-            };
             d.style.background = "#48cfad";
             d.style.color = "#fff";
             if (last_title > '') {
