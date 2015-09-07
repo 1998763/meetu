@@ -63,13 +63,19 @@ dd.setting {
     background-position: right 15px;
 }
 
-.order-link.head {
+.order-box .head {
     min-height: 56px;
 }
 
-.order-link.head h5,
-.order-link.head p {
+.order-box .head h5,
+.order-box .head p {
     width: 120px;
+    float: left;
+}
+
+.order-box .head h5 {
+    line-height: 16px;
+    margin-top: -2px;
 }
 
 .order-link.birthday {
@@ -97,18 +103,22 @@ dd.setting {
 
 .order-box .trip-detail {
     line-height: 15px;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .order-box .face {
     position: absolute;
     top: 11px;
-    right: 30px;
+    right: 22px;
     width: 55px;
     height: 55px;
     border: 2px solid #e7e7e7;
     border-radius: 100%;
     overflow: hidden;
+}
+
+.pay-fold .face {
+    right: 0;
 }
 
 .setting .face {
@@ -288,7 +298,7 @@ dd.setting {
 /* pay */
 
 .pay-fold {
-    height: 115px;
+    height: 116px;
     overflow: hidden;
 }
 

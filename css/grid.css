@@ -124,6 +124,11 @@ header .icon-ring .icon-red{
 	background-size: 16px;
 }
 
+.icon-release {
+  background: url(../images/icon-release.png) center center no-repeat;
+  background-size: 16px;
+}
+
 .icon-chat {
 	background: url(../images/icon-chat.png) center center no-repeat;
 	background-size: 15px;

@@ -66,6 +66,13 @@
 	-webkit-box-flex: 1;
 }
 
+.msg-info.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 53%;
+}
+
 .msg-guide {
 	line-height: 28px;
 	padding: 6px 0;
