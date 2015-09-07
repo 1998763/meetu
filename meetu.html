@@ -153,7 +153,7 @@
 		<div class="box">
 			<a href="#" class="p3-box">
 				<div class="img-box">
-					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="img lazy" data-original="http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg" style="background-image: images/grey.gif"></div>
 					<div class="icon"><i class="icon-saved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
@@ -163,7 +163,7 @@
 			</a>
 			<a href="#" class="p3-box">
 				<div class="img-box">
-					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="img lazy" data-original="http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg" style="background-image: images/grey.gif"></div>
 					<div class="icon"><i class="icon-unsaved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
@@ -173,7 +173,7 @@
 			</a>
 			<a href="#" class="p3-box">
 				<div class="img-box">
-					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="img lazy" data-original="http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg" style="background-image: images/grey.gif"></div>
 					<div class="icon"><i class="icon-unsaved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
@@ -183,7 +183,7 @@
 			</a>
 			<a href="#" class="p3-box">
 				<div class="img-box">
-					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="img lazy" data-original="http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg" style="background-image: images/grey.gif"></div>
 					<div class="icon"><i class="icon-unsaved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
@@ -193,7 +193,7 @@
 			</a>
 			<a href="#" class="p3-box">
 				<div class="img-box">
-					<div class="img" style="background-image: url(http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg);"></div>
+					<div class="img lazy" data-original="http://cdn.duitang.com/uploads/item/201409/11/20140911132715_MS3JM.jpeg" style="background-image: images/grey.gif"></div>
 					<div class="icon"><i class="icon-unsaved"></i></div>
 					<div class="product-foot">
 						<h1>历史与繁华的痕迹—沙面</h1>
@@ -206,6 +206,7 @@
 
 	
 	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.lazyload.min.js"></script>
 	<script src="js/swipe.min.js"></script>
     <script src="js/calendar.js"></script>
     <script>
@@ -309,6 +310,11 @@
 	    }
 
         $(function() {
+        	// lazyload
+        	$('.lazy').lazyload({
+                effect : 'fadeIn'
+            });
+
         	// city
         	$('#btn-city').on('click', function() {
         		// headerDown.show(0);
